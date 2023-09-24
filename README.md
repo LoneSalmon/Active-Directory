@@ -14,7 +14,7 @@
 1. [Introduction](#Introduction)
 2. [Requirements for the lab environment](#Requirements-for-the-lab-environment)
 3. [Setting up the lab environment](#Setting-up-the-lab-environment)
-4. [Creating & Configuring a Domain Controller](#Creating-&-Configuring-a-Domain-Controller)
+4. [Creating & Configuring a Domain Controller](#Creating---Configuring-a-Domain-Controller)
 
 ## Introduction
 <p align="justify">
@@ -22,9 +22,9 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 </p>
 
 ## Requirements for the lab environment
-### [1. Vmware Workstation Pro](https://www.vmware.com/il/products/workstation-pro.html)
-### [2. Windows Server 2019 VM's (3 Machines)](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019)
-### [3. Windows 10/11 Pro VM's (2 Machines)](https://www.microsoft.com/en-us/software-download/windows10)
+1. [Vmware Workstation Pro](https://www.vmware.com/il/products/workstation-pro.html)
+2. [Windows Server 2019 VM's (3 Machines)](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019)
+3. [Windows 10/11 Pro VM's (2 Machines)](https://www.microsoft.com/en-us/software-download/windows10)
 
 ## Setting up the lab environment
 <p align="center"> <strong>--- I will not be diving deep into setting-up virtual machines in Vmware since this is out of the scope of this project ---</strong> </p>
