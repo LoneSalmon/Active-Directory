@@ -14,7 +14,7 @@
 1. [Introduction](#Introduction)
 2. [Requirements for the lab environment](#Requirements-for-the-lab-environment)
 3. [Setting up the lab environment](#Setting-up-the-lab-environment)
-4. [Creating & Configuring a Domain Controller](#Creating---Configuring-a-Domain-Controller)
+4. [Creating & Configuring a Domain Controller](#Creating--Configuring-a-Domain-Controller)
 
 ## Introduction
 <p align="justify">
