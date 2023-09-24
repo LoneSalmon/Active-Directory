@@ -4,7 +4,7 @@
 
 <h1 align="center"> Microsoft Server Module (MCSA) </h1>
 <h2 align="center"> Server Management in Active-Directory </h2>
-<h4 align="center"> Student Name: Mustafa Jaber | <a href="https://see-security.com/?lang=en">See-Security College, Ramat-Gan</a> | Class: CSPP83 | Lecturer: Binyamin Cohen | 24/09/2023 </h4>
+<h4 align="center"> Student Name: <a href="https://www.linkedin.com/in/mustafa-jaber-5a143b269/">Mustafa Jaber</a> | <a href="https://see-security.com/?lang=en">See-Security College, Ramat-Gan</a> | Class: CSPP83 | Lecturer: Binyamin Cohen | 24/09/2023 </h4>
 
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/74f5fabb-cf76-47aa-9595-1892ea1d66bb" height="600px" width="800"> 
@@ -27,33 +27,66 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 3. [Windows 10/11 Pro VM's (2 Machines)](https://www.microsoft.com/en-us/software-download/windows10)
 
 ## Setting up the lab environment
-<p align="center"> <strong>--- I will not be diving deep into setting-up virtual machines in Vmware since this is out of the scope of this project ---</strong> </p>
-<p align="center"> <a href="https://medium.com/r3d-buck3t/building-an-active-directory-lab-part-1-windows-server-2022-setup-7dfaf0dafd5c"><strong>You can check this link here for a guide</strong></a> </p>
+<p align="center"> 
+  <strong>I will not be diving deep into Vmware since this is out of the scope of this project</strong> 
+</p>
+<p align="center"> 
+  <a href="https://medium.com/r3d-buck3t/building-an-active-directory-lab-part-1-windows-server-2022-setup-7dfaf0dafd5c">
+    <strong>You can check this link here for a guide</strong></a> 
+</p>
 
-- We will start by setting up the lab environment in 5 virtual machines in Vmware Workstation Pro. It will Consist of 2 Domain Controllers, a routing server (PAT) (3 Windows Server 2019 OS's) and two end-user clients hosting Windows 10 Pro.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
+
+- We will start by setting up the lab environment in 5 virtual machines in Vmware Workstation Pro. It will Consist of 2 Domain Controllers, a routing server (PAT) (3 Windows Server 2019 OS's), and two end-user clients hosting Windows 10 Pro.<br>
 
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/1b75a183-6995-4452-b7c7-5117b5f41397"> 
 </p>
 
-- It is important to make sure that each virtual machine is configured to NAT and that you have NAT already configured in your Vmware Workstation Pro settings **(Note that I have disabled Vmware DHCP services because I'm going to create my own DHCP service from the Active-Directory services)**
+--------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
+
+- It is essential to make sure that each virtual machine is configured to NAT and that you have NAT already configured in your Vmware Workstation Pro settings.<br>
+
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/2934cd0e-cfd6-4deb-9dba-d01bca4b51f7" height="600px" width="800"> 
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/2934cd0e-cfd6-4deb-9dba-d01bca4b51f7" height="600px" width="800"><br> 
+  <strong>(Note that I have disabled Vmware DHCP services because I'm going to create my own DHCP service from the Active-Directory services)</strong>
 </p>
 
-- Once that's done, begin installing the Operating System individually, and then we will do some basic settings up for both DCs and SRV-1 (basic networking settings)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
+
+- Once that's done, begin installing the Operating System individually, and then we will do some basic settings up for both DCs and SRV-1 (basic networking settings).<br>
+
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/422963d5-e98f-4838-9ef9-280c27aebd01"> 
 </p>
 
-- Change NIC configuration to match your (Future) domain network by selecting the "Ethernet0" value > going to NIC properties > Selecting "Internet Protocol Version 4 (TCP/IPv4)" > Select "Use the following IP address" and "Use the following DNS server addresses" > Add the corrosponding Network address according to the previous "NAT" network that was added by Vmware
+--------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
+
+- Change NIC configuration to match your (Future) domain network as follows:
+  * Select "Ethernet0" Value →<br>
+  * Go To NIC properties →<br>
+  * Open "Internet Protocol Version 4 (TCP/IPv4)" →<br>
+  * Check "Use the following IP address"→<br> 
+  * Check "Use the following DNS server addresses" →<br> 
+  * Add the corresponding Network address according to the previous "NAT" network that was added by VMWare<br>
+  
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/93090491-1fae-493a-81fa-e950a937e063"> 
 </p>
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/73aa5a6f-aa5d-4c49-9685-023a2e3f1f50"> 
 </p>
-<p align="center"> <strong>-- Note that the reason that "Host" portion of the IP address is "3" and not "1" or "2" for example, is because these two "Host" addresses are reserved for Vmwares' NAT operation - "1" is for the NAT bridge that was installed on the host machine and "2" is for the virtual switch (Default-Gateway). <a href="https://docs.vmware.com/en/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-144D22BA-298E-4293-8137-B631AD7BF694.html">Here's more details on the subject</a> --</strong> </p>
+
+**Note that the reason that "Host" portion of the IP address is "3" and not "1" or "2" for example, is because these two "Host" addresses are reserved for Vmwares' NAT operation:**  <br>
+**- "1" is for the NAT bridge that was installed on the host machine.**  <br>
+**- "2" is for the virtual switch (Default-Gateway).**  <br>
+
+  <p align="center">
+    <a href="https://docs.vmware.com/en/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-144D22BA-298E-4293-8137-B631AD7BF694.html">
+      <strong>Here's more details on the subject</strong></a>
+  </p>
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
 
 - Change the Computer Name (And don't add a Domain Just yet since we didn't create a Domain-Controller)
 <p align="center"> 
