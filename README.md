@@ -11,10 +11,10 @@
 </p>
 
 ## Table of Contents
-1. [Introduction](#Introduction)
-2. [Requirements for the lab environment](#Requirements-for-the-lab-environment)
-3. [Setting up the lab environment](#Setting-up-the-lab-environment)
-4. [Creating & Configuring a Domain Controller](#Creating--Configuring-a-Domain-Controller)
+1. ➤[Introduction](#Introduction)
+2. ➤[Requirements for the lab environment](#Requirements-for-the-lab-environment)
+3. ➤[Setting up the lab environment](#Setting-up-the-lab-environment)
+4. ➤[Creating & Configuring a Domain Controller](#Creating--Configuring-a-Domain-Controller)
 
 ## Introduction
 <p align="justify">
@@ -106,3 +106,4 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 </p>
 
 - We will go through the setup wizard to add the needed roles (I skipped the first page by default since it's not necessary)
+- 
