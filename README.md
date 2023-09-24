@@ -14,15 +14,12 @@
 
 <h2 align="center"> Table of Contents </h2>
 
-<details open="open">
-  <summary>Table of Contents</summary>
   <ol>
     <li><a href="#-introduction-"> ➤ Introduction</a></li>
     <li><a href="#-requirements-for-the-lab-environment-"> ➤ Requirements for the lab environment</a></li>
     <li><a href="#-setting-up-the-lab-environment-"> ➤ Setting up the lab environment</a></li>
     <li><a href="#-creating--configuring-a-domain-controller-"> ➤ Creating & Configuring a Domain Controller</a></li>
   </ol>
-</details>
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
