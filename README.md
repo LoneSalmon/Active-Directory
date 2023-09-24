@@ -12,7 +12,10 @@
 
 ## Table of Contents
 1. [Introduction](#Introduction)
-2. 
+2. [Requirements for the lab environment](#Requirements-for-the-lab-environment)
+3. [Setting up the lab environment](#Setting-up-the-lab-environment)
+4. [Creating & Configuring a Domain Controller](#Creating-&-Configuring-a-Domain-Controller)
+
 ## Introduction
 <p align="justify">
 Welcome to my Active Directory Project, culminating my studies in the Microsoft Server (MCSA) and Cybersecurity courses at See-Security College. This project showcases a meticulously designed network infrastructure, focusing on Microsoft's Active Directory technology. I've configured key components within this virtual environment, including Domain Controllers, DNS, Group Policies, user management, security protocols, organizational efficiency, remote access solutions, and comprehensive documentation. This project underscores my expertise in Microsoft technologies and network security principles, emphasizing the pivotal role of a well-structured directory service in modern network management.
