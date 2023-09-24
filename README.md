@@ -14,14 +14,16 @@
 
 <h2 align="center"> Table of Contents </h2>
 
-1. [Introduction](#Introduction)
-2. [Requirements for the lab environment](#Requirements-for-the-lab-environment)
-3. [Setting up the lab environment](#Setting-up-the-lab-environment)
-4. [Creating & Configuring a Domain Controller](#Creating--Configuring-a-Domain-Controller)
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#-introduction-"> ➤ Introduction</a></li>
+    <li><a href="#-requirements-for-the-lab-environment-"> ➤ Requirements for the lab environment</a></li>
+    
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
-<h2 align="center"> Introduction </h2>
+<h2 id="Introduction" align="center"> Introduction </h2>
 
 <p align="justify">
 Welcome to my Active Directory Project, culminating my studies in the Microsoft Server (MCSA) and Cybersecurity courses at See-Security College. This project showcases a meticulously designed network infrastructure, focusing on Microsoft's Active Directory technology. I've configured key components within this virtual environment, including Domain Controllers, DNS, Group Policies, user management, security protocols, organizational efficiency, remote access solutions, and comprehensive documentation. This project underscores my expertise in Microsoft technologies and network security principles, emphasizing the pivotal role of a well-structured directory service in modern network management.
@@ -29,7 +31,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
-<h2 align="center"> Requirements for the lab environment </h2>
+<h2 id="Requirements-for-the-lab-environment" align="center"> Requirements for the lab environment </h2>
 
 1. [Vmware Workstation Pro](https://www.vmware.com/il/products/workstation-pro.html)
 2. [Windows Server 2019 VM's (3 Machines)](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019)
@@ -37,7 +39,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
-<h2 align="center"> Setting up the lab environment </h2>.
+<h2 id="Setting-up-the-lab-environment" align="center"> Setting up the lab environment </h2>.
 
 <p align="center"> 
   <strong>I will not be diving deep into Vmware since this is out of the scope of this project</strong> 
@@ -113,7 +115,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
-<h2 align="center"> Creating & Configuring a Domain Controller </h2>
+<h2 id="Creating-and-configuring-a-domain-controller" align="center"> Creating & Configuring a Domain Controller </h2>
 
 - The first step to creating a domain is to create a Domain-Controller (DC for short). For that, we will go to the Server Manager Application > Click on Manage at the top right and then add Roles and Features
 
