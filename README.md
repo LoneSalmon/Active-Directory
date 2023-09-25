@@ -247,9 +247,53 @@ ___
   <em>Please make sure that the password you created is for the Administrator profile and not your current user profile</em>
 </p>
 
-- If you're cleared to proceed, you can hit "Install". This will install AD-DS & DNS and restart the system to apply the changes.
+- If you're cleared to proceed, you can hit "Install". This will install AD-DS & DNS and restart the system to apply the changes.  <br>
 - Once restarted, you will be asked to enter the domain using your previously configured local admin password.
 
 ___
 
 <h3>Adding a Secondary Domain Controller (DC2)</h3>
+
+<p align="center">
+  <strong>"Do I even need a Secondary Domain Controller?"</strong>  <br>
+  <p align="justify">
+    <em>Yes!! Adding a secondary domain controller (DC) is essential as it ensures high availability, data redundancy, improved performance, and security in an Active Directory environment. While a forest can technically function with just one DC, the recommended practice is to deploy at least two DCs to prevent disruptions caused by hardware failures or maintenance, maintain data integrity, distribute the load, enhance security, and facilitate efficient management and updates. Relying solely on a single DC is discouraged due to the potential risks associated with a single point of failure.</em>
+  </p>
+</p>
+
+___
+
+- Now that we have this out of the way, we'll start by first adding the DC2 VM to our newly established domain:  <br>
+  * Go to Server Manager on DC2  <br>
+  * Switch to the Local Server Page  <br>
+  * Click on either "Computer name" or "Workgroup"  <br>
+  * Click on change  <br>
+  * Select "Domain" and add your previously created domain. In my case, it's "mustafa.com"  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/9c944574-1e44-4ef8-98f8-f2c848cf40a7">
+</p>
+
+- Notice that when clicking "Ok" we run into the following error:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/55d8fe52-5bca-4655-b4b2-8f664e99c8e8">
+</p>
+
+- The reason is because our DC1 DNS properties are pointing to Vmwares' Vmnet DNS Service:  <br>
+- We will need to configure our DC2 to point to DC1 DNS instead:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/a3977a55-c597-4e2b-8069-e4cfb512276d">
+</p>
+
+- Once we insert the DNS of our DC1 and try again, we will be prompted to enter a domain Admin User/pass and DC2 will be migrated to our domain:
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/1ea04923-6853-469d-a4e1-1e43a1db26ea">
+</p>
+
+___
+
+- Now that we confirmed that DC2 is part of the domain. We will begin configuring it as a secondary Domain-Controller.
+- We will go through the same <a href="#-creating--configuring-a-domain-controller-">exact steps as DC1</a>, but I will highlight the exceptions here:
