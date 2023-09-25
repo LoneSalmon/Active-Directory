@@ -23,6 +23,7 @@
       <ol>
         <li><a href="#-creating-server-roles-"> <em> Creating Server Roles</em></a></li>
         <li><a href="#-configuring-our-1st-domain-controller-"> <em> Configuring our 1st Domain Controller</em></a></li>
+        <li><a href="#adding-a-secondary-domain-controller-dc2"> <em> Adding a Secondary Domain Controller (DC2)</em></a></li>
       </ol>
     </details></li>
   </ol>
@@ -45,7 +46,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
-<h2 align="center"> Setting up the lab environment </h2>.
+<h2 align="center"> Setting up the lab environment </h2>
 
 <p align="center"> 
   <strong>I will not be diving deep into Vmware since this is out of the scope of this project</strong>  <br>
@@ -63,16 +64,16 @@ ___
 
 ___
 
-- It is essential to make sure that each virtual machine is configured to NAT and that you have NAT already configured in your Vmware Workstation Pro settings.  <br>
+- It is essential to ensure that each virtual machine is configured to NAT and that you have NAT already configured in your Vmware Workstation Pro settings.  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/2934cd0e-cfd6-4deb-9dba-d01bca4b51f7" height="600px" width="800">  <br> 
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/2934cd0e-cfd6-4deb-9dba-d01bca4b51f7" height="500px" width="auto">  <br> 
   <em>Note that I have disabled Vmware DHCP services because I'm going to create my own DHCP service from the Active-Directory services</em>
 </p>
 
 ___
 
-- Once that's done, begin installing the Operating System individually, and then we will do some basic settings up for both DCs and SRV-1 (basic networking settings).  <br>
+- Once that's done, begin installing the Operating System individually, and then we will do some basic setting up for both DCs and SRV-1 (basic networking settings).  <br>
 
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/422963d5-e98f-4838-9ef9-280c27aebd01"> 
@@ -89,12 +90,12 @@ ___
   * Add the corresponding Network address according to the previous "NAT" network that was added by VMWare  <br>
   
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/93090491-1fae-493a-81fa-e950a937e063" height="auto" width="500">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/73aa5a6f-aa5d-4c49-9685-023a2e3f1f50" height="auto" width="500">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/93090491-1fae-493a-81fa-e950a937e063" height="auto" width="500px">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/73aa5a6f-aa5d-4c49-9685-023a2e3f1f50" height="auto" width="500px">
 </p>
 
-*Note that the reason that the "Host" portion of the IP address is "3" and not "1" or "2" for example, is because these two "Host" addresses are reserved for Vmwares' NAT operation:*  <br>
-- *"1" is for the NAT bridge that was installed on the host machine.*  <br>
+*Note that the reason that the "Host" portion of the IP address is "3" and not "1" or "2" for example is because these two "Host" addresses are reserved for Vmwares' NAT operation:*  <br>
+- *"1" is for the NAT bridge installed on the host machine.*  <br>
 - *"2" is for the virtual switch (Default-Gateway).*  <br>
 
   <p align="center">
@@ -107,8 +108,8 @@ ___
 - Change the Computer Name (And don't add a Domain Just yet since we didn't create a Domain-Controller)  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6de8c76d-f18b-4222-8664-2a300fd4eba2">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/15435f3c-c888-4883-83b4-79b0683bf5ea">  <br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6de8c76d-f18b-4222-8664-2a300fd4eba2" height="auto" width="500px">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/15435f3c-c888-4883-83b4-79b0683bf5ea" height="auto" width="500px">  <br>
   <em>Restart, repeat the same steps in DC2 and SRV1 with their corresponding names and use the IP addresses with "4" and "5" as the hosts.</em>
 </p>
 
@@ -178,9 +179,9 @@ ___
   <em>This will lead us to the next section.</em>
 </p>
 
-- Note that if you reached this point and hit "Close" instead of "Promote this server to a domain controller" then there's no need to panic and follow these steps:  <br>
+- Note that if you reach this point and hit "Close" instead of "Promote this server to a domain controller", then there's no need to panic and follow these steps:  <br>
   * On the top right of the Server Manager UI, you will see a flag with ⚠️ on it.  <br>
-  * When clicking on it, you will see the tasks that need to be completed, among them is Promoting the server.  <br>
+  * When clicking on it, you will see the tasks that must be completed. Among them is Promoting the server.  <br>
   * You can click on the task to resume the configuration.  <br>
 
   <p align="center"> 
@@ -190,8 +191,8 @@ ___
 ___
 
 <h3> Configuring our 1st Domain Controller </h3>
-- For a first deployment, we will need to select the "Add a new forest" operation.  <br>
-- Then specify the "Root Domain Name", in my case, it will be "mustafa.com".  <br>
+- We must select the "Add a new forest" operation for the first deployment.  <br>
+- Then specify the "Root Domain Name". In my case, it will be "mustafa.com".  <br>
 
   <p align="center"> 
     <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/55d86627-2b51-498a-82ca-e575b2f586b1">  <br>
@@ -203,11 +204,11 @@ ___
 ___
 
 - For the DC options, we will need to select the following settings:  <br>
-  * Forest & Domain Functional level: Since we will be using the same OS on all servers, the latest.  <br>
+  * Forest & Domain Functional level: Since we will use the same OS on all servers, the latest.  <br>
   * We will need to ✔️ the DNS since we will require it for configuring a DNS on this DC.  <br>
-  * We will also ✔️ the Global Catalog, since we need it for replication between DC1 to DC2. Follow this <a href="https://learn.microsoft.com/en-us/windows/win32/ad/global-catalog">link</a> to understand GC functionality.  <br>
-  * We <strong>do not</strong> select "RODC", this is reserved for DC's that we dont to have it's info changed/tampered with.  <br>
-  * We are required to enter a DSRM password for catastrophes, check this <a href="https://en.wikipedia.org/wiki/Directory_Services_Restore_Mode">link</a> for more info.<br>
+  * We will also ✔️ the Global Catalog since we need it to replicate DC1 and DC2. Follow this <a href="https://learn.microsoft.com/en-us/windows/win32/ad/global-catalog">link</a> to understand GC functionality.  <br>
+  * We <strong>do not</strong> select "RODC". This is reserved for DCs that we don't want its info changed/tampered with.  <br>
+  * We are required to enter a DSRM password for catastrophes. Check this <a href="https://en.wikipedia.org/wiki/Directory_Services_Restore_Mode">link</a> for more info.  <br>
 
   <p align="center">
     <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/49fd7589-2a98-41e3-9f96-f9900baf89fa">
@@ -215,12 +216,12 @@ ___
 
 ___
 
-- I will be skipping the DNS options since we will not be covering DNS delegation in this step.  <br>
-- In the additional Options page, the NetBIOS domain name will be automatically generated from the root domain name we specified earlier. <a href="http://www.differencebetween.net/technology/internet/difference-between-dns-and-netbios/">Here's more info on NetBIOS</a>.  <br>
+- I will skip the DNS options since we will not cover DNS delegation in this step.  <br>
+- In the Additional Options page, the NetBIOS domain name will be automatically generated from the root domain name we specified earlier. <a href="http://www.differencebetween.net/technology/internet/difference-between-dns-and-netbios/">Here's more info on NetBIOS</a>.  <br>
 - In the "Paths" page, we can see and edit the default folders for:  <br>
   * Database: NTDS is a critical component of the Active Directory infrastructure, housing the database files that store directory information.  <br>
-  * Log files: Log files associated with AD database contains transaction logs that record all changes made to the database.  <br>
-  * SYSVOL: Responsible for storing and distributing Group Policy objects and other system-level settings (Scripts for example) across all domain controllers.  <br>
+  * Log files: Log files associated with AD database contain transaction logs that record all changes made to the database.  <br>
+  * SYSVOL: Responsible for storing and distributing Group Policy objects and other system-level settings (Scripts, for example) across all domain controllers.  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/f0232555-f698-49c6-9caf-b36340d2ebbd">
@@ -239,9 +240,16 @@ ___
 </p>
 
 - The way to remedy this is to change (or create) a local admin password using <a href="https://www.top-password.com/knowledge/change-windows-10-password.html">any of these simple methods here</a>.
-- Once the password is updated we hit the "Rerun prerequisites check" link and can see that there are no errors:  <br>
+- Once the password is updated, we hit the "Rerun prerequisites check" link and can see that there are no errors:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6c11826b-ceab-4efb-9a6b-7b305bca8799">  <br>
-  <em>Please make sure that the password you created is for the Adminstrator profile and not your current user profile</em>
+  <em>Please make sure that the password you created is for the Administrator profile and not your current user profile</em>
 </p>
+
+- If you're cleared to proceed, you can hit "Install". This will install AD-DS & DNS and restart the system to apply the changes.
+- Once restarted, you will be asked to enter the domain using your previously configured local admin password.
+
+___
+
+<h3>Adding a Secondary Domain Controller (DC2)</h3>
