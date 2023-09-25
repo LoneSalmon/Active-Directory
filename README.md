@@ -19,7 +19,21 @@
     <li><a href="#-requirements-for-the-lab-environment-"> ➤ Requirements for the lab environment</a></li>
     <li><a href="#-setting-up-the-lab-environment-"> ➤ Setting up the lab environment</a></li>
     <li><a href="#-creating--configuring-a-domain-controller-"> ➤ Creating & Configuring a Domain Controller</a></li>
+    <details open="open">
+      <ol>
+        <li><a href="#-creating-electing-our-1st-domain-controller-"> <em>➤ Creating (electing) our 1st Domain Controller</em></a></li>
+      </ol>
+    </details>
   </ol>
+
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
@@ -42,9 +56,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 <h2 id="Setting-up-the-lab-environment" align="center"> Setting up the lab environment </h2>.
 
 <p align="center"> 
-  <strong>I will not be diving deep into Vmware since this is out of the scope of this project</strong> 
-</p>
-<p align="center"> 
+  <strong>I will not be diving deep into Vmware since this is out of the scope of this project</strong><br>
   <a href="https://medium.com/r3d-buck3t/building-an-active-directory-lab-part-1-windows-server-2022-setup-7dfaf0dafd5c">
     <em>You can check this link here for a guide</em></a> 
 </p>
@@ -85,10 +97,8 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
   * Add the corresponding Network address according to the previous "NAT" network that was added by VMWare<br>
   
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/93090491-1fae-493a-81fa-e950a937e063"> 
-</p>
-<p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/73aa5a6f-aa5d-4c49-9685-023a2e3f1f50"> 
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/93090491-1fae-493a-81fa-e950a937e063" height="500px" width="500">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/73aa5a6f-aa5d-4c49-9685-023a2e3f1f50" height="500px" width="500">
 </p>
 
 *Note that the reason that the "Host" portion of the IP address is "3" and not "1" or "2" for example, is because these two "Host" addresses are reserved for Vmwares' NAT operation:*  <br>
@@ -104,18 +114,14 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 
 - Change the Computer Name (And don't add a Domain Just yet since we didn't create a Domain-Controller)
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6de8c76d-f18b-4222-8664-2a300fd4eba2"> 
-</p>
-<p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/15435f3c-c888-4883-83b4-79b0683bf5ea"> 
-</p>
-<p align="center"> 
-  <em>Restart, repeat the same steps in DC2 and SRV1 with their corresponding names, and use the IP addresses with "4" and "5" as the hosts.</em>
-</p>
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6de8c76d-f18b-4222-8664-2a300fd4eba2">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/15435f3c-c888-4883-83b4-79b0683bf5ea"><br>
+  <em>Restart, repeat the same steps in DC2 and SRV1 with their corresponding names and use the IP addresses with "4" and "5" as the hosts.</em>
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
 <h2 id="Creating-and-configuring-a-domain-controller" align="center"> Creating & Configuring a Domain Controller </h2>
+<h3 id="Creating-(electing)-our-1st-domain-controller"> Creating (electing) our 1st Domain Controller </h3>
 
 - The first step to creating a domain is to create a Domain-Controller (DC for short). For that, we will go to the Server Manager Application > Click on Manage at the top right and then add Roles and Features
 
@@ -130,10 +136,10 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 - To install a Domain-Controller, select "Role-based or feature-based installation."
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/695d96c2-1261-4f11-a66e-98f7e5ed5844"> 
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/695d96c2-1261-4f11-a66e-98f7e5ed5844"><br>
+  <strong>What is the difference?</strong>
 </p>
 
-<p align="center"> <strong>What is the difference?</strong></p>
 <p align="justify"> 
   Role-based or feature-based installation configures the server's core roles and optional features to provide fundamental services in your network environment. Remote Desktop Services installation, on the other hand, is specifically focused on enabling remote desktop access and application delivery for multiple users. In an Active Directory environment, you might use role-based or feature-based installation to set up essential services like Domain Controllers, DNS, and DHCP. Afterward, if you need to provide remote desktop access to users, you would install the Remote Desktop Services role separately to cater to that specific requirement.
 </p>
@@ -143,10 +149,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 - The next step is to select the server from the server pool. Here, I will choose my current server, "DC1-Mustafa".
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/8b8c7d4e-2b3b-4d4a-8d66-9e813319f485"> 
-</p>
-
-<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/8b8c7d4e-2b3b-4d4a-8d66-9e813319f485"><br>
   <em>We cannot see "DC2" and "SRV1" even though they're in the same subnet because we haven't created a domain yet</em>
 </p>
 
