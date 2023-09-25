@@ -21,14 +21,15 @@
     <li><details open="open">
       <summary><a href="#-creating--configuring-a-domain-controller-"> Creating & Configuring a Domain Controller</a></summary>
       <ol>
-        <li><a href="#-creating-electing-our-1st-domain-controller-"> <em> Creating (electing) our 1st Domain Controller</em></a></li>
+        <li><a href="#-creating-server-roles-"> <em> Creating Server Roles</em></a></li>
+        <li><a href="#-configuring-our-1st-domain-controller-"> <em> Configuring our 1st Domain Controller</em></a></li>
       </ol>
     </details></li>
   </ol>
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
-<h2 id="Introduction" align="center"> Introduction </h2>
+<h2 align="center"> Introduction </h2>
 
 <p align="justify">
 Welcome to my Active Directory Project, culminating my studies in the Microsoft Server (MCSA) and Cybersecurity courses at See-Security College. This project showcases a meticulously designed network infrastructure, focusing on Microsoft's Active Directory technology. I've configured key components within this virtual environment, including Domain Controllers, DNS, Group Policies, user management, security protocols, organizational efficiency, remote access solutions, and comprehensive documentation. This project underscores my expertise in Microsoft technologies and network security principles, emphasizing the pivotal role of a well-structured directory service in modern network management.
@@ -36,7 +37,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
-<h2 id="Requirements-for-the-lab-environment" align="center"> Requirements for the lab environment </h2>
+<h2 align="center"> Requirements for the lab environment </h2>
 
 1. [Vmware Workstation Pro](https://www.vmware.com/il/products/workstation-pro.html)
 2. [Windows Server 2019 VM's (3 Machines)](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019)
@@ -44,7 +45,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
-<h2 id="Setting-up-the-lab-environment" align="center"> Setting up the lab environment </h2>.
+<h2 align="center"> Setting up the lab environment </h2>.
 
 <p align="center"> 
   <strong>I will not be diving deep into Vmware since this is out of the scope of this project</strong><br>
@@ -111,8 +112,8 @@ ___
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
-<h2 id="Creating-and-configuring-a-domain-controller" align="center"> Creating & Configuring a Domain Controller </h2>
-<h3 id="Creating-(electing)-our-1st-domain-controller"> Creating (electing) our 1st Domain Controller </h3>
+<h2 align="center"> Creating & Configuring a Domain Controller </h2>
+<h3> Creating Server Roles </h3>
 
 - The first step to creating a domain is to create a Domain-Controller (DC for short). For that, we will go to the Server Manager Application > Click on Manage at the top right and then add Roles and Features
 
@@ -160,6 +161,7 @@ ___
 - We will also skip all the "About" pages on each Server Role we added.
 
 ___
+
 - Then we will reach the "Confirmation" page and hit "Install"
 
 <p align="center"> 
@@ -170,5 +172,10 @@ ___
 - Once the wizard is done installing, you are given the option to "Promote this server to a domain controller":
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ed2c0dbd-7c23-4563-9934-a60dcbe99d67">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ed2c0dbd-7c23-4563-9934-a60dcbe99d67"><br>
+  <em>This will lead us to the next section.</em>
 </p>
+
+___
+
+<h3> Configuring our 1st Domain Controller </h3>
