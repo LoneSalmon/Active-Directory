@@ -23,6 +23,7 @@
       <ol>
         <li><a href="#-creating-server-roles-"> <em> Creating Server Roles</em></a></li>
         <li><a href="#-configuring-our-1st-domain-controller-"> <em> Configuring our 1st Domain Controller</em></a></li>
+        <li><a href="#initial-security-step"> <em> Intial Security Step</em></a></li>
         <li><a href="#adding-a-secondary-domain-controller-dc2"> <em> Adding a Secondary Domain Controller (DC2)</em></a></li>
       </ol>
     </details></li>
@@ -252,6 +253,31 @@ ___
 
 ___
 
+<h3>Initial Security Step</h3>
+
+- This simple yet essential security measure is needed before proceeding with further configuration steps.  <br>
+- What we will do is:  <br>
+  * Go to Server Manager in DC1.  <br>
+  * Click on Tools in the top right corner.  <br>
+  * Select "Active Directory Users and Computers".  <br>
+
+  <p align="center">
+    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/a4808ad8-5c02-4c19-9456-a606e3bf5b87">
+  </p>
+
+  * Go to the "Users" container, right-click the "Adminstrator" and copy that user.  <br>
+
+  <p align="center">
+    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/318227b8-8c57-4e02-acb4-eaf722d48295">
+  </p>
+
+  * We will give a name to the copied user (This will be the name of the "Super" Administrator.
+ 
+  <p align="center">
+    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/f8482310-7ee9-406a-bd46-3165ce52bf58">
+  </p>
+___
+
 <h3>Adding a Secondary Domain Controller (DC2)</h3>
 
 <p align="center">
@@ -287,7 +313,7 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/a3977a55-c597-4e2b-8069-e4cfb512276d">
 </p>
 
-- Once we insert the DNS of our DC1 and try again, we will be prompted to enter a domain Admin User/pass and DC2 will be migrated to our domain:
+- Once we insert the DNS of our DC1 and try again, we will be prompted to enter a domain Admin User/pass, and DC2 will be migrated to our domain:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/1ea04923-6853-469d-a4e1-1e43a1db26ea">
@@ -295,5 +321,19 @@ ___
 
 ___
 
-- Now that we confirmed that DC2 is part of the domain. We will begin configuring it as a secondary Domain-Controller.
-- We will go through the same<a href="#-creating--configuring-a-domain-controller-"> exact steps as DC1</a>, but I will highlight the exceptions here:
+- Now that we have confirmed that DC2 is part of the domain. We will begin configuring it as a secondary Domain-Controller.  <br>
+- We will go through the same<a href="#-creating--configuring-a-domain-controller-"> exact steps as DC1</a>, but I will highlight the exceptions here:  <br>
+  * For the "Server Roles", we will add AD-DS, a secondary DNS, and a File-Server role.  <br>
+
+  <p align="center">
+    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/88b9335c-d2e7-41aa-b3fb-a45fba53b603">
+  </p>
+
+  * Once the Roles are installed. We will "Promote this server to a domain controller" much like before.
+  * Take note, since this is important; We will need to add our DC2 to an existing domain (since we already have one) and specify it:
+
+  <p align="center">
+    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/992066eb-7ac8-408e-bf32-571875b7f7ec">
+  </p>
+
+  * 
