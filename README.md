@@ -15,15 +15,15 @@
 <h2 align="center"> Table of Contents </h2>
 
   <ol>
-    <li><a href="#-introduction-"> ➤ Introduction</a></li>
-    <li><a href="#-requirements-for-the-lab-environment-"> ➤ Requirements for the lab environment</a></li>
-    <li><a href="#-setting-up-the-lab-environment-"> ➤ Setting up the lab environment</a></li>
-    <li><a href="#-creating--configuring-a-domain-controller-"> ➤ Creating & Configuring a Domain Controller</a></li>
-    <details open="open">
+    <li><a href="#-introduction-"> Introduction</a></li>
+    <li><a href="#-requirements-for-the-lab-environment-"> Requirements for the lab environment</a></li>
+    <li><a href="#-setting-up-the-lab-environment-"> Setting up the lab environment</a></li>
+    <li><details open="open">
+      <summary><a href="#-creating--configuring-a-domain-controller-"> Creating & Configuring a Domain Controller</a></summary>
       <ol>
-        <li><a href="#-creating-electing-our-1st-domain-controller-"> <em>➤ Creating (electing) our 1st Domain Controller</em></a></li>
+        <li><a href="#-creating-electing-our-1st-domain-controller-"> <em> Creating (electing) our 1st Domain Controller</em></a></li>
       </ol>
-    </details>
+    </details></li>
   </ol>
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
