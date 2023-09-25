@@ -296,4 +296,4 @@ ___
 ___
 
 - Now that we confirmed that DC2 is part of the domain. We will begin configuring it as a secondary Domain-Controller.
-- We will go through the same <a href="#-creating--configuring-a-domain-controller-">exact steps as DC1</a>, but I will highlight the exceptions here:
+- We will go through the same<a href="#-creating--configuring-a-domain-controller-"> exact steps as DC1</a>, but I will highlight the exceptions here:
