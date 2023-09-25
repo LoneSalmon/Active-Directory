@@ -7,7 +7,7 @@
 <h4 align="center"> Student Name: <a href="https://www.linkedin.com/in/mustafa-jaber-5a143b269/">Mustafa Jaber</a> | <a href="https://see-security.com/?lang=en">See-Security College, Ramat-Gan</a> | Class: CSPP83 | Lecturer: Binyamin Cohen | 24/09/2023 </h4>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/74f5fabb-cf76-47aa-9595-1892ea1d66bb" height="600px" width="800"> 
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/74f5fabb-cf76-47aa-9595-1892ea1d66bb" height="400px" width="auto"> 
 </p>
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
@@ -52,7 +52,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
     <em>You can check this link here for a guide</em></a> 
 </p>
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
+___
 
 - We will start by setting up the lab environment in 5 virtual machines in Vmware Workstation Pro. It will Consist of 2 Domain Controllers, a routing server (PAT) (3 Windows Server 2019 OS's), and two end-user clients hosting Windows 10 Pro.<br>
 
@@ -60,7 +60,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/1b75a183-6995-4452-b7c7-5117b5f41397"> 
 </p>
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
+___
 
 - It is essential to make sure that each virtual machine is configured to NAT and that you have NAT already configured in your Vmware Workstation Pro settings.<br>
 
@@ -69,7 +69,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
   <em>Note that I have disabled Vmware DHCP services because I'm going to create my own DHCP service from the Active-Directory services</em>
 </p>
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
+___
 
 - Once that's done, begin installing the Operating System individually, and then we will do some basic settings up for both DCs and SRV-1 (basic networking settings).<br>
 
@@ -77,7 +77,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/422963d5-e98f-4838-9ef9-280c27aebd01"> 
 </p>
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
+___
 
 - Change NIC configuration to match your (Future) domain network as follows:
   * Select "Ethernet0" Value →<br>
@@ -88,8 +88,8 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
   * Add the corresponding Network address according to the previous "NAT" network that was added by VMWare<br>
   
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/93090491-1fae-493a-81fa-e950a937e063" height="500px" width="500">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/73aa5a6f-aa5d-4c49-9685-023a2e3f1f50" height="500px" width="500">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/93090491-1fae-493a-81fa-e950a937e063" height="auto" width="500">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/73aa5a6f-aa5d-4c49-9685-023a2e3f1f50" height="auto" width="500">
 </p>
 
 *Note that the reason that the "Host" portion of the IP address is "3" and not "1" or "2" for example, is because these two "Host" addresses are reserved for Vmwares' NAT operation:*  <br>
@@ -101,7 +101,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
       <em>Here's more details on the subject</em></a>
   </p>
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
+___
 
 - Change the Computer Name (And don't add a Domain Just yet since we didn't create a Domain-Controller)
 <p align="center"> 
@@ -120,7 +120,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/8e599590-dae1-4425-bf71-75ba35a959e2"> 
 </p>
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
+___
 
 - We will go through the setup wizard to add the needed roles (I skipped the first page by default since it's not necessary)<br>
 - In the installation wizard, we must choose between "Role-based or feature-based installation" and "Remote Desktop Services installation".<br>
@@ -135,7 +135,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
   Role-based or feature-based installation configures the server's core roles and optional features to provide fundamental services in your network environment. Remote Desktop Services installation, on the other hand, is specifically focused on enabling remote desktop access and application delivery for multiple users. In an Active Directory environment, you might use role-based or feature-based installation to set up essential services like Domain Controllers, DNS, and DHCP. Afterward, if you need to provide remote desktop access to users, you would install the Remote Desktop Services role separately to cater to that specific requirement.
 </p>
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
+___
 
 - The next step is to select the server from the server pool. Here, I will choose my current server, "DC1-Mustafa".
 
@@ -144,7 +144,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
   <em>We cannot see "DC2" and "SRV1" even though they're in the same subnet because we haven't created a domain yet</em>
 </p>
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
+___
 
 - In the "Server Roles" page, we will select the following roles for DC1 and add all of their features:<br>
   * "Active Directory Domain Services"
@@ -159,10 +159,16 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 - We will skip the "Features" page since we already selected all the features for the corresponding Server Roles we added.
 - We will also skip all the "About" pages on each Server Role we added.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
+___
 - Then we will reach the "Confirmation" page and hit "Install"
 
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/73f73bbb-db05-4d83-b3e5-d85466c0e539">  <br>
   <em>We will not need to check the "Restart..." box since this is a local Server</em>
+</p>
+
+- Once the wizard is done installing, you are given the option to "Promote this server to a domain controller":
+
+<p align="center"> 
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ed2c0dbd-7c23-4563-9934-a60dcbe99d67">
 </p>
