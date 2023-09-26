@@ -271,11 +271,64 @@ ___
     <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/318227b8-8c57-4e02-acb4-eaf722d48295">
   </p>
 
-  * We will give a name to the copied user (This will be the name of the "Super" Administrator.
+  * We will give a name to the copied user (This will be the name of the "Super" Administrator) and give the user a password.  <br>
  
   <p align="center">
     <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/f8482310-7ee9-406a-bd46-3165ce52bf58">
+    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/a37175f9-8f0a-4be6-b85f-bfbc7f116db8">
+  </p>  <br>
+
+  * And then proceed with Disabling the user "Administrator":  <br>
+  
+  <p align="center">
+    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/903d1e07-afc1-4c12-b64d-9059469a2682">
+  </p>  <br>
+
+___
+
+<p align="center">
+  <strong>Why did I do that?</strong>  <br>
+  <p align="justify">
+  <em>When creating a domain controller, it's advisable to duplicate the default Administrator user in Active Directory Users and Computers, assign the new copy a distinct name, and disable the original Administrator account. This precaution is taken because the default Administrator account, which is present in every Windows domain, has a well-known Security Identifier (SID) suffix. The SID is a unique identifier associated with user accounts, and a widely recognized SID could potentially expose the domain to security risks. By renaming and disabling the default Administrator account, you obscure its SID, making it less predictable to potential attackers and enhancing the security posture of the domain</em>
   </p>
+</p>
+
+___
+
+- I can demonstrator this by doing the following:  <br>
+  * Input this command in CMD in DC1: <code><strong>wmic useraccount getname, sid</strong></code>  <br>
+  
+  <p align="center">
+    <em>You will get this output (Take note of the numbers for "Administrator")</em>  <br>
+    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/228b09fd-4802-4f97-b1e3-0ef607a5ec62">
+  </p>
+
+  * What is the issue here? Looking at other Windows OSs, you will find a similar pattern:  <br>
+
+  <p align="center">
+    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/c4c95ef7-2821-404c-87d1-c28c2b3e1917">
+  </p> <br>
+
+  * If we break-down every section of the SID, we will find that it's similar across all accounts except the suffix:  <br>
+  * <strong>S-1-5</strong>: SID version information (fixed on all users)  <br>
+  * <strong>21-1869958264-2762823925-4193717463</strong>: Domain Identifier (Fixed for all users in the same domain)  <br>
+  * <strong>500</strong>: Relative ID (RID), which identifies the specific user; default users in the active directory always start at <strong>500</strong>
+  * Any other user created by our <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-adts/d142a27c-65fb-49c9-9e4b-6ede5f226c8a"> RID Master</a> will begin at 1000.
+
+___
+
+<p align="center">
+  <strong>Now Imagine this scenario.</strong>  <br>
+  <p align="justify">
+    <em>An unauthorized access occurs on one of your users (be it outside or inside the network/domain), and that threat actor types this simple command:</em> <code><strong>whoami /user</strong></code><em>. This will be his output. One can use this output to get more information about the domain and try to escalate privileges to an Admin level to gain more control of the system</em>
+  </p>
+</p>  <br>
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/7d413849-a79e-483e-a4e6-d4fe986ca120">  <br>
+  <a href="https://www.sentinelone.com/blog/windows-sid-history-injection-exposure-blog/"><em>Check this technique for example</em></a>  <br>
+  <a href="https://praveenhacks.blogspot.com/2009/08/hack-user-through-sid.html"><em>Or fancy this one, maybe?</em></a>  <br>
+</p>
+
 ___
 
 <h3>Adding a Secondary Domain Controller (DC2)</h3>
@@ -298,20 +351,20 @@ ___
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/9c944574-1e44-4ef8-98f8-f2c848cf40a7">
-</p>
+</p>  <br>
 
 - Notice that when clicking "Ok" we run into the following error:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/55d8fe52-5bca-4655-b4b2-8f664e99c8e8">
-</p>
+</p>  <br>
 
 - The reason is because our DC1 DNS properties are pointing to Vmwares' Vmnet DNS Service:  <br>
 - We will need to configure our DC2 to point to DC1 DNS instead:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/a3977a55-c597-4e2b-8069-e4cfb512276d">
-</p>
+</p>  <br>
 
 - Once we insert the DNS of our DC1 and try again, we will be prompted to enter a domain Admin User/pass, and DC2 will be migrated to our domain:  <br>
 
@@ -327,13 +380,43 @@ ___
 
   <p align="center">
     <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/88b9335c-d2e7-41aa-b3fb-a45fba53b603">
-  </p>
+  </p>  <br>
 
-  * Once the Roles are installed. We will "Promote this server to a domain controller" much like before.
-  * Take note, since this is important; We will need to add our DC2 to an existing domain (since we already have one) and specify it:
+  * Once the Roles are installed. We will "Promote this server to a domain controller" much like before.  <br>
+  * Take note, since this is important, We will need to add our DC2 to an existing domain (since we already have one) and specify it:  <br>
 
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/992066eb-7ac8-408e-bf32-571875b7f7ec">
-  </p>
+    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/c5ef1dd4-5252-4a9c-a8cd-199a92b05408">
+  </p>  <br>
 
-  * 
+  * For "DC options" we will maintain the default values and add the previously created DSRM password:  <br>
+  
+  <p align="center">
+    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/9c6c9ad4-6922-4204-8e4d-07760f04b7e5">
+  </p>  <br>
+
+  * Skip the DNS Options, same as before.  <br>
+  * In the "Additional Options" page, we will specify the DC to replicate from any domain controller in the domain (In this case it's DC1)  <br>
+  
+  <p align="center">
+    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/a03b77a5-a4c4-41a5-a08a-96bb5388a63b">
+  </p>  <br>
+
+  * Paths will be maintained as default.  <br>
+  * After reviewing everything, we will continue to "Prerequisites Check". <strong>Don't forget to add a password to the local Administrator if you haven't already done so</strong>  <br>
+  * If the Prerequisite Check is successful, hit install, and the Server will reboot.
+ 
+___
+
+- Once the server is rebooted, we will notice that it hasn't yet been added to the server list:  <br>
+
+  <p align="center">
+    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/d1c2fd9d-6d71-47b7-8454-3db9d31a7488">
+  </p>  <br>
+
+- This is because <em>DRUM ROLL...</em> DNS!!  <br>
+- Same as we did earlier, we will need to reconfigure the DNS in the IP address information to point to DC1 instead of DC2 (since we also installed another DNS Role on DC2):  <br>
+  
+  <p align="center">
+    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/995d5d70-6f9b-47f7-92af-147b5f9c07f9">
+  </p>
