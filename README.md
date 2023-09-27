@@ -375,6 +375,20 @@ ___
 ___
 
 - Now that we have confirmed that DC2 is part of the domain. We will begin configuring it as a secondary Domain-Controller.  <br>
+- The first thing we'll have to do is add DC2 to the "All Servers" Dashboard:  <br>
+  * Go to "All Servers" Tab.  <br>
+  * Right-click "All Servers" or click on "Manage" at the top-right corner.  <br>
+  * Select "Add Server"  <br>
+  * Search the name of your DC2 and add it  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/0dd991d7-1b58-4f96-a484-0f6056583b25">
+</p>  <br>
+
+- Now you have the option to manage DC2 from DC1. This is especially helpful when you're using a Server-Core.  <br>
+
+___
+
 - We will go through the same<a href="#-creating--configuring-a-domain-controller-"> exact steps as DC1</a>, but I will highlight the exceptions here:  <br>
   * For the "Server Roles", we will add AD-DS, a secondary DNS, and a File-Server role.  <br>
 
@@ -408,15 +422,31 @@ ___
  
 ___
 
-- Once the server is rebooted, we will notice that it hasn't yet been added to the server list:  <br>
+- Once the server is rebooted, we will notice that it's no longer in the Domain:  <br>
 
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/d1c2fd9d-6d71-47b7-8454-3db9d31a7488">
+    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/8a772cb3-f263-40b4-9864-e413883f986b">
   </p>  <br>
 
 - This is because <em>DRUM ROLL...</em> DNS!!  <br>
-- Same as we did earlier, we will need to reconfigure the DNS in the IP address information to point to DC1 instead of DC2 (since we also installed another DNS Role on DC2):  <br>
+- Same as we did earlier, we will need to reconfigure the DNS in the IP address information to point to DC1 instead of DC2 as the preferred, and to DC2 as the alternative:  <br>
   
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/995d5d70-6f9b-47f7-92af-147b5f9c07f9">
-  </p>
+    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/28fa1a2a-4481-4074-845b-878c113bbb4c">
+  </p>  <br>
+
+- If that doesn't work for you, check the DNS server settings in both DC's to ensure that they contain information (SOA/NameServer) on both of them.  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/0ea60822-9097-44c1-ba73-dc7d5786f8dc">
+</p>  <br>
+
+- If you had to add them manually, confirm the settings and restart DC2 and you will see that it's back in the Domain again:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/0e50088f-4e03-4d97-82f2-5af737886ac4">
+</p>
+
+___
+
+<h3>Configure DC2 as the RID Master</h3>
