@@ -25,6 +25,7 @@
         <li><a href="#-configuring-our-1st-domain-controller-"> <em> Configuring our 1st Domain Controller</em></a></li>
         <li><a href="#initial-security-step"> <em> Intial Security Step</em></a></li>
         <li><a href="#adding-a-secondary-domain-controller-dc2"> <em> Adding a Secondary Domain Controller (DC2)</em></a></li>
+        <li><a href="#configure-dc2-as-the-rid-master"> <em> Configure DC2 as the RID Master</em></a></li>
       </ol>
     </details></li>
   </ol>
