@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center"> Microsoft Server Module (MCSA) </h1>
-<h2 align="center"> Server Management in Active-Directory </h2>
+<h2 align="center"> ⚰️ Server Management in Active-Directory ⚰️ </h2>
 <h4 align="center"> Student Name: <a href="https://www.linkedin.com/in/mustafa-jaber-5a143b269/">Mustafa Jaber</a> | <a href="https://see-security.com/?lang=en">See-Security College, Ramat-Gan</a> | Class: CSPP83 | Lecturer: Binyamin Cohen | 10/10/2023 </h4>
 
 <p align="center"> 
@@ -12,7 +12,7 @@
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
-<h2 align="center"> Table of Contents </h2>
+<h2 align="center"> 📑 Table of Contents 📑</h2>
 
   <ol>
     <li><a href="#-introduction-"> Introduction</a></li>
@@ -32,7 +32,7 @@
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
-<h2 align="center"> Introduction </h2>
+<h2 align="center"> 🚪 Introduction 🚪 </h2>
 
 <p align="justify">
 Welcome to my Active Directory Project, culminating my studies in the Microsoft Server (MCSA) and Cybersecurity courses at See-Security College. This project showcases a meticulously designed network infrastructure, focusing on Microsoft's Active Directory technology. I've configured key components within this virtual environment, including Domain Controllers, DNS, Group Policies, user management, security protocols, organizational efficiency, remote access solutions, and comprehensive documentation. This project underscores my expertise in Microsoft technologies and network security principles, emphasizing the pivotal role of a well-structured directory service in modern network management.
@@ -40,7 +40,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
-<h2 align="center"> Requirements for the lab environment </h2>
+<h2 align="center"> 🧰 Requirements for the lab environment 🧰 </h2>
 
 1. [Vmware Workstation Pro](https://www.vmware.com/il/products/workstation-pro.html)
 2. [Windows Server 2019 VM's (3 Machines)](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019)
@@ -48,7 +48,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
-<h2 align="center"> Setting up the lab environment </h2>
+<h2 align="center"> 🏗️ Setting up the lab environment 🏗️ </h2>
 
 <p align="center"> 
   <strong>I will not be diving deep into Vmware since this is out of the scope of this project</strong>  <br>
@@ -70,7 +70,7 @@ ___
 
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/2934cd0e-cfd6-4deb-9dba-d01bca4b51f7" height="500px" width="auto">  <br> 
-  <em>Note that I have disabled Vmware DHCP services because I'm going to create my own DHCP service from the Active-Directory services</em>
+  <em>❗ Note that I have disabled Vmware DHCP services because I'm going to create my own DHCP service from the Active-Directory services ❗</em>
 </p>
 
 ___
@@ -96,13 +96,13 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/73aa5a6f-aa5d-4c49-9685-023a2e3f1f50" height="auto" width="500px">
 </p>
 
-*Note that the reason that the "Host" portion of the IP address is "3" and not "1" or "2" for example is because these two "Host" addresses are reserved for Vmwares' NAT operation:*  <br>
+❗ *Note that the reason that the "Host" portion of the IP address is "3" and not "1" or "2" for example is because these two "Host" addresses are reserved for Vmwares' NAT operation:* ❗  <br>
 - *"1" is for the NAT bridge installed on the host machine.*  <br>
 - *"2" is for the virtual switch (Default-Gateway).*  <br>
 
   <p align="center">
     <a href="https://docs.vmware.com/en/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-144D22BA-298E-4293-8137-B631AD7BF694.html">
-      <em>Here's more details on the subject</em></a>
+      <em>👉 Here's more details on the subject 👈</em></a>
   </p>
 
 ___
@@ -117,8 +117,8 @@ ___
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
-<h2 align="center"> Creating & Configuring a Domain Controller </h2>
-<h3> Creating Server Roles </h3>
+<h2 align="center"> 🤔 Creating & Configuring a Domain Controller 🤔 </h2>
+<h3> 🧻 Creating Server Roles 🧻</h3>
 
 - The first step to creating a domain is to create a Domain-Controller (DC for short). For that, we will go to the Server Manager Application > Click on Manage at the top right and then add Roles and Features  <br>
 
@@ -134,7 +134,7 @@ ___
 
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/695d96c2-1261-4f11-a66e-98f7e5ed5844">  <br>
-  <strong>What is the difference?</strong>
+  <strong>😨 What is the difference? 😨</strong>
 </p>
 
 <p align="justify"> 
@@ -192,7 +192,7 @@ ___
 
 ___
 
-<h3> Configuring our 1st Domain Controller </h3>
+<h3> ☣️ Configuring our 1st Domain Controller ☣️ </h3>
 - We must select the "Add a new forest" operation for the first deployment.  <br>
 - Then specify the "Root Domain Name". In my case, it will be "mustafa.com".  <br>
 
@@ -254,7 +254,7 @@ ___
 
 ___
 
-<h3>Initial Security Step</h3>
+<h3>🧯 Initial Security Step 🧯</h3>
 
 - This simple yet essential security measure is needed before proceeding with further configuration steps.  <br>
 - What we will do is:  <br>
@@ -332,7 +332,7 @@ ___
 
 ___
 
-<h3>Adding a Secondary Domain Controller (DC2)</h3>
+<h3>👨‍🔧 Adding a Secondary Domain Controller 👨‍🔧(DC2)</h3>
 
 <p align="center">
   <strong>"Do I even need a Secondary Domain Controller?"</strong>  <br>
@@ -429,7 +429,7 @@ ___
     <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/8a772cb3-f263-40b4-9864-e413883f986b">
   </p>  <br>
 
-- This is because <em>DRUM ROLL...</em> DNS!!  <br>
+- This is because 🥁<em>DRUM ROLL...</em>🥁 DNS!!  <br>
 - Same as we did earlier, we will need to reconfigure the DNS in the IP address information to point to DC1 instead of DC2 as the preferred, and to DC2 as the alternative:  <br>
   
   <p align="center">
@@ -450,4 +450,11 @@ ___
 
 ___
 
-<h3>Configure DC2 as the RID Master</h3>
+<h3>🎫 Configure DC2 as the RID Master 🎫</h3>
+
+<p align="center">
+  <strong>😨 What in God's Name is a RID Master?? 😨</strong>  <br>
+  <p align="justify">
+    <em>The RID (Relative Identifier) Master is a crucial Flexible Single Master Operations (FSMO) role in an Active Directory domain. Its primary function is to allocate unique Relative Identifiers (RID) to each domain controller within the domain. These RIDs are used to create Security Identifiers (SIDs) for objects like users and groups. Ensuring the uniqueness of SIDs is essential for security and data integrity in the Active Directory. The RID Master is responsible for preventing conflicts and maintaining globally unique SIDs within the domain. In a multi-domain forest, each domain has its own RID Master, and this role can be transferred if necessary.</em>
+  </p>
+</p>
