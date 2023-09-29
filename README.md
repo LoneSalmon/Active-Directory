@@ -626,3 +626,14 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/29a427ea-56c3-49b3-8dc6-27a018f88ec0">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/5342631d-2c2f-45c7-b50d-173493e47430">
 </p>
+
+___
+
+- For group creation, We will create a group for each OU and make our new users Members of these groups.
+
+<p align="center">
+  <strong>😨 "Wait, what is the purpose of a group?" 😨</strong>
+  <p align="justify">
+    <em>The purpose of a group in Active Directory is to simplify user and resource management by grouping users, computers, or other objects together. Groups make it easier to assign permissions, access rights, and policies collectively to multiple objects, reducing administrative complexity and enhancing security and resource management.</em>
+  </p>
+</p>
