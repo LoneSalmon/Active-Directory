@@ -645,13 +645,13 @@ ___
 </p>  <br>
 
 - A window pops up asking you to input the group name and select the desired group settings:  <br>
-  * **Group Scope:** determines where a group's membership is valid.  <br>
-    * **Domain local:** for resource access within one domain.<br>
-    * **Global:** for users and groups within one domain.<br>
-    * **Universal:** for resource access across domains in a forest.  <br>
-  * **Group Type:** whether a group is security-enabled or distribution-enabled.  <br>
-    * **Security:** for security-related purposes, such as granting access permissions.<br>
-    * **Distribution:** for sending email and organizing users for non-security purposes like distribution lists.  <br>
+  * **Group Scope 🔭:** determines where a group's membership is valid.  <br>
+    * **Domain local 🏠:** for resource access within one domain.<br>
+    * **Global 🌍:** for users and groups within one domain.<br>
+    * **Universal 👾:** for resource access across domains in a forest.  <br>
+  * **Group Type 👯‍♂️:** whether a group is security-enabled or distribution-enabled.  <br>
+    * **Security 🔒:** for security-related purposes, such as granting access permissions.<br>
+    * **Distribution 📬:** for sending email and organizing users for non-security purposes like distribution lists.  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/299eaee1-8d49-40da-91cc-3cd50bd5b15c"><br>
@@ -688,4 +688,11 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/9d74f819-cf05-4518-9c15-8a987e25d6a1">  <br>
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/1ae1f15b-c0b2-462a-be5f-0d701e180448">  <br>
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/28f2469d-f7d4-4647-9703-ff36a3c055f2">
+</p>  <br>
+
+- It also makes perfect sense to add these users to the Domain Admins group (Since they're SysAdmin, right?):
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/04d24102-f20b-4b54-8b84-b0ab924c7829">  <br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/02f33598-eb05-4789-85c3-713be02ff636">
 </p>
