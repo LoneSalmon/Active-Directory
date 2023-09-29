@@ -19,7 +19,7 @@
     <li><a href="#--requirements-for-the-lab-environment--"> Requirements for the lab environment</a></li>
     <li><a href="#-%EF%B8%8F-setting-up-the-lab-environment-%EF%B8%8F-"> Setting up the lab environment</a></li>
     <li><details open="open">
-      <summary><a href="#--creating--configuring-a-domain-controller--"> Creating & Configuring a Domain Controller</a></summary></li>
+      <summary><a href="#--creating--configuring-a-domain-controller--"> Creating & Configuring a Domain Controller</a></summary>
       <ol>
         <li><a href="#--creating-server-roles-"> <em> Creating Server Roles</em></a></li>
         <li><a href="#-%EF%B8%8F-configuring-our-1st-domain-controller-%EF%B8%8F-"> <em> Configuring our 1st Domain Controller</em></a></li>
@@ -27,7 +27,7 @@
         <li><a href="#-adding-a-secondary-domain-controller-dc2"> <em> Adding a Secondary Domain Controller (DC2)</em></a></li>
         <li><a href="#-configure-dc2-as-the-rid-master-"> <em> Configure DC2 as the RID Master</em></a></li>
       </ol>
-    </details>
+    </details></li>
     <li><a href="#-%EF%B8%8F-active-directoy-user--computers-management-%EF%B8%8F-"> Active Directory Users & Computers Management</a></li>
   </ol>
 
@@ -119,6 +119,22 @@ ___
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
 <h2 align="center"> 🤔 Creating & Configuring a Domain Controller 🤔 </h2>
+
+<p align="center">
+  <em>In this section of the project, we will be exploring the steps needed to create Two domain controllers properly (I will explain the rationale during setup) and talk briefly about the features and options that will come across during setup.</em>
+</p>  <br>
+
+<strong>Here are the topic that we're going to cover:</strong>  <br>
+<ol>
+  <li><a href="#--creating-server-roles-"> <em> Creating Server Roles</em></a></li>
+  <li><a href="#-%EF%B8%8F-configuring-our-1st-domain-controller-%EF%B8%8F-"> <em> Configuring our 1st Domain Controller</em></a></li>
+  <li><a href="#-initial-security-step-"> <em> Intial Security Step</em></a></li>
+  <li><a href="#-adding-a-secondary-domain-controller-dc2"> <em> Adding a Secondary Domain Controller (DC2)</em></a></li>
+  <li><a href="#-configure-dc2-as-the-rid-master-"> <em> Configure DC2 as the RID Master</em></a></li>
+</ol>
+
+___
+
 <h3> 🧻 Creating Server Roles 🧻</h3>
 
 - The first step to creating a domain is to create a Domain-Controller (DC for short). For that, we will go to the Server Manager Application > Click on Manage at the top right and then add Roles and Features  <br>
@@ -286,7 +302,7 @@ ___
   
   <p align="center">
     <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/903d1e07-afc1-4c12-b64d-9059469a2682">
-  </p>  <br>
+  </p>
 
 ___
 
@@ -299,7 +315,7 @@ ___
 
 ___
 
-- I can demonstrator this by doing the following:  <br>
+- I can demonstrate this by doing the following:  <br>
   * Input this command in CMD in DC1: <code><strong>wmic useraccount getname, sid</strong></code>  <br>
   
   <p align="center">
@@ -314,10 +330,13 @@ ___
   </p> <br>
 
   * If we break-down every section of the SID, we will find that it's similar across all accounts except the suffix:  <br>
-  * <strong>S-1-5</strong>: SID version information (fixed on all users)  <br>
-  * <strong>21-1869958264-2762823925-4193717463</strong>: Domain Identifier (Fixed for all users in the same domain)  <br>
-  * <strong>500</strong>: Relative ID (RID), which identifies the specific user; default users in the active directory always start at <strong>500</strong>
-  * Any other user created by our <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-adts/d142a27c-65fb-49c9-9e4b-6ede5f226c8a"> RID Master</a> will begin at 1000.
+  * **S-1-5**: SID version information (fixed on all users)  <br>
+  * **21-1869958264-2762823925-4193717463**: Domain Identifier (Fixed for all users in the same domain)  <br>
+  * **500**: Relative ID (RID), which identifies the specific user; default users in the active directory always start at **500**
+
+<p align="center">
+  <em>❗ Any other user created by our <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-adts/d142a27c-65fb-49c9-9e4b-6ede5f226c8a"> RID Master</a> will begin at 1000. ❗</em>
+</p>
 
 ___
 
@@ -389,7 +408,7 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/0dd991d7-1b58-4f96-a484-0f6056583b25">
 </p>  <br>
 
-- Now you have the option to manage DC2 from DC1. This is especially helpful when you're using a Server-Core.  <br>
+- Now you have the option to manage DC2 from DC1. This is especially helpful when you're using a Server-Core.
 
 ___
 
@@ -480,13 +499,13 @@ ___
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/bfc7ee72-7040-4806-81c4-444f45b5d329">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/083f161c-6789-4974-848f-627370591b88">
-</p>  <br>
+</p>
 
 ___
 
 <p align="center">
   <strong>😨 "Don't you wanna confirm this through the command line?" 😨</strong>  <br>
-  WHY?? I can see it right in front of me... Alright, here are the steps:  <br>
+  WHY?? I can see it right in front of me... Alright, here are the steps:
 </p>  <br>
 
 1. Run the following command in CMD: <code><strong>dcdiag /test:knowsofroleholders /v</strong></code>  <br>
@@ -495,8 +514,45 @@ ___
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/c81c3973-148d-4427-a04c-658e27cacd17">
-</p>  <br>
+</p>
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
 <h2 align="center"> 🕴️ Active-Directoy Users & Computers Management 🕴️ </h2>
+
+<p align="center">
+  <p align="justify">
+    <em>In this topic, I will demo some use cases of ADUC, including creating and configuring Organizational Units (OUs), Users, and Groups. I will also demo these steps using the command-line interface, both single object creation and in-bulk using scripts in CMD and PowerShell and we're going to make sure that all of these are synced between both DCs</em>
+  </p>
+</p>  <br>
+
+<p align="center">
+  <strong>😨 "What's that now... ADUC?" 😨</strong>  <br>
+  <p align="justify">
+    <em>Active Directory Users & Computers (ADUC) is a vital management tool, serving as the primary interface for administering user accounts, groups, and computer objects in an AD environment. It allows administrators to create, modify, and manage user accounts, reset passwords, assign group memberships, organize objects into organizational units (OUs), and oversee domain-wide policies. ADUC also offers advanced features for managing security settings, group policies, and attributes of AD objects, making it an essential tool for maintaining a domain's security, organization, and functionality.</em>
+  </p>
+</p>
+
+___
+
+<h3>🐒 The ADUC GUI 🐒</h3>
+- We will start off by going to ADUC (Tools > ADUC)
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/86bcd6e6-2ebb-434d-9465-3999f5cf882b">
+</p>
+
+<p align="center">
+  <strong>In the ADUC <a href="https://www.google.com/search?q=gooey&sca_esv=569475139&tbm=isch&sxsrf=AM9HkKms9ViUWIuC98j0IEPXmCmSPQ1Ptg:1695999317076&source=lnms&sa=X&ved=2ahUKEwiFndXmidCBAxV5TKQEHVlHABYQ_AUoAXoECAEQAw&biw=1920&bih=931&dpr=2">GUI</a> we can see these primary components</strong>
+</p>
+
+- **Forest**: A collection of one or more domains that share a common schema, configuration, and global catalog. Forests are the highest level of organization in Active Directory.  <br>
+- **Domain**: A logical grouping of objects within Active Directory. Domains define administrative boundaries and security boundaries within a forest.  <br>
+- **FSMO Roles**: Specialized roles that manage specific operations within Active Directory.  <br>
+- **Containers**: A basic (Default) Organizational Unit for grouping objects within Active Directory.  <br>
+- **Organizational Unit**: A specialized container that allows for a more granular organization of objects.  <br>
+- **Objects**: a basic unit representing various resources like users, groups, computers, etc. Objects have unique properties and attributes organized within the directory structure.  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/377fe417-abb9-45a5-9c26-e609a8642aba">
+</p>
