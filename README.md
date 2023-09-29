@@ -32,6 +32,7 @@
       <summary><a href="#-%EF%B8%8F-active-directoy-user--computers-management-%EF%B8%8F-"> Active Directory Users & Computers Management</a></summary>
       <ol>
         <li><a href="#-the-aduc-gui-"> <em> The ADUC GUI</em></a></li>
+        <li><a href="#-the-aduc-gui-"> <em> Creating OUs, Users & Groups Using the GUI</em></a></li>
       </ol>
     </details></li>
   </ol>
@@ -565,4 +566,4 @@ ___
 
 ___
 
-<h3>Creating OUs, Users & Groups Using the GUI</h3>
+<h3>🏭 Creating OUs, Users & Groups Using the GUI 🏭</h3>
