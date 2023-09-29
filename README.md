@@ -654,5 +654,36 @@ ___
     * **Distribution:** for sending email and organizing users for non-security purposes like distribution lists.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/299eaee1-8d49-40da-91cc-3cd50bd5b15c">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/299eaee1-8d49-40da-91cc-3cd50bd5b15c"><br>
+  <em>❗ I selected "Global" and "Security" for my use case since I want to configure permissions and access policies for this group later on in the project ❗</em>
+</p>
+
+___
+
+- Now that we have our new group, let's add our Sales users to it:  <br>
+  * Select all the desired users.  <br>
+  * Right-click > select "Add to group..."  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/00d9c978-d0f5-4a0d-bc7b-fd4d97ef590f">
+</p>  <br>
+
+  * A window pops-up asking you to search for the desired group:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/4a68aa36-e1bb-431d-98ee-0bcf1f217f36">
+</p>
+
+  * We can confirm this by going to a user's properties and navigating to the "Member of" Tab:
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/148fbe87-6534-4a33-b2cc-0d4df161636b">
+</p>
+
+___
+
+- Now, let's take the same steps on our SysAdmin OU.
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/9d74f819-cf05-4518-9c15-8a987e25d6a1">
 </p>
