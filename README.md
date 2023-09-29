@@ -571,13 +571,23 @@ ___
 - To create new Organizational Units, you will need to take these steps:<br>
   * Right-click the domain you want to create the OUs on.
   * Select New > Organizational Unit.
-  * A window will pop up asking you to input the OU name.
-  * You will also have the option to select "Protect container from accidental deletion".
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/377fe417-abb9-45a5-9c26-e609a8642aba"><br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/fd8be967-74b5-4e27-8f83-70028d8c6620">
+</p>
+
+  * A window will pop up asking you to input the OU name.
+  * You will also have the option to select "Protect container from accidental deletion" - Which I recommend keeping.
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/edf2cefa-d2f6-48ef-97ff-352576bc66bb"><br>
   <strong>"That Protect option sounds fancy, what does it do?"</strong><br>
   <em>When trying to delete the container, a window pops to ask "Are you sure you'd like to get fired today?", you have the option to accept, but umm, well...</em><br>
   🦗 <a href="https://www.youtube.com/watch?v=CpGtBnVZLSk&ab_channel=GamingSoundFX"><strong>*Cricket Sounds*</strong></a> 🦗
 </p>
 
+  * Click "OK" and you have your self a brand-new OU. Well, I created two.
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ec25d914-bdae-4674-9f69-41efcab93866">
+</p>
