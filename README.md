@@ -28,7 +28,12 @@
         <li><a href="#-configure-dc2-as-the-rid-master-"> <em> Configure DC2 as the RID Master</em></a></li>
       </ol>
     </details></li>
-    <li><a href="#-%EF%B8%8F-active-directoy-user--computers-management-%EF%B8%8F-"> Active Directory Users & Computers Management</a></li>
+    <li><details open="open">
+      <summary><a href="#-%EF%B8%8F-active-directoy-user--computers-management-%EF%B8%8F-"> Active Directory Users & Computers Management</a></summary>
+      <ol>
+        <li><a href="#-the-aduc-gui-"> <em> The ADUC GUI</em></a></li>
+      </ol>
+    </details></li>
   </ol>
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
@@ -536,7 +541,8 @@ ___
 ___
 
 <h3>🐒 The ADUC GUI 🐒</h3>
-- We will start off by going to ADUC (Tools > ADUC)
+
+- We will start off by going to ADUC (Tools > ADUC).  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/86bcd6e6-2ebb-434d-9465-3999f5cf882b">
