@@ -15,17 +15,17 @@
 <h2 align="center"> 📑 Table of Contents 📑</h2>
 
   <ol>
-    <li><a href="#-introduction-"> Introduction</a></li>
-    <li><a href="#-requirements-for-the-lab-environment-"> Requirements for the lab environment</a></li>
-    <li><a href="#-setting-up-the-lab-environment-"> Setting up the lab environment</a></li>
+    <li><a href="#--introduction--"> Introduction</a></li>
+    <li><a href="#--requirements-for-the-lab-environment--"> Requirements for the lab environment</a></li>
+    <li><a href="#-%EF%B8%8F-setting-up-the-lab-environment-%EF%B8%8F-"> Setting up the lab environment</a></li>
     <li><details open="open">
-      <summary><a href="#-creating--configuring-a-domain-controller-"> Creating & Configuring a Domain Controller</a></summary>
+      <summary><a href="#--creating--configuring-a-domain-controller--"> Creating & Configuring a Domain Controller</a></summary>
       <ol>
-        <li><a href="#-creating-server-roles-"> <em> Creating Server Roles</em></a></li>
-        <li><a href="#-configuring-our-1st-domain-controller-"> <em> Configuring our 1st Domain Controller</em></a></li>
-        <li><a href="#initial-security-step"> <em> Intial Security Step</em></a></li>
-        <li><a href="#adding-a-secondary-domain-controller-dc2"> <em> Adding a Secondary Domain Controller (DC2)</em></a></li>
-        <li><a href="#configure-dc2-as-the-rid-master"> <em> Configure DC2 as the RID Master</em></a></li>
+        <li><a href="#--creating-server-roles-"> <em> Creating Server Roles</em></a></li>
+        <li><a href="#-%EF%B8%8F-configuring-our-1st-domain-controller-%EF%B8%8F-"> <em> Configuring our 1st Domain Controller</em></a></li>
+        <li><a href="#-initial-security-step-"> <em> Intial Security Step</em></a></li>
+        <li><a href="#-adding-a-secondary-domain-controller-dc2"> <em> Adding a Secondary Domain Controller (DC2)</em></a></li>
+        <li><a href="#-configure-dc2-as-the-rid-master-"> <em> Configure DC2 as the RID Master</em></a></li>
       </ol>
     </details></li>
   </ol>
@@ -53,7 +53,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 <p align="center"> 
   <strong>I will not be diving deep into Vmware since this is out of the scope of this project</strong>  <br>
   <a href="https://medium.com/r3d-buck3t/building-an-active-directory-lab-part-1-windows-server-2022-setup-7dfaf0dafd5c">
-    <em>You can check this link here for a guide</em></a> 
+    👉 <em>You can check this link here for a guide</em></a> 👈
 </p>
 
 ___
@@ -112,7 +112,7 @@ ___
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6de8c76d-f18b-4222-8664-2a300fd4eba2" height="auto" width="500px">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/15435f3c-c888-4883-83b4-79b0683bf5ea" height="auto" width="500px">  <br>
-  <em>Restart, repeat the same steps in DC2 and SRV1 with their corresponding names and use the IP addresses with "4" and "5" as the hosts.</em>
+  ❗ <em>Restart, repeat the same steps in DC2 and SRV1 with their corresponding names and use the IP addresses with "4" and "5" as the hosts.</em> ❗
 </p>
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
@@ -147,7 +147,7 @@ ___
 
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/8b8c7d4e-2b3b-4d4a-8d66-9e813319f485">  <br>
-  <em>We cannot see "DC2" and "SRV1" even though they're in the same subnet because we haven't created a domain yet</em>
+  ❗ <em>We cannot see "DC2" and "SRV1" even though they're in the same subnet because we haven't created a domain yet</em> ❗
 </p>
 
 ___
@@ -171,15 +171,17 @@ ___
 
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/73f73bbb-db05-4d83-b3e5-d85466c0e539">  <br>
-  <em>We will not need to check the "Restart..." box since this is a local Server</em>
+  ❗ <em>We will not need to check the "Restart..." box since this is a local Server</em> ❗
 </p>
 
 - Once the wizard is done installing, you are given the option to "Promote this server to a domain controller":  <br>
 
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ed2c0dbd-7c23-4563-9934-a60dcbe99d67">  <br>
-  <em>This will lead us to the next section.</em>
+  ❗ <em>This will lead us to the next section.</em> ❗
 </p>
+
+___
 
 - Note that if you reach this point and hit "Close" instead of "Promote this server to a domain controller", then there's no need to panic and follow these steps:  <br>
   * On the top right of the Server Manager UI, you will see a flag with ⚠️ on it.  <br>
@@ -198,7 +200,7 @@ ___
 
   <p align="center"> 
     <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/55d86627-2b51-498a-82ca-e575b2f586b1">  <br>
-    <strong>Why Did I select "Add a new forest"?</strong>  <br>
+    <strong>😨 Why Did I select "Add a new forest"? 😨</strong>  <br>
     <p align="justify">
       <em> Selecting "Add a new forest" when deploying a domain controller for the first time is necessary when establishing a new Active Directory environment from scratch. It allows you to create the foundation for your directory structure, set forest-wide settings, and maintain administrative autonomy over your network.</em></p>
 </p>
@@ -233,12 +235,12 @@ ___
 
 - Lastly, we will reach the "Review Options" page, where we can review all the configurations we did. Take note of the following sentence:  <br>
 <p align="center">
-  <strong>The password of the new domain Administrator will be the same as the password of the local Administrator of this computer.</strong>
+  <strong>❗ The password of the new domain Administrator will be the same as the password of the local Administrator of this computer. ❗</strong>
 </p>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6f66ee18-14e3-4e66-bd69-b084bcecb25c">  <br>
-  <em>If you haven't yet configured a local Admin password when installing the VM, you will run into this error in the Prerequisites Check page</em>
+  ❗ <em>If you haven't yet configured a local Admin password when installing the VM, you will run into this error in the Prerequisites Check page</em> ❗
 </p>
 
 - The way to remedy this is to change (or create) a local admin password using <a href="https://www.top-password.com/knowledge/change-windows-10-password.html">any of these simple methods here</a>.
@@ -246,7 +248,7 @@ ___
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6c11826b-ceab-4efb-9a6b-7b305bca8799">  <br>
-  <em>Please make sure that the password you created is for the Administrator profile and not your current user profile</em>
+  ❗ <em>Please make sure that the password you created is for the Administrator profile and not your current user profile</em> ❗
 </p>
 
 - If you're cleared to proceed, you can hit "Install". This will install AD-DS & DNS and restart the system to apply the changes.  <br>
@@ -288,7 +290,7 @@ ___
 ___
 
 <p align="center">
-  <strong>Why did I do that?</strong>  <br>
+  <strong>😨 Why did I do that? 😨</strong>  <br>
   <p align="justify">
   <em>When creating a domain controller, it's advisable to duplicate the default Administrator user in Active Directory Users and Computers, assign the new copy a distinct name, and disable the original Administrator account. This precaution is taken because the default Administrator account, which is present in every Windows domain, has a well-known Security Identifier (SID) suffix. The SID is a unique identifier associated with user accounts, and a widely recognized SID could potentially expose the domain to security risks. By renaming and disabling the default Administrator account, you obscure its SID, making it less predictable to potential attackers and enhancing the security posture of the domain</em>
   </p>
@@ -300,7 +302,7 @@ ___
   * Input this command in CMD in DC1: <code><strong>wmic useraccount getname, sid</strong></code>  <br>
   
   <p align="center">
-    <em>You will get this output (Take note of the numbers for "Administrator")</em>  <br>
+    ❗ <em>You will get this output (Take note of the numbers for "Administrator")</em> ❗  <br>
     <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/228b09fd-4802-4f97-b1e3-0ef607a5ec62">
   </p>
 
@@ -319,7 +321,7 @@ ___
 ___
 
 <p align="center">
-  <strong>Now Imagine this scenario.</strong>  <br>
+  <strong>😨 Now Imagine this scenario. 😨</strong>  <br>
   <p align="justify">
     <em>An unauthorized access occurs on one of your users (be it outside or inside the network/domain), and that threat actor types this simple command:</em> <code><strong>whoami /user</strong></code><em>. This will be his output. One can use this output to get more information about the domain and try to escalate privileges to an Admin level to gain more control of the system</em>
   </p>
@@ -335,7 +337,7 @@ ___
 <h3>👨‍🔧 Adding a Secondary Domain Controller 👨‍🔧(DC2)</h3>
 
 <p align="center">
-  <strong>"Do I even need a Secondary Domain Controller?"</strong>  <br>
+  <strong>😨 "Do I even need a Secondary Domain Controller?" 😨/strong>  <br>
   <p align="justify">
     <em>Yes!! Adding a secondary domain controller (DC) is essential as it ensures high availability, data redundancy, improved performance, and security in an Active Directory environment. While a forest can technically function with just one DC, the recommended practice is to deploy at least two DCs to prevent disruptions caused by hardware failures or maintenance, maintain data integrity, distribute the load, enhance security, and facilitate efficient management and updates. Relying solely on a single DC is discouraged due to the potential risks associated with a single point of failure.</em>
   </p>
@@ -456,5 +458,12 @@ ___
   <strong>😨 What in God's Name is a RID Master?? 😨</strong>  <br>
   <p align="justify">
     <em>The RID (Relative Identifier) Master is a crucial Flexible Single Master Operations (FSMO) role in an Active Directory domain. Its primary function is to allocate unique Relative Identifiers (RID) to each domain controller within the domain. These RIDs are used to create Security Identifiers (SIDs) for objects like users and groups. Ensuring the uniqueness of SIDs is essential for security and data integrity in the Active Directory. The RID Master is responsible for preventing conflicts and maintaining globally unique SIDs within the domain. In a multi-domain forest, each domain has its own RID Master, and this role can be transferred if necessary.</em>
+  </p>
+</p>
+
+<p align="center">
+  <strong>😨 FSMO?? 😨</strong>  <br>
+  <p align="justify">
+    <em>FSMO roles are critical components of Active Directory, responsible for various administrative functions. Five FSMO roles exist in an Active Directory forest: the Schema Master, Domain Naming Master, Infrastructure Master, RID Master, and PDC Emulator. Each role has a specific purpose: managing schema updates, domain naming, handling RID allocation, and time synchronization. FSMO roles ensure the proper functioning and integrity of the Active Directory structure. While some roles are forest-wide (Schema Master and Domain Naming Master), others are per-domain (RID Master, Infrastructure Master, and PDC Emulator). FSMO roles can be transferred or seized if needed, but careful planning is essential to maintain the stability and security of the Active Directory environment.</em>
   </p>
 </p>
