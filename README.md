@@ -672,9 +672,9 @@ ___
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/4a68aa36-e1bb-431d-98ee-0bcf1f217f36">
-</p>
+</p>  <br>
 
-  * We can confirm this by going to a user's properties and navigating to the "Member of" Tab:
+  * We can confirm this by going to a user's properties and navigating to the "Member of" Tab:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/148fbe87-6534-4a33-b2cc-0d4df161636b">
@@ -682,8 +682,10 @@ ___
 
 ___
 
-- Now, let's take the same steps on our SysAdmin OU.
+- Now, let's take the same steps on our SysAdmin OU.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/9d74f819-cf05-4518-9c15-8a987e25d6a1">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/9d74f819-cf05-4518-9c15-8a987e25d6a1">  <br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/1ae1f15b-c0b2-462a-be5f-0d701e180448">  <br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/28f2469d-f7d4-4647-9703-ff36a3c055f2">
 </p>
