@@ -629,11 +629,30 @@ ___
 
 ___
 
-- For group creation, We will create a group for each OU and make our new users Members of these groups.
+- For group creation, We will create a group for each OU and make our new users Members of these groups.  <br>
 
 <p align="center">
   <strong>😨 "Wait, what is the purpose of a group?" 😨</strong>
   <p align="justify">
-    <em>The purpose of a group in Active Directory is to simplify user and resource management by grouping users, computers, or other objects together. Groups make it easier to assign permissions, access rights, and policies collectively to multiple objects, reducing administrative complexity and enhancing security and resource management.</em>
+    <em>The purpose of a group in Active Directory is to simplify user and resource management by grouping users, computers, or other objects. Groups make it easier to assign permissions, access rights, and policies collectively to multiple objects, reducing administrative complexity and enhancing security and resource management.</em>
   </p>
+</p>  <br>
+
+- Right-click the desired OU > New > Group.  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/0383e3ac-3d02-4008-945e-f4c0e893d1e1">
+</p>  <br>
+
+- A window pops up asking you to input the group name and select the desired group settings:  <br>
+  * **Group Scope:** determines where a group's membership is valid.  <br>
+    * **Domain local:** for resource access within one domain.<br>
+    * **Global:** for users and groups within one domain.<br>
+    * **Universal:** for resource access across domains in a forest.  <br>
+  * **Group Type:** whether a group is security-enabled or distribution-enabled.  <br>
+    * **Security:** for security-related purposes, such as granting access permissions.<br>
+    * **Distribution:** for sending email and organizing users for non-security purposes like distribution lists.  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/299eaee1-8d49-40da-91cc-3cd50bd5b15c">
 </p>
