@@ -27,6 +27,7 @@
         <li><a href="#-adding-a-secondary-domain-controller-dc2"> <em> Adding a Secondary Domain Controller (DC2)</em></a></li>
         <li><a href="#-configure-dc2-as-the-rid-master-"> <em> Configure DC2 as the RID Master</em></a></li>
       </ol>
+    <li><a href="#-%EF%B8%8F-active-directoy-user--computers-management-%EF%B8%8F-"> Active Directory Users & Computers Management</a></li>
     </details></li>
   </ol>
 
@@ -432,19 +433,19 @@ ___
   </p>  <br>
 
 - This is because 🥁<em>DRUM ROLL...</em>🥁 DNS!!  <br>
-- Same as we did earlier, we will need to reconfigure the DNS in the IP address information to point to DC1 instead of DC2 as the preferred, and to DC2 as the alternative:  <br>
+- Same as we did earlier, we will need to reconfigure the DNS in the IP address information to point to DC1 instead of DC2 as the preferred and to DC2 as the alternative:  <br>
   
   <p align="center">
     <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/28fa1a2a-4481-4074-845b-878c113bbb4c">
   </p>  <br>
 
-- If that doesn't work for you, check the DNS server settings in both DC's to ensure that they contain information (SOA/NameServer) on both of them.  <br>
+- If that doesn't work for you, check the DNS server settings in both DCs to ensure they contain information (SOA/NameServer) on both.  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/0ea60822-9097-44c1-ba73-dc7d5786f8dc">
 </p>  <br>
 
-- If you had to add them manually, confirm the settings and restart DC2 and you will see that it's back in the Domain again:  <br>
+- If you had to add them manually, confirm the settings and restart DC2, and you will see that it's back in the Domain again:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/0e50088f-4e03-4d97-82f2-5af737886ac4">
@@ -457,7 +458,7 @@ ___
 <p align="center">
   <strong>😨 What in God's Name is a RID Master?? 😨</strong>  <br>
   <p align="justify">
-    <em>The RID (Relative Identifier) Master is a crucial Flexible Single Master Operations (FSMO) role in an Active Directory domain. Its primary function is to allocate unique Relative Identifiers (RID) to each domain controller within the domain. These RIDs are used to create Security Identifiers (SIDs) for objects like users and groups. Ensuring the uniqueness of SIDs is essential for security and data integrity in the Active Directory. The RID Master is responsible for preventing conflicts and maintaining globally unique SIDs within the domain. In a multi-domain forest, each domain has its own RID Master, and this role can be transferred if necessary.</em>
+    <em>The RID (Relative Identifier) Master is a crucial Flexible Single Master Operations (FSMO) role in an Active Directory domain. Its primary function is to allocate unique Relative Identifiers (RID) to each domain controller. These RIDs create Security Identifiers (SIDs) for objects like users and groups. Ensuring the uniqueness of SIDs is essential for security and data integrity in the Active Directory. The RID Master is responsible for preventing conflicts and maintaining globally unique SIDs within the domain. In a multi-domain forest, each domain has its own RID Master, and this role can be transferred if necessary.</em>
   </p>
 </p>
 
@@ -467,3 +468,35 @@ ___
     <em>FSMO roles are critical components of Active Directory, responsible for various administrative functions. Five FSMO roles exist in an Active Directory forest: the Schema Master, Domain Naming Master, Infrastructure Master, RID Master, and PDC Emulator. Each role has a specific purpose: managing schema updates, domain naming, handling RID allocation, and time synchronization. FSMO roles ensure the proper functioning and integrity of the Active Directory structure. While some roles are forest-wide (Schema Master and Domain Naming Master), others are per-domain (RID Master, Infrastructure Master, and PDC Emulator). FSMO roles can be transferred or seized if needed, but careful planning is essential to maintain the stability and security of the Active Directory environment.</em>
   </p>
 </p>
+
+___
+
+- in DC2, We navigate to "Active Directory Users and Computers".  <br>
+- We right-click the domain name and select "Operations Masters".  <br>
+- A window displays information about All the Domain Roles (RID, PDC, Infrastructure).  <br>
+- We will select "RID" and click "change" to transfer the role from DC1 to DC2.  <br>
+- Once that's done, you'll get another window confirming the role transfer.  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/bfc7ee72-7040-4806-81c4-444f45b5d329">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/083f161c-6789-4974-848f-627370591b88">
+</p>  <br>
+
+___
+
+<p align="center">
+  <strong>😨 "Don't you wanna confirm this through the command line?" 😨</strong>  <br>
+  WHY?? I can see it right in front of me... Alright, here are the steps:  <br>
+</p>  <br>
+
+1. Run the following command in CMD: <code><strong>dcdiag /test:knowsofroleholders /v</strong></code>  <br>
+2. You get a bunch of tests.  <br>
+3. And viola, we have ourselves a DC2 RID Master.  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/c81c3973-148d-4427-a04c-658e27cacd17">
+</p>  <br>
+
+![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
+
+<h2 align="center"> 🕴️ Active-Directoy Users & Computers Management 🕴️ </h2>
