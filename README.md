@@ -610,7 +610,19 @@ ___
 </p>  <br>
 
 - Next, we will need to specify a password and its settings. They're self-explanatory, but let me go over their use case:  <br>
-  1. **Change password at next logon:** Highly recommended. First login passwords are easy and generic to make the first login easier for the new user, enforcing this option will enhance security.  <br>
-  2. **User cannot change password:** For services that require a fixed password, or guests so you could have more control over their account, etc.  <br>
-  3. **Password never expires:** For service accounts, Super-Administrative or critical accounts, and specialized accounts (backups, for example), etc.  <br>
-  4. **Account is disabled:** For user templates, when creating accounts in bulk, Temporary/Seasonal users, testing, and for Security review before deploying the account - especially for accounts with wide access.  <br>
+  1. **Change password at next logon:** recommended. First login passwords are easy and generic, making first logon easier for new users.  <br>
+  2. **User cannot change password:** For services that require a fixed password. Or guests, where you have more control over their account.  <br>
+  3. **Password never expires:** For services, Super-Administrative or critical users, and specialized accounts.  <br>
+  4. **Account is disabled:** For templates, bulk account creation, Temporary/Seasonal users, testing, and Security review before deployment.  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/c02e5247-7ccb-4b52-bd29-d8830aeb9843"><br>
+  <em>❗ There are many use cases out there, of course. These are just examples ❗</em>
+</p>  <br>
+
+- Once you choose the desired settings, review them and "Finish". Congratulations, you have your first users!  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/29a427ea-56c3-49b3-8dc6-27a018f88ec0">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/5342631d-2c2f-45c7-b50d-173493e47430">
+</p>
