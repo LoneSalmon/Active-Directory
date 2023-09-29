@@ -458,3 +458,10 @@ ___
     <em>The RID (Relative Identifier) Master is a crucial Flexible Single Master Operations (FSMO) role in an Active Directory domain. Its primary function is to allocate unique Relative Identifiers (RID) to each domain controller within the domain. These RIDs are used to create Security Identifiers (SIDs) for objects like users and groups. Ensuring the uniqueness of SIDs is essential for security and data integrity in the Active Directory. The RID Master is responsible for preventing conflicts and maintaining globally unique SIDs within the domain. In a multi-domain forest, each domain has its own RID Master, and this role can be transferred if necessary.</em>
   </p>
 </p>
+
+<p align="center">
+  <strong>😨 FSMO?? 😨</strong>  <br>
+  <p align="justify">
+    <em>FSMO roles are critical components of Active Directory, responsible for various administrative functions. Five FSMO roles exist in an Active Directory forest: the Schema Master, Domain Naming Master, Infrastructure Master, RID Master, and PDC Emulator. Each role has a specific purpose: managing schema updates, domain naming, handling RID allocation, and time synchronization. FSMO roles ensure the proper functioning and integrity of the Active Directory structure. While some roles are forest-wide (Schema Master and Domain Naming Master), others are per-domain (RID Master, Infrastructure Master, and PDC Emulator). FSMO roles can be transferred or seized if needed, but careful planning is essential to maintain the stability and security of the Active Directory environment.</em>
+  </p>
+</p>
