@@ -594,21 +594,23 @@ ___
 
 ___
 
-- Now, let's create new users in our OUs. Here are the needed steps:
-  * Select the designated OU.
-  * Right-click it or the it's empty directory.
-  * Select New > User
+- Now, let's create new users in our OUs. Here are the needed steps:  <br>
+- Select the designated OU.  <br>
+- Right-click it, or it's empty directory.  <br>
+- Select New > User  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/3086897b-622d-4a29-ab97-eb06a0fc1d11">
-</p>
+</p>  <br>
 
-  * A window pops up so you can fill-out basic info about the new user:
+- A window pops up so you can fill out basic info about the new user:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/b3130dc2-51ca-49ad-a44e-4835de4b50c3">
-</p>
+</p>  <br>
 
-  * Next we will need to specify a password and it's settings, they're self-explanatory but let me go over their use case:
-    1. I highly recommend from a security standpoint to ✔️ the change at next logon, Since this will let the user decide on his personal password (which you can dictate through a policy) and also, the passwords given to new users are usually generic and easy to simplify the first login attempt, So this option is a must.
-    2. 
+- Next, we will need to specify a password and its settings. They're self-explanatory, but let me go over their use case:  <br>
+  1. **Change password at next logon:** Highly recommended. First login passwords are easy and generic to make the first login easier for the new user, enforcing this option will enhance security.  <br>
+  2. **User cannot change password:** For services that require a fixed password, or guests so you could have more control over their account, etc.  <br>
+  3. **Password never expires:** For service accounts, Super-Administrative or critical accounts, and specialized accounts (backups, for example), etc.  <br>
+  4. **Account is disabled:** For user templates, when creating accounts in bulk, Temporary/Seasonal users, testing, and for Security review before deploying the account - especially for accounts with wide access.  <br>
