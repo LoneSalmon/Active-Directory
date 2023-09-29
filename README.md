@@ -567,3 +567,9 @@ ___
 ___
 
 <h3>🏭 Creating OUs, Users & Groups Using the GUI 🏭</h3>
+
+- To create new Organizational Units, you will need to take these steps:
+  * Right-click the domain you want to create the OUs on.
+  * Select New > Organizational Unit.
+  * A window will pop up asking you to input the OU name.
+  * You will also have the option to select "Protect container from accidental deletion".
