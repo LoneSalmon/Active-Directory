@@ -574,7 +574,7 @@ ___
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/fd8be967-74b5-4e27-8f83-70028d8c6620">
-</p>
+</p>  <br>
 
   * A window will pop up asking you to input the OU name.
   * You will also have the option to select "Protect container from accidental deletion" - Which I recommend keeping.
@@ -609,4 +609,6 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/b3130dc2-51ca-49ad-a44e-4835de4b50c3">
 </p>
 
-  * 
+  * Next we will need to specify a password and it's settings, they're self-explanatory but let me go over their use case:
+    1. I highly recommend from a security standpoint to ✔️ the change at next logon, Since this will let the user decide on his personal password (which you can dictate through a policy) and also, the passwords given to new users are usually generic and easy to simplify the first login attempt, So this option is a must.
+    2. 
