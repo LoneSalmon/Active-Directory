@@ -581,13 +581,32 @@ ___
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/edf2cefa-d2f6-48ef-97ff-352576bc66bb"><br>
-  <strong>"That Protect option sounds fancy, what does it do?"</strong><br>
-  <em>When trying to delete the container, a window pops to ask "Are you sure you'd like to get fired today?", you have the option to accept, but umm, well...</em><br>
+  <strong>"That Protect option sounds fancy. What does it do?"</strong><br>
+  <em>When trying to delete the container, a window pops to ask, "Are you sure you'd like to get fired today?", you have the option to accept, but umm, well...</em><br>
   🦗 <a href="https://www.youtube.com/watch?v=CpGtBnVZLSk&ab_channel=GamingSoundFX"><strong>*Cricket Sounds*</strong></a> 🦗
 </p>
 
-  * Click "OK" and you have your self a brand-new OU. Well, I created two.
+  * Click "OK" and you have yourself a brand-new OU. Well, I created two.
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ec25d914-bdae-4674-9f69-41efcab93866">
 </p>
+
+___
+
+- Now, let's create new users in our OUs. Here are the needed steps:
+  * Select the designated OU.
+  * Right-click it or the it's empty directory.
+  * Select New > User
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/3086897b-622d-4a29-ab97-eb06a0fc1d11">
+</p>
+
+  * A window pops up so you can fill-out basic info about the new user:
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/b3130dc2-51ca-49ad-a44e-4835de4b50c3">
+</p>
+
+  * 
