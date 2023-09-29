@@ -337,7 +337,7 @@ ___
 <h3>👨‍🔧 Adding a Secondary Domain Controller 👨‍🔧(DC2)</h3>
 
 <p align="center">
-  <strong>😨 "Do I even need a Secondary Domain Controller?" 😨/strong>  <br>
+  <strong>😨 "Do I even need a Secondary Domain Controller?" 😨</strong>  <br>
   <p align="justify">
     <em>Yes!! Adding a secondary domain controller (DC) is essential as it ensures high availability, data redundancy, improved performance, and security in an Active Directory environment. While a forest can technically function with just one DC, the recommended practice is to deploy at least two DCs to prevent disruptions caused by hardware failures or maintenance, maintain data integrity, distribute the load, enhance security, and facilitate efficient management and updates. Relying solely on a single DC is discouraged due to the potential risks associated with a single point of failure.</em>
   </p>
