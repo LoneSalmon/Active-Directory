@@ -589,7 +589,7 @@ ___
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/e25c60e9-e321-45ea-87e7-6a78faa2c0b0"><br>
   <em>❗ Your Start/End addresses will be different according to the subnet you're in and your use case ❗</em>
-</p>  <br>
+</p>
 
 ___
 
@@ -601,7 +601,7 @@ ___
   <p align="justify">
     <em>It ensures that these addresses are not automatically assigned to client devices. Exclusion is typically used for network devices with statically configured IP addresses, such as servers, routers, or printers, ensuring that the DHCP server does not allocate these reserved addresses to other devices. Address exclusion helps maintain network stability, preventing IP address conflicts and ensuring that critical network resources always have their designated addresses available for use.</em>
   </p>
-</p>  <br>
+</p>
 
 ___
 
@@ -613,7 +613,7 @@ ___
   <p align="justify">
     <em>The lease duration in DHCP specifies how long a client device can use an IP address and network configuration. Its purpose is to efficiently manage IP address allocation, adapt to changing network needs, facilitate IP address reclamation, support load balancing, and enhance network security. The choice of lease duration depends on network requirements, balancing address management efficiency, network stability, and security considerations. Shorter leases suit devices with frequent connections, while longer leases are suitable for stable connections and resource planning.</em>
   </p>
-</p>  <br>
+</p>
 
 ___
 
@@ -626,13 +626,25 @@ ___
   <p align="justify">
     <em>They are additional parameters that a DHCP server can provide to client devices alongside the essential IP address and subnet mask. These options include settings such as the default gateway, DNS server addresses, domain names, time servers, and more.
   </p>
-</p>  <br>
+</p>
 
-- The first step is to define our Default-Gateway (Router) Address. Here, I will not be specifying the Vmware NAT, but Instead, I will be adding the address of our SRV1. If you look back at our <a href="#-%EF%B8%8F-topology-%EF%B8%8F-">Topology</a> You can see that we will be configuring our SRV1 as a routing server.
+___
+
+- The first step is to define our Default-Gateway (Router) Address. Here, I will not specify the Vmware NAT, but Instead, I will add the address of our SRV1. If you look back at our <a href="#-%EF%B8%8F-topology-%EF%B8%8F-">Topology</a> You can see that we will be configuring our SRV1 as a routing server.  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/1e2fa65d-3bb8-414e-97a2-0ec6a1557725">
 </p>  <br>
+
+- Next, we will Define our Parent domain and DNS servers, which we already configured in previous steps:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/fd6744e9-80af-4403-a837-8a1a0d7f871e">
+</p>  <br>
+
+- We will skip the "WINS" section since it's not necessary for this project, but here's more 👉 <a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/setting-wins-server-options">info</a> 👈 on the subject.  <br>
+- Now select "Yes. I want to activate this scope now" So that it gets activated on clients who request DHCP leases.
+
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
