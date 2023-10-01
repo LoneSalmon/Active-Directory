@@ -28,6 +28,7 @@
         <li><a href="#-configure-dc2-as-the-rid-master-"> <em> Configure DC2 as the RID Master</em></a></li>
       </ol>
     </details></li>
+    <li><a href="#--dhcp-configuration--"> DHCP Configuration</a></li>
     <li><details open="open">
       <summary><a href="#-%EF%B8%8F-active-directoy-user--computers-management-%EF%B8%8F-"> Active Directory Users & Computers Management</a></summary>
       <ol>
@@ -525,6 +526,17 @@ ___
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
+<h2 align="center"> 🛂 DHCP Configuration 🛂 </h2>
+
+<p align="center">
+  <strong>😨 "Why do I even need DHCP in a MS Server Environment?" 😨</strong>  <br>
+  <p align="justify">
+    <em>DHCP, or Dynamic Host Configuration Protocol, is a network service used in Microsoft Server to automatically assign IP addresses and related network configuration settings to devices on a network. Its primary use case is to simplify and streamline IP address management, making it easier to deploy and manage a large number of computers and devices in a network. DHCP ensures that each device on the network receives a unique IP address, subnet mask, default gateway, DNS server addresses, and other configuration parameters, reducing the administrative overhead of manually configuring each device's network settings. This automation is especially beneficial in large corporate networks, reducing errors and ensuring efficient IP address allocation.</em>
+  </p>
+</p>
+
+![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
+
 <h2 align="center"> 🕴️ Active-Directoy Users & Computers Management 🕴️ </h2>
 
 <p align="center">
@@ -646,13 +658,18 @@ ___
 </p>  <br>
 
 - A window pops up asking you to input the group name and select the desired group settings:  <br>
-  * **Group Scope 🔭:** determines where a group's membership is valid.  <br>
-    * **Domain local 🏠:** for resource access within one domain.<br>
-    * **Global 🌍:** for users and groups within one domain.<br>
-    * **Universal 👾:** for resource access across domains in a forest.  <br>
-  * **Group Type 👯‍♂️:** whether a group is security-enabled or distribution-enabled.  <br>
-    * **Security 🔒:** for security-related purposes, such as granting access permissions.<br>
-    * **Distribution 📬:** for sending email and organizing users for non-security purposes like distribution lists.  <br>
+
+  | 🔭 Group Scope 🔭 | 📔 Description 📔 |
+  | ------------------ | ----------------- |
+  | **Domain local** | for resource access within one domain.|
+  | **Global** | for users and groups within one domain.|
+  | **Universal** | for resource access across domains in a forest.|
+
+| 👯‍♂️ Group Type 👯‍♂️ | 📔 Description 📔 |
+| ----------------- | ----------------- |
+| **Security** | for security-related purposes, such as granting access permissions.|
+| **Distribution** | for sending email and organizing users for non-security purposes like distribution lists.|
+<br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/299eaee1-8d49-40da-91cc-3cd50bd5b15c"><br>
@@ -700,11 +717,39 @@ ___
 
 ___
 
+- Let's check if the users we created are functioning correctly and if their relevant information is correct:
+  * Remember the Windows 10 Pro we added to the domain earlier when setting up the lab environment? Well, let's fire it up.
+___
+
 <h3>🏭 Creating OUs, Users & Groups Using CMD 🏭</h3>
 
 <p align="center">
   <strong>😨 "But I already have the GUI!" 😨</strong>  <br>
   <p align="justify">
-    <em>True, but Imagine getting a task of creating 40, 50, 200 users. That's time-consuming. Creating objects using CMD in AD is valuable for efficient bulk operations, automated provisioning, and scripting. It's handy when adding multiple users, groups, or other objects with consistent attributes, reducing manual effort and ensuring accuracy. CMD scripts or batch files can streamline repetitive tasks, such as onboarding new employees or managing group memberships, improving administrative efficiency, and maintaining a consistent directory environment.</em>
+    <em>True, but Imagine getting a task of creating 40, 50, or 200 users. That's time-consuming. Creating objects using CMD in AD is valuable for efficient bulk operations, automated provisioning, and scripting. It's handy when adding multiple users, groups, or other objects with consistent attributes, reducing manual effort and ensuring accuracy. CMD scripts can streamline repetitive tasks, such as onboarding new employees or managing group memberships, improving administrative efficiency, and maintaining a consistent directory environment.</em>
   </p>
 </p>
+
+___
+
+- We will first demo creating two users with the following command-line tool: <code><strong>DSADD</strong></code>  <br>
+- Here's a table that describes what each of the DSADD tools can do:  <br>
+
+| Command | Description |
+| ------- | ----------- |
+| DSADD computer | Adds a single computer to the directory.|
+| DSADD contact | Adds a single contact to the directory.|
+| DSADD group | Adds a single group to the directory.|
+| DSADD OU | Adds a single organizational unit to the directory.|
+| DSADD user | Adds a single user to the directory.|
+| DSADD quota | Adds a quota specification to a directory partition.|
+
+- You can use <code><strong>DSADD /?</strong></code> or <code><strong> DSADD user /?</strong></code> to check what syntax follows each tool.
+
+<p align="center">
+  <a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc753708(v=ws.11)">👉 Here's more info on DSADD 👈</a>
+</p>
+
+___
+
+I will demonstrate elements crucial to creating an account, as there are many options in the tool itself on how to customize the user or add more information about the account.
