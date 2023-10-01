@@ -18,7 +18,7 @@
 <h2 align="center"> 📑 Table of Contents 📑</h2>
 
   <ol>
-    <li><a href=""> Topology</a></li>
+    <li><a href="#-%EF%B8%8F-topology-%EF%B8%8F-"> Topology</a></li>
     <li><a href="#--introduction--"> Introduction</a></li>
     <li><a href="#--requirements-for-the-lab-environment--"> Requirements for the lab environment</a></li>
     <li><a href="#-%EF%B8%8F-setting-up-the-lab-environment-%EF%B8%8F-"> Setting up the lab environment</a></li>
