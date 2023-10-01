@@ -565,14 +565,14 @@ ___
 
 ___
 
-- Now we will create a new <strong><a href="https://learn.microsoft.com/en-us/windows-server/networking/technologies/dhcp/dhcp-scopes">DHCP Scope</a></strong> and customize it's settings to match our domain needs.  <br>
-- The first step is to go to "Tools"> Select "DHCP" and a window for the DHCP sevice will pop-up:  <br>
+- Now we will create a new <strong><a href="https://learn.microsoft.com/en-us/windows-server/networking/technologies/dhcp/dhcp-scopes">DHCP Scope</a></strong> and customize its settings to match our domain needs.  <br>
+- The first step is to go to "Tools"> Select "DHCP" and a window for the DHCP service will pop-up:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/a187b6b1-4e10-47f9-aa83-5d64691bdd64">
 </p>  <br>
 
-- We will configure a new DHCP scope by right clicking "IPv4"> select "New Scope...":  <br>
+- We will configure a new DHCP scope by right-clicking "IPv4"> select "New Scope...":  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/cbac15b7-3ecc-4191-8cea-2a2971a20c4d">
@@ -591,16 +591,48 @@ ___
   <em>❗ Your Start/End addresses will be different according to the subnet you're in and your use case ❗</em>
 </p>  <br>
 
+___
+
 - I will be excluding the first 5 addresses from the scope, this will bring the total down to 45 addresses:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ff45ece3-9f91-43ad-adf1-8230a7c0626b"><br>
-  <strong>😨 "What is the purpose of address exclusion?" 😨</strong><br>
-  <p align="justify>
+  <strong>😨 "What is the purpose of address exclusion?" 😨</strong>  <br>
+  <p align="justify">
     <em>It ensures that these addresses are not automatically assigned to client devices. Exclusion is typically used for network devices with statically configured IP addresses, such as servers, routers, or printers, ensuring that the DHCP server does not allocate these reserved addresses to other devices. Address exclusion helps maintain network stability, preventing IP address conflicts and ensuring that critical network resources always have their designated addresses available for use.</em>
   </p>
 </p>  <br>
 
+___
+
+- Then we will define the Lease Duration, which will be 8 hours:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/e1bd59fc-3592-463c-9235-f8a78bbfb298"><br>
+  <strong>😨 "What is the purpose of Lease Duration?" 😨</strong>  <br>
+  <p align="justify">
+    <em>The lease duration in DHCP specifies how long a client device can use an IP address and network configuration. Its purpose is to efficiently manage IP address allocation, adapt to changing network needs, facilitate IP address reclamation, support load balancing, and enhance network security. The choice of lease duration depends on network requirements, balancing address management efficiency, network stability, and security considerations. Shorter leases suit devices with frequent connections, while longer leases are suitable for stable connections and resource planning.</em>
+  </p>
+</p>  <br>
+
+___
+
+- Now we're given the choice to define the DHCP options (which I'll explain in a bit) or opt out of it for now.  <br>
+- We will select the option to define these options from the get-go since I like living on the edge:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/156c113a-a9ce-4691-8eda-48551cb6394d">  <br>
+  <strong>😨 "So what are DHCP options?" 😨</strong>  <br>
+  <p align="justify">
+    <em>They are additional parameters that a DHCP server can provide to client devices alongside the essential IP address and subnet mask. These options include settings such as the default gateway, DNS server addresses, domain names, time servers, and more.
+  </p>
+</p>  <br>
+
+- The first step is to define our Default-Gateway (Router) Address. Here, I will not be specifying the Vmware NAT, but Instead, I will be adding the address of our SRV1. If you look back at our <a href="#-%EF%B8%8F-topology-%EF%B8%8F-">Topology</a> You can see that we will be configuring our SRV1 as a routing server.
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/1e2fa65d-3bb8-414e-97a2-0ec6a1557725">
+</p>  <br>
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
