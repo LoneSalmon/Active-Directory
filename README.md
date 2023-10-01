@@ -33,6 +33,7 @@
       <ol>
         <li><a href="#-the-aduc-gui-"> <em> The ADUC GUI</em></a></li>
         <li><a href="#creating-ous-users--groups-using-the-gui"> <em> Creating OUs, Users & Groups Using the GUI</em></a></li>
+        <li><a href="#-creating-ous-users--groups-using-cmd-"> <em> Creating OUs, Users & Groups Using CMD</em></a></li>
       </ol>
     </details></li>
   </ol>
@@ -695,4 +696,15 @@ ___
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/04d24102-f20b-4b54-8b84-b0ab924c7829">  <br>
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/02f33598-eb05-4789-85c3-713be02ff636">
+</p>
+
+___
+
+<h3>🏭 Creating OUs, Users & Groups Using CMD 🏭</h3>
+
+<p align="center">
+  <strong>😨 "But I already have the GUI!" 😨</strong>  <br>
+  <p align="justify">
+    <em>True, but Imagine getting a task of creating 40, 50, 200 users. That's time-consuming. Creating objects using CMD in AD is valuable for efficient bulk operations, automated provisioning, and scripting. It's handy when adding multiple users, groups, or other objects with consistent attributes, reducing manual effort and ensuring accuracy. CMD scripts or batch files can streamline repetitive tasks, such as onboarding new employees or managing group memberships, improving administrative efficiency, and maintaining a consistent directory environment.</em>
+  </p>
 </p>
