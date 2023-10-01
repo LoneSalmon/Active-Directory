@@ -6,7 +6,10 @@
 <h2 align="center"> ⚰️ Server Management in Active-Directory ⚰️ </h2>
 <h4 align="center"> Student Name: <a href="https://www.linkedin.com/in/mustafa-jaber-5a143b269/">Mustafa Jaber</a> | <a href="https://see-security.com/?lang=en">See-Security College, Ramat-Gan</a> | Class: CSPP83 | Lecturer: Binyamin Cohen | 10/10/2023 </h4>
 
-<p align="center"> 
+![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
+
+<h2 align="center"> 🗺️ Topology 🗺️ </h2>
+<p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/74f5fabb-cf76-47aa-9595-1892ea1d66bb" height="400px" width="auto"> 
 </p>
 
@@ -15,6 +18,7 @@
 <h2 align="center"> 📑 Table of Contents 📑</h2>
 
   <ol>
+    <li><a href=""> Topology</a></li>
     <li><a href="#--introduction--"> Introduction</a></li>
     <li><a href="#--requirements-for-the-lab-environment--"> Requirements for the lab environment</a></li>
     <li><a href="#-%EF%B8%8F-setting-up-the-lab-environment-%EF%B8%8F-"> Setting up the lab environment</a></li>
@@ -533,7 +537,70 @@ ___
   <p align="justify">
     <em>DHCP, or Dynamic Host Configuration Protocol, is a network service used in Microsoft Server to automatically assign IP addresses and related network configuration settings to devices on a network. Its primary use case is to simplify and streamline IP address management, making it easier to deploy and manage a large number of computers and devices in a network. DHCP ensures that each device on the network receives a unique IP address, subnet mask, default gateway, DNS server addresses, and other configuration parameters, reducing the administrative overhead of manually configuring each device's network settings. This automation is especially beneficial in large corporate networks, reducing errors and ensuring efficient IP address allocation.</em>
   </p>
+</p>  <br>
+
+<p align="center">
+  <strong>😨 "Why are you configuring DHCP now?" 😨</strong>  <br>
+  <p align="justify">
+    <em>The reason is that I will require DHCP services in the next chapter when testing our user creations on a Windows 10 Pro logon to our domain, I don't want to configure a windows 10 pro then configure a DHCP then reconfigure the Windows Client again.</em>
+  </p>
 </p>
+
+___
+
+- Since we have already installed our DHCP service on DC1 in the <a href="#--creating-server-roles-">Server Roles chapter</a>. I will now jump directly into DHCP configuration.  <br>
+- We will click on our "Tasks" tab and select "Complete DHCP configuration":  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/c52881cf-9da2-400e-a8e3-52119bb844d4">
+</p>  <br>
+
+- This will take us to a window where we have to specify the user authorization - the same as previous steps:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/d764019e-e9cb-4d9c-896e-dea906a10259">
+</p>  <br>
+
+- This will finish the initial DHCP configuration and we can now begin our in-depth DHCP configuration.
+
+___
+
+- Now we will create a new <strong><a href="https://learn.microsoft.com/en-us/windows-server/networking/technologies/dhcp/dhcp-scopes">DHCP Scope</a></strong> and customize it's settings to match our domain needs.  <br>
+- The first step is to go to "Tools"> Select "DHCP" and a window for the DHCP sevice will pop-up:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/a187b6b1-4e10-47f9-aa83-5d64691bdd64">
+</p>  <br>
+
+- We will configure a new DHCP scope by right clicking "IPv4"> select "New Scope...":  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/cbac15b7-3ecc-4191-8cea-2a2971a20c4d">
+</p>  <br>
+
+- This will open an installation wizard window, we will begin by specifying the scope name and description:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/d1cdec29-1ec3-44cc-a2c3-dc958ed72324">
+</p>  <br>
+
+- I will configure the DHCP scope to lease 50 addresses in total for my domain:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/e25c60e9-e321-45ea-87e7-6a78faa2c0b0"><br>
+  <em>❗ Your Start/End addresses will be different according to the subnet you're in and your use case ❗</em>
+</p>  <br>
+
+- I will be excluding the first 5 addresses from the scope, this will bring the total down to 45 addresses:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ff45ece3-9f91-43ad-adf1-8230a7c0626b"><br>
+  <strong>😨 "What is the purpose of address exclusion?" 😨</strong><br>
+  <p align="justify>
+    <em>It ensures that these addresses are not automatically assigned to client devices. Exclusion is typically used for network devices with statically configured IP addresses, such as servers, routers, or printers, ensuring that the DHCP server does not allocate these reserved addresses to other devices. Address exclusion helps maintain network stability, preventing IP address conflicts and ensuring that critical network resources always have their designated addresses available for use.</em>
+  </p>
+</p>  <br>
+
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
