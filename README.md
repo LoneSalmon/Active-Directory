@@ -740,6 +740,12 @@ ___
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/aa68dbf3-3713-4a84-9194-9050900bf871">
+</p>  <br>
+
+- We can confirm this by checking the description of the Scope we created at the beginning and see that the failover relationship was applied:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/be2f8db1-7db4-40f6-b969-b6e5afddb418">
 </p>
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
