@@ -673,7 +673,13 @@ ___
   * The default-Gateway which is SRV1 ✔️  <br>
   * The DHCP Server, which is DC1 ✔️  <br>
   * The DNS servers, which is both DC1 and DC2 ✔️  <br>
- 
+
+- We can also verify that windows 10 is connected to domain by pinging our DCs:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/44046531-d5b6-42f3-b081-07fc6abd304f">
+</p>
+
 ___
 
 <h3>🚧 Configuring a Failover Cluster 🚧</h3>
