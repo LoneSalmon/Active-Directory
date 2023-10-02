@@ -135,7 +135,7 @@ ___
 </p>
 
 <p align="center">
-  <a href="#--table-of-contents-">☝️ <strong>Back to Table of Contents</strong> ☝️</a>
+  <a href="#--table-of-contents-"><img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/458f6b42-71cd-4e41-9df5-aea5c8686b57"></a>
 </p>
   
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
