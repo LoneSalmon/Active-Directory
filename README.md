@@ -32,7 +32,12 @@
         <li><a href="#-configure-dc2-as-the-rid-master-"> <em> Configure DC2 as the RID Master</em></a></li>
       </ol>
     </details></li>
-    <li><a href="#--dhcp-configuration--"> DHCP Configuration</a></li>
+    <li><details open="open">
+      <summary><a href="#--dhcp-configuration--"> DHCP Configuration</a></summary>
+      <ol>
+        <li><a href="#-configuring-a-failover-cluster-"> Configuring a Failover Cluster</a></li>
+      </ol>
+    </details></li>
     <li><details open="open">
       <summary><a href="#-%EF%B8%8F-active-directoy-user--computers-management-%EF%B8%8F-"> Active Directory Users & Computers Management</a></summary>
       <ol>
