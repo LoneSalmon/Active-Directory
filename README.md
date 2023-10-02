@@ -134,6 +134,10 @@ ___
   ❗ <em>Restart, repeat the same steps in DC2 and SRV1 with their corresponding names and use the IP addresses with "4" and "5" as the hosts.</em> ❗
 </p>
 
+<p align="center">
+  <a href="#--table-of-contents-">☝️ <strong>Back to Table of Contents</strong> ☝️</a>
+</p>
+  
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
 <h2 align="center"> 🤔 Creating & Configuring a Domain Controller 🤔 </h2>
