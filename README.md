@@ -758,6 +758,10 @@ ___
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
+<h2 align="center"> ☎️ Configuring PAT on SRV1 ☎️</h2>
+
+![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
+
 <h2 align="center"> 🕴️ Active-Directoy Users & Computers Management 🕴️ </h2>
 
 <p align="center">
