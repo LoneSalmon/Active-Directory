@@ -645,7 +645,35 @@ ___
 - We will skip the "WINS" section since it's not necessary for this project, but here's more 👉 <a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/setting-wins-server-options">info</a> 👈 on the subject.  <br>
 - Now select "Yes. I want to activate this scope now" So that it gets activated on clients who request DHCP leases.
 
+___
 
+- It's time to test our DHCP configuration in action and see if it works properly.  <br>
+- We will fire up a Windows 10 Pro image that we prepared during the <a href="#--requirements-for-the-lab-environment--">requirements for the lab environment</a>.  <br>
+- As soon as we log in to the OS, we are automatically Added to the domain using our Admin User (in my case SuperSalmon):  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/21f578a1-e0a7-4c31-a10a-495906f1e7a7">
+</p>  <br>
+
+- And if we check using <code><strong>ipconfig /all</strong></code>:
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/8845f140-04f7-4567-b24b-a12e95ff1ffa">
+</p>  <br>
+
+- Here, we can see all the parameters we previously configured:  <br>
+  * The domain ✔️  <br>
+  * IP address which took the suffix "26", which means our exclusion rule worked ✔️  <br>
+  * The lease that expires in 8 hours ✔️  <br>
+  * The default-Gateway which is SRV1 ✔️  <br>
+  * The DHCP Server, which is DC1 ✔️  <br>
+  * The DNS servers, which is both DC1 and DC2 ✔️  <br>
+ 
+___
+
+<h3>🚧 Configuring a Failover Cluster 🚧</h3>
+
+- Now let's move on to creating a Failover Cluster to DHCP.
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
 <h2 align="center"> 🕴️ Active-Directoy Users & Computers Management 🕴️ </h2>
