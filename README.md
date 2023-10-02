@@ -679,6 +679,62 @@ ___
 <h3>🚧 Configuring a Failover Cluster 🚧</h3>
 
 - Now let's move on to creating a Failover Cluster to DHCP.
+
+<p align="center">
+  <strong>😨 "A Failover Cluster?! I thought we were done with DHCP!" 😨</strong>  <br>
+  <p align="justify">
+    <em> Yeah, sure. You can stop here... Why would you need a Failover Cluster?... BAM! Your DC1 decided it's taking a holiday, along with its DHCP server to the digital Caribbean, In 8 hours, all of your DHCP clients are going to lose their lease and, therefore, lose their IP address information. Do you think you have the wits to fix the issue in less than 8 hours? at midnight? oh, you forgot the keys? you're having a gut-wrenching diarrhea? Do you think you can survive all the human factors and restore stability to your organization before all hell breaks loose?</em>
+  </p>
+</p>
+
+<p align="center">
+  <strong>😨 "I get your point. What is a Failover Cluster, then?" 😨</strong>  <br>
+  <p align="justify">
+    <em>A failover cluster ensures high availability and load balancing for DHCP services, improving network reliability. In Load Balance mode, both servers share the DHCP client load, while in Hot Standby mode, one server is active while the other is on standby, ready to take over if the active server fails. This setup helps prevent DHCP service interruptions and is especially valuable in environments where uninterrupted IP address assignment is critical.</em>
+  </p>
+</p>
+
+- The first step is to create a DHCP server role in DC2 using the same steps we took when we <a href="#--creating-server-roles-">configured a DHCP server on DC1</a>; By selecting the DHCP server role and adding it's features.  <br>
+- Then we go through the initial configuration, the same way we did <a href="#--dhcp-configuration--">here</a>  <br>
+- Now that we're done with the initial configuration, we will move to DC1 DHCP tools.  <br>
+- We will right-click "IPv4" again and select "Configure Failover..."  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/efea059c-6e6f-4442-b13c-914357147f03">
+</p>  <br>
+
+- An installation wizard will open up, asking us which scopes we would like to configure for the failover.  <br>
+- We will select the one we already created since we want our Secondary DHCP to take over the same functions:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6ab3aa66-3726-45d7-8fca-8bb23e7c586f">
+</p>  <br>
+
+- On the next page, we're asked to specify the server we want to configure as a Failover DHCP. We will select "Add Server" and add DC2 as the Partner Server and click Next:
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/932ecaa3-f1ec-4a28-9ac6-f3352743b8b9"><br>
+  <em>❗ If you don't see DC2 in the "Authorized DHCP Servers", you should refresh the Server Manager UI ❗</em>
+</p>  <br>
+
+- The next page is where we lay out the details of the Failover Relationship:
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/c0e02983-41d8-4c80-b3d8-6e859427a12e">
+</p>  <br>
+
+- Here's a detailed explanation of each Parameter and their use cases:  <br>
+
+| Parameter | Description |
+| --------- | ----------- |
+| <strong>Relationship Name</strong> | Assign a unique name to identify the failover relationship. It helps distinguish this relationship from others if you have multiple configurations. |
+| <strong>Maximum Client Lead Time</strong> | Specifies the maximum time by which a client can extend its lease beyond the duration offered by the failed DHCP. |
+| <strong>Mode</strong> | <ul><li><strong>Load Balance:</strong> Both servers actively serve DHCP clients, sharing the load. It's suitable for distributing client requests across both servers.</li><li><strong>Hot Standby:</strong> One server is active, and the other is on standby. The standby server only takes over the DHCP service if the active server fails.</li></ul>|
+| <strong>Addresses Reserved for Standby Server</strong> | You can specify a pool of IP addresses that will be reserved and not used for DHCP assignments. This is useful for maintaining a buffer of unused addresses for failover situations.|
+| <strong>State Switchover Interval</strong> | This is unrelated to Hot-Standby. It represents the interval at which the roles of the two DHCP servers in a relationship switch between the primary and secondary DHCP servers in Load-Balance mode. |
+| <strong>Enable Message Authentication</strong> | allows for the authentication of messages exchanged between the DHCP servers in a failover relationship. It ensures that the messages transmitted between the servers are secure and have not been tampered with during transmission.|
+| <strong>Shared Secret</strong> | A secret key shared only between both servers to communicate securely - Required if Message Authentication is Enabled.|
+
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
 <h2 align="center"> 🕴️ Active-Directoy Users & Computers Management 🕴️ </h2>
