@@ -538,21 +538,25 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/c81c3973-148d-4427-a04c-658e27cacd17">
 </p>
 
+<p align="center">
+  <a href="#--table-of-contents-">☝️ <strong>Back to Table of Contents</strong> ☝️</a>
+</p>
+
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
 <h2 align="center"> 🛂 DHCP Configuration 🛂 </h2>
 
 <p align="center">
-  <strong>😨 "Why do I even need DHCP in a MS Server Environment?" 😨</strong>  <br>
+  <strong>😨 "Why do I need DHCP in an MS Server Environment?" 😨</strong>  <br>
   <p align="justify">
-    <em>DHCP, or Dynamic Host Configuration Protocol, is a network service used in Microsoft Server to automatically assign IP addresses and related network configuration settings to devices on a network. Its primary use case is to simplify and streamline IP address management, making it easier to deploy and manage a large number of computers and devices in a network. DHCP ensures that each device on the network receives a unique IP address, subnet mask, default gateway, DNS server addresses, and other configuration parameters, reducing the administrative overhead of manually configuring each device's network settings. This automation is especially beneficial in large corporate networks, reducing errors and ensuring efficient IP address allocation.</em>
+    <em>DHCP, or Dynamic Host Configuration Protocol, is a network service used in Microsoft Server to automatically assign IP addresses and related network configuration settings to devices on a network. Its primary use case is to simplify and streamline IP address management, making deploying and managing many computers and devices in a network easier. DHCP ensures that each device on the network receives a unique IP address, subnet mask, default gateway, DNS server addresses, and other configuration parameters, reducing the administrative overhead of manually configuring each device's network settings. This automation especially benefits large corporate networks, reducing errors and ensuring efficient IP address allocation.</em>
   </p>
 </p>  <br>
 
 <p align="center">
   <strong>😨 "Why are you configuring DHCP now?" 😨</strong>  <br>
   <p align="justify">
-    <em>The reason is that I will require DHCP services in the next chapter when testing our user creations on a Windows 10 Pro logon to our domain, I don't want to configure a windows 10 pro then configure a DHCP then reconfigure the Windows Client again.</em>
+    <em>The reason is that I will require DHCP services in the next chapter when testing our user creations on a Windows 10 Pro login to our domain. I don't want to configure a Windows 10 pro, then configure a DHCP then reconfigure the Windows Client again.</em>
   </p>
 </p>
 
@@ -603,7 +607,7 @@ ___
 
 ___
 
-- I will be excluding the first 5 addresses from the scope, this will bring the total down to 45 addresses:  <br>
+- I will be excluding the first 5 addresses from the scope. This will bring the total down to 45 addresses:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ff45ece3-9f91-43ad-adf1-8230a7c0626b"><br>
@@ -761,9 +765,17 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/be2f8db1-7db4-40f6-b969-b6e5afddb418">
 </p>
 
+<p align="center">
+  <a href="#--table-of-contents-">☝️ <strong>Back to Table of Contents</strong> ☝️</a>
+</p>
+
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
 <h2 align="center"> ☎️ Configuring PAT on SRV1 ☎️</h2>
+
+<p align="center">
+  <a href="#--table-of-contents-">☝️ <strong>Back to Table of Contents</strong> ☝️</a>
+</p>
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
@@ -983,3 +995,9 @@ ___
 ___
 
 I will demonstrate elements crucial to creating an account, as there are many options in the tool itself on how to customize the user or add more information about the account.
+
+<p align="center">
+  <a href="#--table-of-contents-">☝️ <strong>Back to Table of Contents</strong> ☝️</a>
+</p>
+
+![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
