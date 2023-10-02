@@ -17,36 +17,36 @@
 
 <h2 align="center"> 📑 Table of Contents 📑</h2>
 
-  <ol>
-    <li><a href="#-%EF%B8%8F-topology-%EF%B8%8F-"> Topology</a></li>
-    <li><a href="#--introduction--"> Introduction</a></li>
-    <li><a href="#--requirements-for-the-lab-environment--"> Requirements for the lab environment</a></li>
-    <li><a href="#-%EF%B8%8F-setting-up-the-lab-environment-%EF%B8%8F-"> Setting up the lab environment</a></li>
-    <li><details open="open">
-      <summary><a href="#--creating--configuring-a-domain-controller--"> Creating & Configuring a Domain Controller</a></summary>
-      <ol>
-        <li><a href="#--creating-server-roles-"> <em> Creating Server Roles</em></a></li>
-        <li><a href="#-%EF%B8%8F-configuring-our-1st-domain-controller-%EF%B8%8F-"> <em> Configuring our 1st Domain Controller</em></a></li>
-        <li><a href="#-initial-security-step-"> <em> Intial Security Step</em></a></li>
-        <li><a href="#-adding-a-secondary-domain-controller-dc2"> <em> Adding a Secondary Domain Controller (DC2)</em></a></li>
-        <li><a href="#-configure-dc2-as-the-rid-master-"> <em> Configure DC2 as the RID Master</em></a></li>
-      </ol>
-    </details></li>
-    <li><details open="open">
-      <summary><a href="#--dhcp-configuration--"> DHCP Configuration</a></summary>
-      <ol>
-        <li><a href="#-configuring-a-failover-cluster-"> Configuring a Failover Cluster</a></li>
-      </ol>
-    </details></li>
-    <li><details open="open">
-      <summary><a href="#-%EF%B8%8F-active-directoy-user--computers-management-%EF%B8%8F-"> Active Directory Users & Computers Management</a></summary>
-      <ol>
-        <li><a href="#-the-aduc-gui-"> <em> The ADUC GUI</em></a></li>
-        <li><a href="#creating-ous-users--groups-using-the-gui"> <em> Creating OUs, Users & Groups Using the GUI</em></a></li>
-        <li><a href="#-creating-ous-users--groups-using-cmd-"> <em> Creating OUs, Users & Groups Using CMD</em></a></li>
-      </ol>
-    </details></li>
-  </ol>
+<ol>
+  <li><a href="#-%EF%B8%8F-topology-%EF%B8%8F-"> Topology</a></li>
+  <li><a href="#--introduction--"> Introduction</a></li>
+  <li><a href="#--requirements-for-the-lab-environment--"> Requirements for the lab environment</a></li>
+  <li><a href="#-%EF%B8%8F-setting-up-the-lab-environment-%EF%B8%8F-"> Setting up the lab environment</a></li>
+  <li><details open="open">
+    <summary><a href="#--creating--configuring-a-domain-controller--"> Creating & Configuring a Domain Controller</a></summary>
+    <ol>
+      <li><a href="#--creating-server-roles-"> <em> Creating Server Roles</em></a></li>
+      <li><a href="#-%EF%B8%8F-configuring-our-1st-domain-controller-%EF%B8%8F-"> <em> Configuring our 1st Domain Controller</em></a></li>
+      <li><a href="#-initial-security-step-"> <em> Intial Security Step</em></a></li>
+      <li><a href="#-adding-a-secondary-domain-controller-dc2"> <em> Adding a Secondary Domain Controller (DC2)</em></a></li>
+      <li><a href="#-configure-dc2-as-the-rid-master-"> <em> Configure DC2 as the RID Master</em></a></li>
+    </ol>
+  </details></li>
+  <li><details open="open">
+    <summary><a href="#--dhcp-configuration--"> DHCP Configuration</a></summary>
+    <ol>
+      <li><a href="#-configuring-a-failover-cluster-"> Configuring a Failover Cluster</a></li>
+    </ol>
+  </details></li>
+  <li><details open="open">
+    <summary><a href="#-%EF%B8%8F-active-directoy-user--computers-management-%EF%B8%8F-"> Active Directory Users & Computers Management</a></summary>
+    <ol>
+      <li><a href="#-the-aduc-gui-"> <em> The ADUC GUI</em></a></li>
+      <li><a href="#creating-ous-users--groups-using-the-gui"> <em> Creating OUs, Users & Groups Using the GUI</em></a></li>
+      <li><a href="#-creating-ous-users--groups-using-cmd-"> <em> Creating OUs, Users & Groups Using CMD</em></a></li>
+    </ol>
+  </details></li>
+</ol>
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
