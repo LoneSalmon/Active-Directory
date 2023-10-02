@@ -700,6 +700,8 @@ ___
   </p>
 </p>
 
+___
+
 - The first step is to create a DHCP server role in DC2 using the same steps we took when we <a href="#--creating-server-roles-">configured a DHCP server on DC1</a>; By selecting the DHCP server role and adding it's features.  <br>
 - Then we go through the initial configuration, the same way we did <a href="#--dhcp-configuration--">here</a>  <br>
 - Now that we're done with the initial configuration, we will move to DC1 DHCP tools.  <br>
