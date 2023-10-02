@@ -735,6 +735,13 @@ ___
 | <strong>Enable Message Authentication</strong> | allows for the authentication of messages exchanged between the DHCP servers in a failover relationship. It ensures that the messages transmitted between the servers are secure and have not been tampered with during transmission.|
 | <strong>Shared Secret</strong> | A secret key shared only between both servers to communicate securely - Required if Message Authentication is Enabled.|
 
+- The last page shows a review of your configuration to confirm and apply, click "Finish".  <br>
+- Once you click "Finish" a log window will pop-up to show you the progress of installing the failover configuration:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/aa68dbf3-3713-4a84-9194-9050900bf871">
+</p>
+
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
 <h2 align="center"> 🕴️ Active-Directoy Users & Computers Management 🕴️ </h2>
