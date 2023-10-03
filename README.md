@@ -134,13 +134,12 @@ ___
   ❗ <em>Restart, repeat the same steps in DC2 and SRV1 with their corresponding names and use the IP addresses with "4" and "5" as the hosts.</em> ❗
 </p>
 
-<button onclick="window.location.href='#--table-of-contents-';">
-  Click Here
-</button>
+<div align="center">
+  
+|[☝️ Back to top ☝️](#-%EF%B8%8F-setting-up-the-lab-environment-%EF%B8%8F-)|[📑 Table of Contents 📑](#--table-of-contents-)|
+|---|---|
 
-<p align="center">
-  <a href="#--table-of-contents-">☝️ <strong>Back to Table of Contents</strong> ☝️</a>
-</p>
+</div>
   
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
