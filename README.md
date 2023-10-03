@@ -89,7 +89,7 @@ ___
 
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/2934cd0e-cfd6-4deb-9dba-d01bca4b51f7" height="500px" width="auto">  <br> 
-  <em>❗ Note that I have disabled Vmware DHCP services because I'm going to create my own DHCP service from the Active-Directory services ❗</em>
+  <em>❗ I have disabled Vmware DHCP services because I'm going to create my own DHCP service from the Active-Directory services ❗</em>
 </p>
 
 ___
@@ -115,7 +115,7 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/73aa5a6f-aa5d-4c49-9685-023a2e3f1f50" height="auto" width="500px">
 </p>
 
-❗ *Note that the reason that the "Host" portion of the IP address is "3" and not "1" or "2" for example is because these two "Host" addresses are reserved for Vmwares' NAT operation:* ❗  <br>
+❗ *The reason that the "Host" portion of the IP address is "3" and not "1" or "2" for example is because these two "Host" addresses are reserved for Vmwares' NAT operation:* ❗  <br>
 - *"1" is for the NAT bridge installed on the host machine.*  <br>
 - *"2" is for the virtual switch (Default-Gateway).*  <br>
 
@@ -133,6 +133,10 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/15435f3c-c888-4883-83b4-79b0683bf5ea" height="auto" width="500px">  <br>
   ❗ <em>Restart, repeat the same steps in DC2 and SRV1 with their corresponding names and use the IP addresses with "4" and "5" as the hosts.</em> ❗
 </p>
+
+<button onclick="window.location.href='#--table-of-contents-';">
+  Click Here
+</button>
 
 <p align="center">
   <a href="#--table-of-contents-">☝️ <strong>Back to Table of Contents</strong> ☝️</a>
@@ -341,7 +345,7 @@ ___
   * Input this command in CMD in DC1: <code><strong>wmic useraccount getname, sid</strong></code>  <br>
   
   <p align="center">
-    ❗ <em>You will get this output (Take note of the numbers for "Administrator")</em> ❗  <br>
+    ❗ <em>You will get this output (Note of the numbers for "Administrator")</em> ❗  <br>
     <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/228b09fd-4802-4f97-b1e3-0ef607a5ec62">
   </p>
 
