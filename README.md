@@ -541,9 +541,12 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/c81c3973-148d-4427-a04c-658e27cacd17">
 </p>
 
-<p align="center">
-  <a href="#--table-of-contents-">☝️ <strong>Back to Table of Contents</strong> ☝️</a>
-</p>
+<div align="center">
+  
+|[☝️ Back to top ☝️](#--creating--configuring-a-domain-controller--)|[📑 Table of Contents 📑](#--table-of-contents-)|
+|---|---|
+
+</div>
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
@@ -768,17 +771,23 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/be2f8db1-7db4-40f6-b969-b6e5afddb418">
 </p>
 
-<p align="center">
-  <a href="#--table-of-contents-">☝️ <strong>Back to Table of Contents</strong> ☝️</a>
-</p>
+<div align="center">
+  
+|[☝️ Back to top ☝️](#--dhcp-configuration--)|[📑 Table of Contents 📑](#--table-of-contents-)|
+|---|---|
+
+</div>
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
 <h2 align="center"> ☎️ Configuring PAT on SRV1 ☎️</h2>
 
-<p align="center">
-  <a href="#--table-of-contents-">☝️ <strong>Back to Table of Contents</strong> ☝️</a>
-</p>
+<div align="center">
+  
+|[☝️ Back to top ☝️](#-%EF%B8%8F-configuring-pat-on-srv1-%EF%B8%8F)|[📑 Table of Contents 📑](#--table-of-contents-)|
+|---|---|
+
+</div>
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
@@ -999,8 +1008,11 @@ ___
 
 I will demonstrate elements crucial to creating an account, as there are many options in the tool itself on how to customize the user or add more information about the account.
 
-<p align="center">
-  <a href="#--table-of-contents-">☝️ <strong>Back to Table of Contents</strong> ☝️</a>
-</p>
+<div align="center">
+  
+|[☝️ Back to top ☝️](#-%EF%B8%8F-active-directoy-user--computers-management-%EF%B8%8F-)|[📑 Table of Contents 📑](#--table-of-contents-)|
+|---|---|
+
+</div>
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
