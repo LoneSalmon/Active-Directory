@@ -891,6 +891,14 @@ ___
   <strong>😨 "You... missed the Default Gateway?" 😨</strong><br>
   <p align="justify">
     <em>I did not. I intentionally haven't configured it with a default gateway because a bridged network relies on the default gateway present in the network it's bridged with. In this case, it's bridged to our NAT, and the NAT, in turn, handles the actual routing for it. </em>
+  </p>
+</p>
+
+<p align="center">
+  <strong>😨 "Why the whole work-around?" 😨</strong><br>
+  <p align="justify">
+    <em>Because the Remote Access Role enables advanced routing features that cannot be found on the VMware NAT. Configuring it on our bridged NIC will act as a Gateway to our internal network, handling all of their requests, filtering, capturing data, and passing it through configured policies and rules. Once it's all passed, our "Internal" Router will pass that data to our NAT NIC, handling the more straightforward routing.</em>
+  </p>
 </p>
 
 
