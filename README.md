@@ -23,7 +23,7 @@
   <li><a href="#--introduction--"> Introduction</a></li>
   <li><a href="#--requirements-for-the-lab-environment--"> Requirements for the lab environment</a></li>
   <li><a href="#-%EF%B8%8F-setting-up-the-lab-environment-%EF%B8%8F-"> Setting up the lab environment</a></li>
-  <li><details>
+  <li><details open="open">
     <summary><a href="#--creating--configuring-a-domain-controller--"> Creating & Configuring a Domain Controller</a></summary>
     <ol>
       <li><a href="#--creating-server-roles-"> <em> Creating Server Roles</em></a></li>
@@ -33,17 +33,17 @@
       <li><a href="#-configure-dc2-as-the-rid-master-"> <em> Configure DC2 as the RID Master</em></a></li>
     </ol>
   </details></li>
-  <li><details>
+  <li><details open="open">
     <summary><a href="#--dhcp-configuration--"> DHCP Configuration</a></summary>
     <ol>
-      <li><a href="#-pre-requesite-steps-"> Pre-requisite Steps</a></li>
-      <li><a href="#-configuring-a-dhcp-scope-"> Configuring a DHCP Scope</a></li>
-      <li><a href="#-testing-our-dhcp-scope-"> Testing our DHCP Scope</a></li>
-      <li><a href="#-configuring-a-failover-cluster-"> Configuring a Failover Cluster</a></li>
+      <li><a href="#-pre-requesite-steps-"> <em>Pre-requisite Steps</em></a></li>
+      <li><a href="#-configuring-a-dhcp-scope-"> <em>Configuring a DHCP Scope</em></a></li>
+      <li><a href="#-testing-our-dhcp-scope-"> <em>Testing our DHCP Scope</em></a></li>
+      <li><a href="#-configuring-a-failover-cluster-"> <em>Configuring a Failover Cluster</em></a></li>
     </ol>
   </details></li>
   <li><a href="#-%EF%B8%8F-configuring-pat-on-srv1-%EF%B8%8F"> Configuring PAT on SRV1</a></li>
-  <li><details>
+  <li><details open="open">
     <summary><a href="#-%EF%B8%8F-active-directoy-user--computers-management-%EF%B8%8F-"> Active Directory Users & Computers Management</a></summary>
     <ol>
       <li><a href="#-the-aduc-gui-"> <em> The ADUC GUI</em></a></li>
