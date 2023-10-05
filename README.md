@@ -44,7 +44,7 @@
   </details></li>
   <li><a href="#-%EF%B8%8F-configuring-pat-on-srv1-%EF%B8%8F"> Configuring PAT on SRV1</a></li>
   <li><details open="open">
-    <summary><a href="#-%EF%B8%8F-active-directoy-user--computers-management-%EF%B8%8F-"> Active Directory Users & Computers Management</a></summary>
+    <summary><a href="#-%EF%B8%8F-active-directoy-users--computers-management-%EF%B8%8F-"> Active Directory Users & Computers Management</a></summary>
     <ol>
       <li><a href="#-the-aduc-gui-"> <em> The ADUC GUI</em></a></li>
       <li><a href="#creating-ous-users--groups-using-the-gui"> <em> Creating OUs, Users & Groups Using the GUI</em></a></li>
