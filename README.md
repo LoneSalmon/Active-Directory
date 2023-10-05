@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://see-security.com/?lang=en"><img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/1d10a0e9-e2f0-46bf-b80a-f9f7beae8423"></a>
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/1d10a0e9-e2f0-46bf-b80a-f9f7beae8423">
 </p>
 
 <h1 align="center"> Microsoft Server Module (MCSA) </h1>
