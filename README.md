@@ -814,7 +814,7 @@ ___
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
-<h2 align="center"> ☎️ Configuring PAT on SRV1 ☎️</h2>
+<h2 align="center"> ☎️ Configuring Routing and PAT on SRV1 ☎️</h2>
 
 <p align="center">
   <strong>😨 "What is PAT?" 😨</strong>
@@ -927,23 +927,45 @@ ___
 </p>  <br>
 
 - Once we confirm our selection, we will select Next until we reach the confirmation tab and install the Role.  <br>
-  
-<p align="center">
-  ❗ <em>I will not be convering IIS/Web Server configuration and just leave all to default</em> ❗
-</p>  <br>
 
-- When the installation is finished, we will not select the "Open the getting started Wizard". Since this is the Wizard for DirectAccess and VPN, and this is not what we need.  <br>
-- So instead we will close this window:  <br>
+- We will not select the "Open the getting started Wizard" when the installation is finished. This is not what we need since this is the Wizard for DirectAccess and VPN.  <br>
+- So instead, we will close this window:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/55c45e47-a851-4fa1-a129-7ac5db93c5c7">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/55c45e47-a851-4fa1-a129-7ac5db93c5c7"><br>
+  ❗ <em>I will not be covering IIS/Web Server configuration and leave all to default</em> ❗
 </p>  <br>
 
-- And instead, to configure routing, we will go to "Tools" in the Server Manager UI, and select "Routing and Remote Access".
+- Instead, to configure routing, we will go to "Tools" in the Server Manager UI and select "Routing and Remote Access":  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/32a6d4ac-1622-4d76-93b1-400556d5df8e"><br>
   ❗ <em>If you can't see the relevant tool, close the Server Manager UI and re-open it (as many times as needed) - Cheers Microsoft</em> ❗
+</p>  <br>
+
+___
+
+- In the Routing and Remote Access Window, on the left, we can see our SRV1, which has a red icon, meaning it's not configured or running yet.  <br>
+- Right-click SRV1 and select "Configure and enable routing and remote access".  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/e525af60-b927-4f64-8a8d-7e40ee36bf42">
+</p>  <br>
+
+- In this Wizard, we will reach the configuration page.  <br>
+- Here, we will select "Custom Configuration":  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/3090680a-3c6f-41c3-861f-c8d84e4e8ec8">
+</p>  <br>
+
+- On the next page. The Wizard is asking to select which features we'd like to configure.  <br>
+- We will Select both NAT and LAN routing.  <br>
+  * **NAT:** Because we want to configure this service on our WAN NIC.  <br>
+  * **LAN Routing:** Because we want to configure this service on our LAN NIC.  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/d316de2f-8b26-4655-8055-3e8a2478a9db">
 </p>  <br>
 
 <div align="center">
