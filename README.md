@@ -901,10 +901,50 @@ ___
   </p>
 </p>
 
-
 ___
 
+<h3>🛠️ Installing & Configuring Routing & Remote Access Services (RRAS) 🛠️</h3>
 
+- Now that we're done with the pre-requisites, let's dive into creating the actual RRAS Server on our Windows Server Machine.  <br>
+- We will begin by going to Manage > Selecting "Add Roles and Features".  <br>
+- Select "Role-based or feature-based installation".  <br>
+- Select our SRV1 from the server pool like we did with our DCs.  <br>
+- In the "Server Roles" Tab, we will scroll-down and select the "Remote Access" role:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/53867404-8fa1-488a-9160-e6d40941698b">
+</p>  <br>
+
+- We will not change anything with the feautres.  <br>
+- Once we get to the Role Services tab, we will need to select "Routing":  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/26094bf5-062f-4020-8f87-ab68cbfa5fd1"><br>
+  <strong>😨 "Why did "DirectAccess and VPN (RAS)" get automatically selected?!" 😨</strong><br>
+  <p align="justify">
+    <em>The role is mandatory when selecting "Routing" because routing and VPN services are closely linked. Routing often involves secure data transfer between networks, where VPNs play a crucial role. This bundled setup simplifies configuration and caters to common scenarios where both routing and VPN services are needed, offering flexibility to enable or disable specific features based on your requirements during setup.</em>
+  </p>
+</p>  <br>
+
+- Once we confirm our selection, we will select Next until we reach the confirmation tab and install the Role.  <br>
+  
+<p align="center">
+  ❗ <em>I will not be convering IIS/Web Server configuration and just leave all to default</em> ❗
+</p>  <br>
+
+- When the installation is finished, we will not select the "Open the getting started Wizard". Since this is the Wizard for DirectAccess and VPN, and this is not what we need.  <br>
+- So instead we will close this window:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/55c45e47-a851-4fa1-a129-7ac5db93c5c7">
+</p>  <br>
+
+- And instead, to configure routing, we will go to "Tools" in the Server Manager UI, and select "Routing and Remote Access".
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/32a6d4ac-1622-4d76-93b1-400556d5df8e"><br>
+  ❗ <em>If you can't see the relevant tool, close the Server Manager UI and re-open it (as many times as needed) - Cheers Microsoft</em> ❗
+</p>  <br>
 
 <div align="center">
   
