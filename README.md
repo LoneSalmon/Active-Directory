@@ -43,7 +43,7 @@
     </ol>
   </details></li>
   <li><details open="open">
-    <summary><a href="#-%EF%B8%8F-configuring-routing-and-pat-on-srv1-%EF%B8%8F"> Configuring PAT on SRV1</a></summary>
+    <summary><a href="#-%EF%B8%8F-configuring-routing-and-pat-on-srv1-%EF%B8%8F"> Configuring Routing & PAT on SRV1</a></summary>
       <ol>
         <li><a href="#-pre-requisite-steps-"> <em>Pre-requisite Steps</em></a></li>
         <li><a href="#%EF%B8%8F-installing--configuring-routing--remote-access-services-rras-%EF%B8%8F"><em> Configuring Routing & Remote Access Services (RRAS)</em></a></li>
