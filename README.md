@@ -168,6 +168,7 @@ ___
 </p>  <br>
 
 <strong>Here are the topic that we're going to cover:</strong>  <br>
+
 <ol>
   <li><a href="#--creating-server-roles-"> <em> Creating Server Roles</em></a></li>
   <li><a href="#-%EF%B8%8F-configuring-our-1st-domain-controller-%EF%B8%8F-"> <em> Configuring our 1st Domain Controller</em></a></li>
@@ -585,6 +586,7 @@ ___
 </p>
 
 <strong>Here are the topic that we're going to cover:</strong>  <br>
+
 <ol>
   <li><a href="#-pre-requesite-steps-"> <em>Pre-requisite Steps</em></a></li>
   <li><a href="#-configuring-a-dhcp-scope-"> <em>Configuring a DHCP Scope</em></a></li>
@@ -834,6 +836,8 @@ ___
 
 ___
 
+<h3>🚶 Pre-requisite Steps 🚶</h3>
+
 - The first step to configure PAT on SRV1 is to make sure that your Server has two network cards installed.  <br>
 - Since we're using a virtual environment, we're going to simply add another virtual NIC to our SRV1 by going to its settings:  <br>
 
@@ -851,7 +855,48 @@ ___
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ccc310a4-f5b7-43fe-9fbb-940a8179b315">
+</p>  <br>
+
+- Once that's done, we can see both NICs on the "Network Connections" page:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/185fc933-8ae2-4f03-8d0d-e1bbb188c056">
+</p>  <br>
+
+- But how can we identify which NIC is internal and which is external?  <br>
+- Luckily, we already configured our external NIC to the VMware NAT.  <br>
+- Double-click one of the NICs and select "Details..."  <br>
+- If you check the Default Gateway, you'll find the ".2" suffix, the VMware NAT:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/12bae089-dbce-4986-a6f3-8abb7accf3b2">
+</p>  <br>
+
+- We will also change the IP address of this NIC, since we will be using the ".5" suffix for our SRV1 Router:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/701e7464-2175-4013-81b0-6f159555ecce">
+</p>  <br>
+
+- This is our External NIC. Let's call it "WAN" and the other NIC will be "LAN": <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/9087c571-5e88-4c01-9d6e-85bccf36337c">
+</p>  <br>
+
+- We will also change the IPv4 information of our LAN NIC:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/40f07de6-84ae-4206-8940-d34374b361d2"><br>
+  <strong>😨 "You... missed the Default Gateway?" 😨</strong><br>
+  <p align="justify">
+    <em>I did not. I intentionally haven't configured it with a default gateway because a bridged network relies on the default gateway present in the network it's bridged with. In this case, it's bridged to our NAT, and the NAT, in turn, handles the actual routing for it. </em>
 </p>
+
+
+___
+
+
 
 <div align="center">
   
