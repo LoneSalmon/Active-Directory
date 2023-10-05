@@ -580,9 +580,17 @@ ___
 <p align="center">
   <strong>😨 "Why are you configuring DHCP now?" 😨</strong>  <br>
   <p align="justify">
-    <em>The reason is that I will require DHCP services in the next chapter when testing our user creations on a Windows 10 Pro login to our domain. I don't want to configure a Windows 10 pro, then configure a DHCP then reconfigure the Windows Client again.</em>
+    <em>The reason is that I will require DHCP services in the next chapter when testing our user creations on a Windows 10 Pro log in to our domain. I don't want to configure a Windows 10 pro, then configure a DHCP then reconfigure the Windows Client again.</em>
   </p>
 </p>
+
+<strong>Here are the topic that we're going to cover:</strong>  <br>
+<ol>
+  <li><a href="#-pre-requesite-steps-"> <em>Pre-requisite Steps</em></a></li>
+  <li><a href="#-configuring-a-dhcp-scope-"> <em>Configuring a DHCP Scope</em></a></li>
+  <li><a href="#-testing-our-dhcp-scope-"> <em>Testing our DHCP Scope</em></a></li>
+  <li><a href="#-configuring-a-failover-cluster-"> <em>Configuring a Failover Cluster</em></a></li>
+</ol>
 
 ___
 
