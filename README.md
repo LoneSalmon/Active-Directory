@@ -61,6 +61,13 @@
 Welcome to my Active Directory Project, culminating my studies in the Microsoft Server (MCSA) and Cybersecurity courses at See-Security College. This project showcases a meticulously designed network infrastructure, focusing on Microsoft's Active Directory technology. I've configured key components within this virtual environment, including Domain Controllers, DNS, Group Policies, user management, security protocols, organizational efficiency, remote access solutions, and comprehensive documentation. This project underscores my expertise in Microsoft technologies and network security principles, emphasizing the pivotal role of a well-structured directory service in modern network management.
 </p>
 
+<div align="center">
+  
+|[☝️ Back to top ☝️](#--introduction--)|[📑 Table of Contents 📑](#--table-of-contents-)|
+|---|---|
+
+</div>
+
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
 <h2 align="center"> 🧰 Requirements for the lab environment 🧰 </h2>
@@ -68,6 +75,13 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 1. [Vmware Workstation Pro](https://www.vmware.com/il/products/workstation-pro.html)
 2. [Windows Server 2019 VM's (3 Machines)](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019)
 3. [Windows 10/11 Pro VM's (2 Machines)](https://www.microsoft.com/en-us/software-download/windows10)
+
+<div align="center">
+  
+|[☝️ Back to top ☝️](#--requirements-for-the-lab-environment--)|[📑 Table of Contents 📑](#--table-of-contents-)|
+|---|---|
+
+</div>
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
