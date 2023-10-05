@@ -42,7 +42,7 @@
       <li><a href="#-configuring-a-failover-cluster-"> <em>Configuring a Failover Cluster</em></a></li>
     </ol>
   </details></li>
-  <li><a href="#-%EF%B8%8F-configuring-pat-on-srv1-%EF%B8%8F"> Configuring PAT on SRV1</a></li>
+  <li><a href="#-%EF%B8%8F-configuring-routing-and-pat-on-srv1-%EF%B8%8F"> Configuring PAT on SRV1</a></li>
   <li><details open="open">
     <summary><a href="#-%EF%B8%8F-active-directoy-users--computers-management-%EF%B8%8F-"> Active Directory Users & Computers Management</a></summary>
     <ol>
@@ -970,7 +970,7 @@ ___
 
 <div align="center">
   
-|[☝️ Back to top ☝️](#-%EF%B8%8F-configuring-pat-on-srv1-%EF%B8%8F)|[📑 Table of Contents 📑](#--table-of-contents-)|
+|[☝️ Back to top ☝️](#-%EF%B8%8F-configuring-routing-and-pat-on-srv1-%EF%B8%8F)|[📑 Table of Contents 📑](#--table-of-contents-)|
 |---|---|
 
 </div>
