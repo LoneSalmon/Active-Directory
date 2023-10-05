@@ -1196,7 +1196,7 @@ I will demonstrate elements crucial to creating an account, as there are many op
 
 <div align="center">
   
-|[☝️ Back to top ☝️](#-%EF%B8%8F-active-directoy-user--computers-management-%EF%B8%8F-)|[📑 Table of Contents 📑](#--table-of-contents-)|
+|[☝️ Back to top ☝️](#-%EF%B8%8F-active-directoy-users--computers-management-%EF%B8%8F-)|[📑 Table of Contents 📑](#--table-of-contents-)|
 |---|---|
 
 </div>
