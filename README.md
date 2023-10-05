@@ -8,7 +8,8 @@
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
-<h2 align="center"> 🗺️ Topology 🗺️ </h2>
+  <h2 align="center"> 🗺️ Topology 🗺️ </h2>
+
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/74f5fabb-cf76-47aa-9595-1892ea1d66bb" height="400px" width="auto"> 
 </p>
@@ -35,6 +36,9 @@
   <li><details>
     <summary><a href="#--dhcp-configuration--"> DHCP Configuration</a></summary>
     <ol>
+      <li><a href="#-pre-requesite-steps-"> Pre-requisite Steps</a></li>
+      <li><a href="#-configuring-a-dhcp-scope-"> Configuring a DHCP Scope</a></li>
+      <li><a href="#-testing-our-dhcp-scope-"> Testing our DHCP Scope</a></li>
       <li><a href="#-configuring-a-failover-cluster-"> Configuring a Failover Cluster</a></li>
     </ol>
   </details></li>
@@ -568,7 +572,9 @@ ___
 
 ___
 
-- Since we have already installed our DHCP service on DC1 in the <a href="#--creating-server-roles-">Server Roles chapter</a>. I will now jump directly into DHCP configuration.  <br>
+<h3>🚶 Pre-requesite Steps 🚶</h3>
+
+- Since we have already installed our DHCP service on DC1 in the <a href="#--creating-server-roles-">Server Roles chapter</a>. I will now jump directly into the DHCP configuration.  <br>
 - We will click on our "Tasks" tab and select "Complete DHCP configuration":  <br>
 
 <p align="center">
@@ -584,6 +590,8 @@ ___
 - This will finish the initial DHCP configuration and we can now begin our in-depth DHCP configuration.
 
 ___
+
+<h3>🔭 Configuring a DHCP Scope 🔭</h3>
 
 - Now we will create a new <strong><a href="https://learn.microsoft.com/en-us/windows-server/networking/technologies/dhcp/dhcp-scopes">DHCP Scope</a></strong> and customize its settings to match our domain needs.  <br>
 - The first step is to go to "Tools"> Select "DHCP" and a window for the DHCP service will pop-up:  <br>
@@ -637,8 +645,8 @@ ___
 
 ___
 
-- Now we're given the choice to define the DHCP options (which I'll explain in a bit) or opt out of it for now.  <br>
-- We will select the option to define these options from the get-go since I like living on the edge:  <br>
+- Now we're given the choice to define the DHCP options (which I'll explain shortly) or opt out of them for now.  <br>
+- We will define these options from the get-go since I like living on the edge:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/156c113a-a9ce-4691-8eda-48551cb6394d">  <br>
@@ -667,7 +675,9 @@ ___
 
 ___
 
-- It's time to test our DHCP configuration in action and see if it works properly.  <br>
+<h3>🧪 Testing our DHCP Scope 🧪</h3>
+
+- It's time to test our DHCP configuration and see if it works properly.  <br>
 - We will fire up a Windows 10 Pro image that we prepared during the <a href="#--requirements-for-the-lab-environment--">requirements for the lab environment</a>.  <br>
 - As soon as we log in to the OS, we are automatically Added to the domain using our Admin User (in my case SuperSalmon):  <br>
 
@@ -781,6 +791,45 @@ ___
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
 
 <h2 align="center"> ☎️ Configuring PAT on SRV1 ☎️</h2>
+
+<p align="center">
+  <strong>😨 "What is PAT?" 😨</strong>
+  <p align="justify">
+    <em>Port Address Translation is a network address translation (NAT) technique that enables multiple devices within a private network to share a single public IP address. It achieves this by mapping different private IP addresses and port numbers to a single public IP address and port number, facilitating efficient internet access for multiple devices while conserving public IP addresses. We're essentially, in simple terms, converting SRV1 into a router for our domain LAN.</em>
+  </p>
+</p>
+
+<p align="center">
+  <strong>😨 "What are the use cases? You already have Vmware NAT"</strong>
+  <p align="justify">
+    <em> Using a Windows Server as a PAT router is advantageous in scenarios where integration with the Windows environment, centralized management, limited budget or resources, testing, and development, or customization and scripting are priorities. It can simplify management within a Windows-centric ecosystem and be cost-effective in smaller environments. However, traditional routers and dedicated networking hardware typically outperform Windows Servers regarding performance and reliability. VMware NAT, on the other hand, is well-suited for virtualized environments but may lack the level of control and integration found in a Windows Server setup. In a dedicated PAT Windows Server, you can activate <a href="https://docs.netscaler.com/en-us/citrix-sd-wan/current-release/dhcp-server-and-dhcp-relay.html#:~:text=A%20DHCP%20relay%20agent%20is,and%20a%20remote%20DHCP%20Server.">DHCP Relay Agent</a>, Enable packet capture and analysis, and create firewall policies in the PAT Server. Capabilities which are not found in Vmware NAT.</em>
+  </p>
+</p>
+
+<p align="center">
+  <strong>👉 <a href="https://learn.microsoft.com/en-us/windows-server/remote/remote-access/remote-access">Here's more details on the subject</a> 👈</strong>
+</p>
+
+___
+
+- The first step to configure PAT on SRV1 is to make sure that your Server has two network cards installed.  <br>
+- Since we're using a virtual environment, we're going to simply add another virtual NIC to our SRV1 by going to its settings:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/d261bb3e-df35-45e9-87ef-108f450298b5">
+</p>  <br>
+
+- Then we will select and add a "Network Adapter":  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/4019c564-bafb-4328-bdad-39e5c7e56963">
+</p>  <br>
+
+- And make sure that this new adapter is configured to "Bridged" Since this NIC will be facing our internal network:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ccc310a4-f5b7-43fe-9fbb-940a8179b315">
+</p>
 
 <div align="center">
   
