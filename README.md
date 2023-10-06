@@ -186,6 +186,8 @@ ___
   <em>In this section of the project, we will be exploring the steps needed to create Two domain controllers properly (I will explain the rationale during setup) and talk briefly about the features and options that will come across during setup.</em>
 </p>  <br>
 
+___
+
 <strong>Here are the topic that we're going to cover:</strong>  <br>
 
 |[1. Creating Server Roles ▶️](#--creating-server-roles-)|
@@ -630,6 +632,8 @@ ___
     <em>The reason is that I will require DHCP services in the next chapter when testing our user creations on a Windows 10 Pro log in to our domain. I don't want to configure a Windows 10 pro, then configure a DHCP then reconfigure the Windows Client again.</em>
   </p>
 </p>
+
+___
 
 <strong>Here are the topic that we're going to cover:</strong>  <br>
 
