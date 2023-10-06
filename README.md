@@ -141,9 +141,10 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/73aa5a6f-aa5d-4c49-9685-023a2e3f1f50" height="auto" width="500px">
 </p>
 
-❗ *The reason that the "Host" portion of the IP address is "3" and not "1" or "2" for example is because these two "Host" addresses are reserved for Vmwares' NAT operation:* ❗  <br>
-- *"1" is for the NAT bridge installed on the host machine.*  <br>
-- *"2" is for the virtual switch (Default-Gateway).*  <br>
+> [!NOTE]  
+> *The reason that the "Host" portion of the IP address is "3" and not "1" or "2" for example is because these two "Host" addresses are reserved for Vmwares' NAT operation:*  
+> - *"1" is for the NAT bridge installed on the host machine.*  
+> - *"2" is for the virtual switch (Default-Gateway).*  
 
   <p align="center">
     <a href="https://docs.vmware.com/en/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-144D22BA-298E-4293-8137-B631AD7BF694.html">
