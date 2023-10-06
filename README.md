@@ -114,7 +114,7 @@ ___
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/2934cd0e-cfd6-4deb-9dba-d01bca4b51f7" height="500px" width="auto">
 </p>
-
+  
 > [!NOTE]  
 > <em>I have disabled Vmware DHCP services because I'm going to create my own DHCP service from the Active-Directory services.</em>
 
@@ -157,9 +157,11 @@ ___
 
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6de8c76d-f18b-4222-8664-2a300fd4eba2" height="auto" width="500px">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/15435f3c-c888-4883-83b4-79b0683bf5ea" height="auto" width="500px">  <br>
-  ❗ <em>Restart, repeat the same steps in DC2 and SRV1 with their corresponding names and use the IP addresses with "4" and "5" as the hosts.</em> ❗
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/15435f3c-c888-4883-83b4-79b0683bf5ea" height="auto" width="500px">
 </p>
+
+> [!NOTE]  
+> *Restart, repeat the same steps in DC2 and SRV1 with their corresponding names, and use the IP addresses with "4" and "5" as the hosts.*
 
 <div align="center">
   
@@ -223,9 +225,11 @@ ___
 - The next step is to select the server from the server pool. Here, I will choose my current server, "DC1-Mustafa".  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/8b8c7d4e-2b3b-4d4a-8d66-9e813319f485">  <br>
-  ❗ <em>We cannot see "DC2" and "SRV1" even though they're in the same subnet because we haven't created a domain yet</em> ❗
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/8b8c7d4e-2b3b-4d4a-8d66-9e813319f485">
 </p>
+
+> [!NOTE]  
+> *We cannot see "DC2" and "SRV1" even though they're in the same subnet because we haven't created a domain yet*
 
 ___
 
@@ -247,15 +251,16 @@ ___
 - Then we will reach the "Confirmation" page and hit "Install"  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/73f73bbb-db05-4d83-b3e5-d85466c0e539">  <br>
-  ❗ <em>We will not need to check the "Restart..." box since this is a local Server</em> ❗
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/73f73bbb-db05-4d83-b3e5-d85466c0e539">
 </p>
+
+> [!NOTE]  
+> *We will not need to check the "Restart..." box since this is a local Server.*
 
 - Once the wizard is done installing, you are given the option to "Promote this server to a domain controller":  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ed2c0dbd-7c23-4563-9934-a60dcbe99d67">  <br>
-  ❗ <em>This will lead us to the next section.</em> ❗
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ed2c0dbd-7c23-4563-9934-a60dcbe99d67">
 </p>
 
 ___
@@ -316,17 +321,21 @@ ___
 </p>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6f66ee18-14e3-4e66-bd69-b084bcecb25c">  <br>
-  ❗ <em>If you haven't yet configured a local Admin password when installing the VM, you will run into this error in the Prerequisites Check page</em> ❗
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6f66ee18-14e3-4e66-bd69-b084bcecb25c">
 </p>
+
+> [!NOTE]  
+> *If you haven't yet configured a local Admin password when installing the VM, you will run into this error in the Prerequisites Check page.*
 
 - The way to remedy this is to change (or create) a local admin password using <a href="https://www.top-password.com/knowledge/change-windows-10-password.html">any of these simple methods here</a>.
 - Once the password is updated, we hit the "Rerun prerequisites check" link and can see that there are no errors:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6c11826b-ceab-4efb-9a6b-7b305bca8799">  <br>
-  ❗ <em>Please make sure that the password you created is for the Administrator profile and not your current user profile</em> ❗
 </p>
+
+> [!NOTE]  
+> *Please ensure the password you created is for the Administrator profile and not your current user profile.*
 
 - If you're cleared to proceed, you can hit "Install". This will install AD-DS & DNS and restart the system to apply the changes.  <br>
 - Once restarted, you will be asked to enter the domain using your previously configured local admin password.
@@ -392,11 +401,10 @@ ___
   * If we break-down every section of the SID, we will find that it's similar across all accounts except the suffix:  <br>
   * **S-1-5**: SID version information (fixed on all users)  <br>
   * **21-1869958264-2762823925-4193717463**: Domain Identifier (Fixed for all users in the same domain)  <br>
-  * **500**: Relative ID (RID), which identifies the specific user; default users in the active directory always start at **500**
+  * **500**: Relative ID (RID), which identifies the specific user; default users in the active directory always start at **500**  <br>
 
-<p align="center">
-  <em>❗ Any other user created by our <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-adts/d142a27c-65fb-49c9-9e4b-6ede5f226c8a"> RID Master</a> will begin at 1000. ❗</em>
-</p>
+> [!NOTE]  
+> *Any other user created by our <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-adts/d142a27c-65fb-49c9-9e4b-6ede5f226c8a">RID Master</a> will begin at 1000.*
 
 ___
 
@@ -655,10 +663,11 @@ ___
 - I will configure the DHCP scope to lease 50 addresses in total for my domain:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/e25c60e9-e321-45ea-87e7-6a78faa2c0b0"><br>
-  <em>❗ Your Start/End addresses will be different according to the subnet you're in and your use case ❗</em>
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/e25c60e9-e321-45ea-87e7-6a78faa2c0b0">
 </p>
 
+> [!NOTE]  
+> *Your Start/End addresses will be different according to the subnet you're in and your use case*
 ___
 
 - I will be excluding the first 5 addresses from the scope. This will bring the total down to 45 addresses:  <br>
@@ -786,9 +795,11 @@ ___
 - On the next page, we're asked to specify the server we want to configure as a Failover DHCP. We will select "Add Server" and add DC2 as the Partner Server and click Next:
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/932ecaa3-f1ec-4a28-9ac6-f3352743b8b9"><br>
-  <em>❗ If you don't see DC2 in the "Authorized DHCP Servers", you should refresh the Server Manager UI ❗</em>
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/932ecaa3-f1ec-4a28-9ac6-f3352743b8b9">
 </p>  <br>
+
+> [!NOTE]  
+> *If you don't see DC2 in the "Authorized DHCP Servers", you should refresh the Server Manager UI.*
 
 - The next page is where we lay out the details of the Failover Relationship:
 
@@ -948,16 +959,20 @@ ___
 - So instead, we will close this window:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/55c45e47-a851-4fa1-a129-7ac5db93c5c7"><br>
-  ❗ <em>I will not be covering IIS/Web Server configuration and leave all to default</em> ❗
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/55c45e47-a851-4fa1-a129-7ac5db93c5c7">
 </p>  <br>
+
+> [!NOTE]  
+> *I will not be covering IIS/Web Server configuration and leave all to default.*
 
 - Instead, to configure routing, we will go to "Tools" in the Server Manager UI and select "Routing and Remote Access":  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/32a6d4ac-1622-4d76-93b1-400556d5df8e"><br>
-  ❗ <em>If you can't see the relevant tool, close the Server Manager UI and re-open it (as many times as needed) - Cheers Microsoft</em> ❗
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/32a6d4ac-1622-4d76-93b1-400556d5df8e">
 </p>  <br>
+
+> [!NOTE]  
+> *If you can't see the relevant tool, close the Server Manager UI and re-open it (as many times as needed) - Cheers Microsoft.*
 
 ___
 
@@ -1091,9 +1106,11 @@ ___
   4. **Account is disabled:** For templates, bulk account creation, Temporary/Seasonal users, testing, and Security review before deployment.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/c02e5247-7ccb-4b52-bd29-d8830aeb9843"><br>
-  <em>❗ There are many use cases out there, of course. These are just examples ❗</em>
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/c02e5247-7ccb-4b52-bd29-d8830aeb9843">
 </p>  <br>
+
+> [!NOTE]  
+> *There are many use cases out there, of course. These are just examples.*
 
 - Once you choose the desired settings, review them and "Finish". Congratulations, you have your first users!  <br>
 
@@ -1135,8 +1152,10 @@ ___
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/299eaee1-8d49-40da-91cc-3cd50bd5b15c"><br>
-  <em>❗ I selected "Global" and "Security" for my use case since I want to configure permissions and access policies for this group later on in the project ❗</em>
 </p>
+
+> [!NOTE]  
+> *I selected "Global" and "Security" for my use case since I want to configure permissions and access policies for this group later on in the project.*
 
 ___
 
