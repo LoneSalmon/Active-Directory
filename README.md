@@ -112,12 +112,11 @@ ___
 - It is essential to ensure that each virtual machine is configured to NAT and that you have NAT already configured in your Vmware Workstation Pro settings.  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/2934cd0e-cfd6-4deb-9dba-d01bca4b51f7" height="500px" width="auto">  <br> 
-  <em>❗ I have disabled Vmware DHCP services because I'm going to create my own DHCP service from the Active-Directory services ❗</em>
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/2934cd0e-cfd6-4deb-9dba-d01bca4b51f7" height="500px" width="auto">
 </p>
 
 > [!NOTE]  
-> Highlights information that users should take into account, even when skimming.
+> <em>I have disabled Vmware DHCP services because I'm going to create my own DHCP service from the Active-Directory services.</em>
 
 ___
 
