@@ -633,12 +633,17 @@ ___
 
 <strong>Here are the topic that we're going to cover:</strong>  <br>
 
-<ol>
-  <li><a href="#-pre-requesite-steps-"> <em>Pre-requisite Steps</em></a></li>
-  <li><a href="#-configuring-a-dhcp-scope-"> <em>Configuring a DHCP Scope</em></a></li>
-  <li><a href="#-testing-our-dhcp-scope-"> <em>Testing our DHCP Scope</em></a></li>
-  <li><a href="#-configuring-a-failover-cluster-"> <em>Configuring a Failover Cluster</em></a></li>
-</ol>
+|[1. Pre-requisite Steps ▶️](#-pre-requesite-steps-)|
+|---|
+
+|[2. Configuring a DHCP Scope ▶️](#-configuring-a-dhcp-scope-)|
+|---|
+
+|[3. Testing our DHCP Scope ▶️](#-testing-our-dhcp-scope-)|
+|---|
+
+|[4. Configuring a Failover Cluster ▶️](#-configuring-a-failover-cluster-)|
+|---|
 
 ___
 
