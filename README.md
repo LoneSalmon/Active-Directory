@@ -114,10 +114,10 @@ ___
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/2934cd0e-cfd6-4deb-9dba-d01bca4b51f7" height="500px" width="auto">
 </p>
-  
-|> [!NOTE]  
-> <em>I have disabled Vmware DHCP services because I'm going to create my own DHCP service from the Active-Directory services.</em>|
-|---|
+___
+
+> [!NOTE]  
+> <em>I have disabled Vmware DHCP services because I'm going to create my own DHCP service from the Active-Directory services.</em>
 
 ___
 
