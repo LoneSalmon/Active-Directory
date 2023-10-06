@@ -116,6 +116,9 @@ ___
   <em>❗ I have disabled Vmware DHCP services because I'm going to create my own DHCP service from the Active-Directory services ❗</em>
 </p>
 
+> [!NOTE]  
+> Highlights information that users should take into account, even when skimming.
+
 ___
 
 - Once that's done, begin installing the Operating System individually, and then we will do some basic setting up for both DCs and SRV-1 (basic networking settings).  <br>
@@ -175,13 +178,20 @@ ___
 
 <strong>Here are the topic that we're going to cover:</strong>  <br>
 
-<ol>
-  <li><a href="#--creating-server-roles-"> <em> Creating Server Roles</em></a></li>
-  <li><a href="#-%EF%B8%8F-configuring-our-1st-domain-controller-%EF%B8%8F-"> <em> Configuring our 1st Domain Controller</em></a></li>
-  <li><a href="#-initial-security-step-"> <em> Intial Security Step</em></a></li>
-  <li><a href="#-adding-a-secondary-domain-controller-dc2"> <em> Adding a Secondary Domain Controller (DC2)</em></a></li>
-  <li><a href="#-configure-dc2-as-the-rid-master-"> <em> Configure DC2 as the RID Master</em></a></li>
-</ol>
+|[1. Creating Server Roles ▶️](#--creating-server-roles-)|
+|---|
+
+|[2. Configuring our 1st Domain Controller ▶️](#-%EF%B8%8F-configuring-our-1st-domain-controller-%EF%B8%8F-)|
+|---|
+
+|[3. Intial Security Step ▶️](#-initial-security-step-)|
+|---|
+
+|[4. Adding a Secondary Domain Controller (DC2) ▶️](#-adding-a-secondary-domain-controller-dc2)|
+|---|
+
+|[5. Configure DC2 as the RID Master ▶️](#-configure-dc2-as-the-rid-master-)|
+|---|
 
 ___
 
@@ -972,6 +982,12 @@ ___
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/d316de2f-8b26-4655-8055-3e8a2478a9db">
+</p>  <br>
+
+- Once finished, Start the service when prompted, and you will see the updated window:
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/abc3ee79-d065-466d-b327-d4b13af18797">
 </p>  <br>
 
 <div align="center">
