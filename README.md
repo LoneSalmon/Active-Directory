@@ -150,8 +150,6 @@ ___
 > - *"1" is for the NAT bridge installed on the host machine.*  
 > - *"2" is for the virtual switch (Default-Gateway).*
 
-___
-
   <p align="center">
     <a href="https://docs.vmware.com/en/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-144D22BA-298E-4293-8137-B631AD7BF694.html">
       <em>👉 Here's more details on the subject 👈</em></a>
