@@ -726,7 +726,7 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/156c113a-a9ce-4691-8eda-48551cb6394d">  <br>
   <strong>😨 "So what are DHCP options?" 😨</strong>  <br>
   <p align="justify">
-    <em>They are additional parameters that a DHCP server can provide to client devices alongside the essential IP address and subnet mask. These options include settings such as the default gateway, DNS server addresses, domain names, time servers, and more.
+    <em>They are additional parameters that a DHCP server can provide to client devices alongside the essential IP address and subnet mask. These options include settings such as the default gateway, DNS server addresses, domain names, time servers, and more.</em>
   </p>
 </p>
 
