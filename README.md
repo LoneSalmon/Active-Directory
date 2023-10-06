@@ -1078,13 +1078,19 @@ ___
   <strong>In the ADUC <a href="https://www.google.com/search?q=gooey&sca_esv=569475139&tbm=isch&sxsrf=AM9HkKms9ViUWIuC98j0IEPXmCmSPQ1Ptg:1695999317076&source=lnms&sa=X&ved=2ahUKEwiFndXmidCBAxV5TKQEHVlHABYQ_AUoAXoECAEQAw&biw=1920&bih=931&dpr=2">GUI</a> we can see these primary components</strong>
 </p>
 
-- **Forest**: A collection of one or more domains that share a common schema, configuration, and global catalog. Forests are the highest level of organization in Active Directory.  <br>
-- **Domain**: A logical grouping of objects within Active Directory. Domains define administrative boundaries and security boundaries within a forest.  <br>
-- **FSMO Roles**: Specialized roles that manage specific operations within Active Directory.  <br>
-- **Containers**: A basic (Default) Organizational Unit for grouping objects within Active Directory.  <br>
-- **Organizational Unit**: A specialized container that allows for a more granular organization of objects.  <br>
-- **Objects**: a basic unit representing various resources like users, groups, computers, etc. Objects have unique properties and attributes organized within the directory structure.  <br>
+<div align="center">
+  
+  | **Component** | **Description** |
+  |---|---|
+  | **Forest 🎄:** | A collection of one or more domains that share a common schema, configuration, and global catalog. Forests are the highest level of organization in Active Directory. |
+  | **Domain 🚫:** | A logical grouping of objects within Active Directory. Domains define administrative boundaries and security boundaries within a forest. |
+  | **FSMO Roles 🧻:** | Specialized roles that manage specific operations within Active Directory. |
+  | **Containers 🏬:** | A basic (Default) Organizational Unit for grouping objects within Active Directory. |
+  | **Organizational Unit 🥡:** | A specialized container that allows for a more granular organization of objects.|
+  | **Objects 🧑‍💼:** | a basic unit representing various resources like users, groups, computers, etc. Objects have unique properties and attributes organized within the directory structure. |
 
+</div>
+  
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/377fe417-abb9-45a5-9c26-e609a8642aba">
 </p>
