@@ -352,15 +352,13 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6c11826b-ceab-4efb-9a6b-7b305bca8799">  <br>
 </p>
 
+- If you're cleared to proceed, you can hit "Install". This will install AD-DS & DNS and restart the system to apply the changes.  <br>
+- Once restarted, you will be asked to enter the domain using your previously configured local admin password.
+
 ___
 
 > [!NOTE]  
 > *Please ensure the password you created is for the Administrator profile and not your current user profile.*
-
-___
-
-- If you're cleared to proceed, you can hit "Install". This will install AD-DS & DNS and restart the system to apply the changes.  <br>
-- Once restarted, you will be asked to enter the domain using your previously configured local admin password.
 
 ___
 
