@@ -1043,11 +1043,49 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/d316de2f-8b26-4655-8055-3e8a2478a9db">
 </p>  <br>
 
-- Once finished, Start the service when prompted, and you will see the updated window:
+- Once finished, Start the service when prompted, and you will see the updated window:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/abc3ee79-d065-466d-b327-d4b13af18797">
+</p>
+
+___
+
+- We'll start off by configuring the NAT.  <br>
+- Right-Click "NAT" in the Routing and Remote Access window and select "New Interface...":  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/93e306df-c1da-4c3b-af1c-b775ff4c6b5d">
 </p>  <br>
+
+- A window that requires selecting which physical interface to work with will open. Select the "WAN" interface:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/7f98939d-202a-4411-bea3-380e43ac9897">
+</p>  <br>
+
+- In the next window, Configure this WAN interface as "Public" and enable "NAT":  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/b8f124fb-dea0-4a29-8bad-ccd0b270b982">
+</p>  <br>
+
+- Your domain should be able to access the internet from this interface now.
+
+___
+
+- The interface will be added to the "NAT" list. Now, let's test the connection and see if we can generate some packets:
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/04efff32-b4b5-48e9-a958-264d9e3b79de">
+</p>
+
+- First, let's configure both of our DCs default-gateway to point to this interface:
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/5f40b013-e4ef-4263-9592-bf9db3cefec9" hspace="5">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/3419483f-f724-4cbd-af50-d923e66d1370" hspace="5">
+</p>
 
 <div align="center">
   
