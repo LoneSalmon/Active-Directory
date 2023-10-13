@@ -968,6 +968,31 @@ ___
 
 ___
 
+- Once this initial configuration is complete, we will add our SRV1 to the domain.  <br>
+- Go to your WAN NIC and change the DNS to point to one of your DNS Servers:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/26b91440-34ce-4338-a87f-d1e16e07a4d0">
+</p>  <br>
+
+- Like we previously did with our DCs, we will select the "Computer Name" in the Server Manager UI:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/f6d13aef-9d89-4824-853f-3a0f9bf911e0">
+</p>  <br>
+
+- Select "Change..." > Domain > Add your domain name.  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ff7f63b1-8cbc-4c02-82f6-348b8d479f9e">
+</p>  <br>
+
+- Once you confirm your settings, a window will pop-up asking for Domain credentials.
+- The server will restart and enter the domain.
+
+
+___
+
 <h3>🛠️ Installing & Configuring Routing & Remote Access Services (RRAS) 🛠️</h3>
 
 - Now that we're done with the pre-requisites, let's dive into creating the actual RRAS Server on our Windows Server Machine.  <br>
@@ -1325,9 +1350,13 @@ ___
   <a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc753708(v=ws.11)">👉 Here's more info on DSADD 👈</a>
 </p>
 
+> [!NOTE]  
+> *I will demonstrate elements crucial to creating an account, as there are many options in the tool itself on how to customize the user or add more information about the account.*
+
 ___
 
-I will demonstrate elements crucial to creating an account, as there are many options in the tool itself on how to customize the user or add more information about the account.
+- We will start off by manually running DSADD commands so we could get familiar with them.
+- 
 
 <div align="center">
   
