@@ -1355,7 +1355,7 @@ ___
 
 ___
 
-- We will start off by manually running DSADD commands so we could get familiar with them.
+- We will start off by manually running DSADD commands so we can get familiar with them.
 - 
 
 <div align="center">
