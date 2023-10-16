@@ -658,44 +658,44 @@ ___
 - We will click on our "Tasks" tab and select "Complete DHCP configuration":  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/c52881cf-9da2-400e-a8e3-52119bb844d4">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/DHCP-pre-requisite-steps-1.png">
 </p>  <br>
 
 - This will take us to a window where we have to specify the user authorization - the same as previous steps:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/d764019e-e9cb-4d9c-896e-dea906a10259">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/DHCP-pre-requisite-steps-2.png">
 </p>  <br>
 
-- This will finish the initial DHCP configuration and we can now begin our in-depth DHCP configuration.
+- This will finish the initial DHCP configuration, and we can begin our in-depth DHCP configuration.
 
 ___
 
 <h3>🔭 Configuring a DHCP Scope 🔭</h3>
 
 - Now we will create a new <strong><a href="https://learn.microsoft.com/en-us/windows-server/networking/technologies/dhcp/dhcp-scopes">DHCP Scope</a></strong> and customize its settings to match our domain needs.  <br>
-- The first step is to go to "Tools"> Select "DHCP" and a window for the DHCP service will pop-up:  <br>
+- The first step is to go to "Tools"> Select "DHCP" and a window for the DHCP service will pop up:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/a187b6b1-4e10-47f9-aa83-5d64691bdd64">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-1.png">
 </p>  <br>
 
 - We will configure a new DHCP scope by right-clicking "IPv4"> select "New Scope...":  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/cbac15b7-3ecc-4191-8cea-2a2971a20c4d">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-2.png">
 </p>  <br>
 
 - This will open an installation wizard window, we will begin by specifying the scope name and description:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/d1cdec29-1ec3-44cc-a2c3-dc958ed72324">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-3.png">
 </p>  <br>
 
 - I will configure the DHCP scope to lease 50 addresses in total for my domain:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/e25c60e9-e321-45ea-87e7-6a78faa2c0b0">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-4.png">
 </p>
 
 ___
@@ -708,7 +708,7 @@ ___
 - I will be excluding the first 5 addresses from the scope. This will bring the total down to 45 addresses:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ff45ece3-9f91-43ad-adf1-8230a7c0626b"><br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-5.png"><br>
   <strong>😨 "What is the purpose of address exclusion?" 😨</strong>  <br>
   <p align="justify">
     <em>It ensures that these addresses are not automatically assigned to client devices. Exclusion is typically used for network devices with statically configured IP addresses, such as servers, routers, or printers, ensuring that the DHCP server does not allocate these reserved addresses to other devices. Address exclusion helps maintain network stability, preventing IP address conflicts and ensuring that critical network resources always have their designated addresses available for use.</em>
@@ -720,7 +720,7 @@ ___
 - Then we will define the Lease Duration, which will be 8 hours:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/e1bd59fc-3592-463c-9235-f8a78bbfb298"><br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-6.png"><br>
   <strong>😨 "What is the purpose of Lease Duration?" 😨</strong>  <br>
   <p align="justify">
     <em>The lease duration in DHCP specifies how long a client device can use an IP address and network configuration. Its purpose is to efficiently manage IP address allocation, adapt to changing network needs, facilitate IP address reclamation, support load balancing, and enhance network security. The choice of lease duration depends on network requirements, balancing address management efficiency, network stability, and security considerations. Shorter leases suit devices with frequent connections, while longer leases are suitable for stable connections and resource planning.</em>
@@ -733,7 +733,7 @@ ___
 - We will define these options from the get-go since I like living on the edge:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/156c113a-a9ce-4691-8eda-48551cb6394d">  <br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-7.png">  <br>
   <strong>😨 "So what are DHCP options?" 😨</strong>  <br>
   <p align="justify">
     <em>They are additional parameters that a DHCP server can provide to client devices alongside the essential IP address and subnet mask. These options include settings such as the default gateway, DNS server addresses, domain names, time servers, and more.</em>
@@ -745,13 +745,13 @@ ___
 - The first step is to define our Default-Gateway (Router) Address. Here, I will not specify the Vmware NAT, but Instead, I will add the address of our SRV1. If you look back at our <a href="#-%EF%B8%8F-topology-%EF%B8%8F-">Topology</a> You can see that we will be configuring our SRV1 as a routing server.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/1e2fa65d-3bb8-414e-97a2-0ec6a1557725">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-8.png">
 </p>  <br>
 
 - Next, we will Define our Parent domain and DNS servers, which we already configured in previous steps:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/fd6744e9-80af-4403-a837-8a1a0d7f871e">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-9.png">
 </p>  <br>
 
 - We will skip the "WINS" section since it's not necessary for this project, but here's more 👉 <a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/setting-wins-server-options">info</a> 👈 on the subject.  <br>
