@@ -817,20 +817,20 @@ ___
 - We will right-click "IPv4" again and select "Configure Failover..."  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/efea059c-6e6f-4442-b13c-914357147f03">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-1.png">
 </p>  <br>
 
 - An installation wizard will open up, asking us which scopes we would like to configure for the failover.  <br>
 - We will select the one we already created since we want our Secondary DHCP to take over the same functions:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6ab3aa66-3726-45d7-8fca-8bb23e7c586f">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-2.png">
 </p>  <br>
 
 - On the next page, we're asked to specify the server we want to configure as a Failover DHCP. We will select "Add Server" and add DC2 as the Partner Server and click Next:
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/932ecaa3-f1ec-4a28-9ac6-f3352743b8b9">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-3.png">
 </p>  <br>
 
 ___
@@ -843,7 +843,7 @@ ___
 - The next page is where we lay out the details of the Failover Relationship:
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/c0e02983-41d8-4c80-b3d8-6e859427a12e">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-4.png">
 </p>  <br>
 
 - Here's a detailed explanation of each Parameter and their use cases:  <br>
@@ -862,13 +862,13 @@ ___
 - Once you click "Finish" a log window will pop-up to show you the progress of installing the failover configuration:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/aa68dbf3-3713-4a84-9194-9050900bf871">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-5.png">
 </p>  <br>
 
 - We can confirm this by checking the description of the Scope we created at the beginning and see that the failover relationship was applied:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/be2f8db1-7db4-40f6-b969-b6e5afddb418">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-6.png">
 </p>
 
 <div align="center">
