@@ -590,8 +590,8 @@ ___
 - Once that's done, you'll get another window confirming the role transfer.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/bfc7ee72-7040-4806-81c4-444f45b5d329">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/083f161c-6789-4974-848f-627370591b88">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/rid-master-1.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/rid-master-2.png">
 </p>
 
 ___
@@ -606,7 +606,7 @@ ___
 3. And viola, we have ourselves a DC2 RID Master.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/c81c3973-148d-4427-a04c-658e27cacd17">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/rid-master-3.png">
 </p>
 
 <div align="center">
