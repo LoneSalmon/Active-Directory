@@ -212,7 +212,7 @@ ___
 - The first step to creating a domain is to create a Domain-Controller (DC for short). For that, we will go to the Server Manager Application > Click on Manage at the top right and then add Roles and Features  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/8e599590-dae1-4425-bf71-75ba35a959e2"> 
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-1.png"> 
 </p>
 
 ___
@@ -222,7 +222,7 @@ ___
 - To install a Domain-Controller, select "Role-based or feature-based installation."  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/695d96c2-1261-4f11-a66e-98f7e5ed5844">  <br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-2.png">  <br>
   <strong>😨 What is the difference? 😨</strong>
 </p>
 
@@ -235,7 +235,7 @@ ___
 - The next step is to select the server from the server pool. Here, I will choose my current server, "DC1-Mustafa".  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/8b8c7d4e-2b3b-4d4a-8d66-9e813319f485">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-3.png">
 </p>
 
 ___
@@ -252,7 +252,7 @@ ___
   * The already (partially) selected "File and Storage Services"  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/d72a0466-2816-4858-8ee4-6afdfaedf62c"> 
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-4.png"> 
 </p>
 
 - We will skip the "Features" page since we already selected all the features for the corresponding Server Roles we added.  <br>
@@ -263,7 +263,7 @@ ___
 - Then we will reach the "Confirmation" page and hit "Install"  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/73f73bbb-db05-4d83-b3e5-d85466c0e539">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-5.png">
 </p>
 
 ___
@@ -276,7 +276,7 @@ ___
 - Once the wizard is done installing, you are given the option to "Promote this server to a domain controller":  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ed2c0dbd-7c23-4563-9934-a60dcbe99d67">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-6.png">
 </p>
 
 ___
@@ -287,7 +287,7 @@ ___
   * You can click on the task to resume the configuration.  <br>
 
   <p align="center"> 
-    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/46b3a110-117e-4193-a738-9ead89e9ffb0">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-7.png">
 </p>
 
 ___
@@ -297,7 +297,7 @@ ___
 - Then specify the "Root Domain Name". In my case, it will be "mustafa.com".  <br>
 
   <p align="center"> 
-    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/55d86627-2b51-498a-82ca-e575b2f586b1">  <br>
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-1.png">  <br>
     <strong>😨 Why Did I select "Add a new forest"? 😨</strong>  <br>
     <p align="justify">
       <em> Selecting "Add a new forest" when deploying a domain controller for the first time is necessary when establishing a new Active Directory environment from scratch. It allows you to create the foundation for your directory structure, set forest-wide settings, and maintain administrative autonomy over your network.</em></p>
@@ -313,7 +313,7 @@ ___
   * We are required to enter a DSRM password for catastrophes. Check this <a href="https://en.wikipedia.org/wiki/Directory_Services_Restore_Mode">link</a> for more info.  <br>
 
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/49fd7589-2a98-41e3-9f96-f9900baf89fa">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-2.png">
   </p>
 
 ___
@@ -326,7 +326,7 @@ ___
   * SYSVOL: Responsible for storing and distributing Group Policy objects and other system-level settings (Scripts, for example) across all domain controllers.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/f0232555-f698-49c6-9caf-b36340d2ebbd">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-3.png">
 </p>
 
 ___
@@ -337,7 +337,7 @@ ___
 </p>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6f66ee18-14e3-4e66-bd69-b084bcecb25c">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-4.png">
 </p>
 
 ___
@@ -351,7 +351,7 @@ ___
 - Once the password is updated, we hit the "Rerun prerequisites check" link and can see that there are no errors:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6c11826b-ceab-4efb-9a6b-7b305bca8799">  <br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-5.png">  <br>
 </p>
 
 - If you're cleared to proceed, you can hit "Install". This will install AD-DS & DNS and restart the system to apply the changes.  <br>
