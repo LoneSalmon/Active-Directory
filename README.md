@@ -373,26 +373,26 @@ ___
   * Select "Active Directory Users and Computers".  <br>
 
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/a4808ad8-5c02-4c19-9456-a606e3bf5b87">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/initial-security-step-1.png">
   </p>
 
   * Go to the "Users" container, right-click the "Adminstrator" and copy that user.  <br>
 
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/318227b8-8c57-4e02-acb4-eaf722d48295">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/initial-security-step-2.png">
   </p>
 
   * We will give a name to the copied user (This will be the name of the "Super" Administrator) and give the user a password.  <br>
  
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/f8482310-7ee9-406a-bd46-3165ce52bf58">
-    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/a37175f9-8f0a-4be6-b85f-bfbc7f116db8">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/initial-security-step-3.png">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/initial-security-step-4.png">
   </p>  <br>
 
   * And then proceed with Disabling the user "Administrator":  <br>
   
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/903d1e07-afc1-4c12-b64d-9059469a2682">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/initial-security-step-5.png">
   </p>
 
 ___
@@ -411,13 +411,13 @@ ___
   
   <p align="center">
     ❗ <em>You will get this output (Note of the numbers for "Administrator")</em> ❗  <br>
-    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/228b09fd-4802-4f97-b1e3-0ef607a5ec62">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/initial-security-step-6.png">
   </p>
 
   * What is the issue here? Looking at other Windows OSs, you will find a similar pattern:  <br>
 
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/c4c95ef7-2821-404c-87d1-c28c2b3e1917">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/initial-security-step-7.png">
   </p> <br>
 
   * If we break-down every section of the SID, we will find that it's similar across all accounts except the suffix:  <br>
@@ -439,7 +439,7 @@ ___
   </p>
 </p>  <br>
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/7d413849-a79e-483e-a4e6-d4fe986ca120">  <br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/initial-security-step-8.png">  <br>
   <a href="https://www.sentinelone.com/blog/windows-sid-history-injection-exposure-blog/"><em>Check this technique for example</em></a>  <br>
   <a href="https://praveenhacks.blogspot.com/2009/08/hack-user-through-sid.html"><em>Or fancy this one, maybe?</em></a>  <br>
 </p>
