@@ -1366,4 +1366,4 @@ ___
 
 </div>
 
-![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
+![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Split-Bar.png)
