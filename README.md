@@ -6,7 +6,7 @@
 <h2 align="center"> ⚰️ Server Management in Active-Directory ⚰️ </h2>
 <h4 align="center"> Student Name: <a href="https://www.linkedin.com/in/mustafa-jaber-5a143b269/">Mustafa Jaber</a> | <a href="https://see-security.com/?lang=en">See-Security College, Ramat-Gan</a> | Class: CSPP83 | Lecturer: Binyamin Cohen | 10/10/2023 </h4>
 
-![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
+![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Split-Bar.png)
 
   <h2 align="center"> 🗺️ Topology 🗺️ </h2>
 
@@ -14,7 +14,7 @@
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/74f5fabb-cf76-47aa-9595-1892ea1d66bb" height="400px" width="auto"> 
 </p>
 
-![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
+![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Split-Bar.png)
 
 <h2 align="center"> 📑 Table of Contents 📑</h2>
 
@@ -59,7 +59,7 @@
   </details></li>
 </ol>
 
-![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
+![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Split-Bar.png)
 
 <h2 align="center"> 🚪 Introduction 🚪 </h2>
 
@@ -74,7 +74,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 
 </div>
 
-![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
+![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Split-Bar.png)
 
 <h2 align="center"> 🧰 Requirements for the lab environment 🧰 </h2>
 
@@ -89,7 +89,7 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 
 </div>
 
-![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
+![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Split-Bar.png)
 
 <h2 align="center"> 🏗️ Setting up the lab environment 🏗️ </h2>
 
@@ -178,7 +178,7 @@ ___
 
 </div>
   
-![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
+![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Split-Bar.png)
 
 <h2 align="center"> 🤔 Creating & Configuring a Domain Controller 🤔 </h2>
 
@@ -615,7 +615,7 @@ ___
 
 </div>
 
-![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
+![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Split-Bar.png)
 
 <h2 align="center"> 🛂 DHCP Configuration 🛂 </h2>
 
@@ -877,7 +877,7 @@ ___
 
 </div>
 
-![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
+![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Split-Bar.png)
 
 <h2 align="center"> ☎️ Configuring Routing & PAT on SRV1 ☎️</h2>
 
@@ -1119,7 +1119,7 @@ ___
 
 </div>
 
-![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/assets/132819728/4180ad20-43f5-4584-9132-a2bfd2ebfcbe)
+![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Split-Bar.png)
 
 <h2 align="center"> 🕴️ Active-Directoy Users & Computers Management 🕴️ </h2>
 
