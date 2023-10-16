@@ -1003,14 +1003,14 @@ ___
 - In the "Server Roles" Tab, we will scroll-down and select the "Remote Access" role:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/53867404-8fa1-488a-9160-e6d40941698b">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-1.png">
 </p>  <br>
 
 - We will not change anything with the feautres.  <br>
 - Once we get to the Role Services tab, we will need to select "Routing":  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/26094bf5-062f-4020-8f87-ab68cbfa5fd1"><br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-2.png"><br>
   <strong>😨 "Why did "DirectAccess and VPN (RAS)" get automatically selected?!" 😨</strong><br>
   <p align="justify">
     <em>The role is mandatory when selecting "Routing" because routing and VPN services are closely linked. Routing often involves secure data transfer between networks, where VPNs play a crucial role. This bundled setup simplifies configuration and caters to common scenarios where both routing and VPN services are needed, offering flexibility to enable or disable specific features based on your requirements during setup.</em>
@@ -1023,7 +1023,7 @@ ___
 - So instead, we will close this window:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/55c45e47-a851-4fa1-a129-7ac5db93c5c7">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-3.png">
 </p>  <br>
 
 ___
@@ -1036,7 +1036,7 @@ ___
 - Instead, to configure routing, we will go to "Tools" in the Server Manager UI and select "Routing and Remote Access":  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/32a6d4ac-1622-4d76-93b1-400556d5df8e">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-4.png">
 </p>  <br>
 
 ___
@@ -1050,14 +1050,14 @@ ___
 - Right-click SRV1 and select "Configure and enable routing and remote access".  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/e525af60-b927-4f64-8a8d-7e40ee36bf42">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-5.png">
 </p>  <br>
 
 - In this Wizard, we will reach the configuration page.  <br>
 - Here, we will select "Custom Configuration":  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/3090680a-3c6f-41c3-861f-c8d84e4e8ec8">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-6.png">
 </p>  <br>
 
 - On the next page. The Wizard is asking to select which features we'd like to configure.  <br>
@@ -1066,13 +1066,13 @@ ___
   * **LAN Routing:** Because we want to configure this service on our LAN NIC.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/d316de2f-8b26-4655-8055-3e8a2478a9db">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-7.png">
 </p>  <br>
 
 - Once finished, Start the service when prompted, and you will see the updated window:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/abc3ee79-d065-466d-b327-d4b13af18797">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-8.png">
 </p>
 
 ___
@@ -1081,19 +1081,19 @@ ___
 - Right-Click "NAT" in the Routing and Remote Access window and select "New Interface...":  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/93e306df-c1da-4c3b-af1c-b775ff4c6b5d">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-9.png">
 </p>  <br>
 
 - A window that requires selecting which physical interface to work with will open. Select the "WAN" interface:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/7f98939d-202a-4411-bea3-380e43ac9897">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-10.png">
 </p>  <br>
 
 - In the next window, Configure this WAN interface as "Public" and enable "NAT":  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/b8f124fb-dea0-4a29-8bad-ccd0b270b982">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-11.png">
 </p>  <br>
 
 - Your domain should be able to access the internet from this interface now.
@@ -1103,14 +1103,14 @@ ___
 - The interface will be added to the "NAT" list. Now, let's test the connection and see if we can generate some packets:
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/04efff32-b4b5-48e9-a958-264d9e3b79de">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-12.png">
 </p>
 
 - First, let's configure both of our DCs default-gateway to point to this interface:
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/5f40b013-e4ef-4263-9592-bf9db3cefec9" hspace="5">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/3419483f-f724-4cbd-af50-d923e66d1370" hspace="5">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-13.png" hspace="5">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-14.png" hspace="5">
 </p>
 
 <div align="center">
