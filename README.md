@@ -465,26 +465,26 @@ ___
   * Select "Domain" and add your previously created domain. In my case, it's "mustafa.com"  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/9c944574-1e44-4ef8-98f8-f2c848cf40a7">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-1.png">
 </p>  <br>
 
 - Notice that when clicking "Ok" we run into the following error:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/55d8fe52-5bca-4655-b4b2-8f664e99c8e8">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-2.png">
 </p>  <br>
 
 - The reason is because our DC1 DNS properties are pointing to Vmwares' Vmnet DNS Service:  <br>
 - We will need to configure our DC2 to point to DC1 DNS instead:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/a3977a55-c597-4e2b-8069-e4cfb512276d">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-3.png">
 </p>  <br>
 
 - Once we insert the DNS of our DC1 and try again, we will be prompted to enter a domain Admin User/pass, and DC2 will be migrated to our domain:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/1ea04923-6853-469d-a4e1-1e43a1db26ea">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-4.png">
 </p>
 
 ___
@@ -497,10 +497,11 @@ ___
   * Search the name of your DC2 and add it  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/0dd991d7-1b58-4f96-a484-0f6056583b25">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-5.png">
 </p>  <br>
 
-- Now you have the option to manage DC2 from DC1. This is especially helpful when you're using a Server-Core.
+> [!NOTE]  
+> *Now you have the option to manage DC2 from DC1. This is especially helpful when you're using a Server-Core.*
 
 ___
 
@@ -508,27 +509,27 @@ ___
   * For the "Server Roles", we will add AD-DS, a secondary DNS, and a File-Server role.  <br>
 
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/88b9335c-d2e7-41aa-b3fb-a45fba53b603">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-6.png">
   </p>  <br>
 
   * Once the Roles are installed. We will "Promote this server to a domain controller" much like before.  <br>
   * Take note, since this is important, We will need to add our DC2 to an existing domain (since we already have one) and specify it:  <br>
 
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/c5ef1dd4-5252-4a9c-a8cd-199a92b05408">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-7.png">
   </p>  <br>
 
   * For "DC options" we will maintain the default values and add the previously created DSRM password:  <br>
   
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/9c6c9ad4-6922-4204-8e4d-07760f04b7e5">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-8.png">
   </p>  <br>
 
   * Skip the DNS Options, same as before.  <br>
   * In the "Additional Options" page, we will specify the DC to replicate from any domain controller in the domain (In this case it's DC1)  <br>
   
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/a03b77a5-a4c4-41a5-a08a-96bb5388a63b">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-9.png">
   </p>  <br>
 
   * Paths will be maintained as default.  <br>
@@ -540,26 +541,26 @@ ___
 - Once the server is rebooted, we will notice that it's no longer in the Domain:  <br>
 
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/8a772cb3-f263-40b4-9864-e413883f986b">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-10.png">
   </p>  <br>
 
 - This is because 🥁<em>DRUM ROLL...</em>🥁 DNS!!  <br>
 - Same as we did earlier, we will need to reconfigure the DNS in the IP address information to point to DC1 instead of DC2 as the preferred and to DC2 as the alternative:  <br>
   
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/28fa1a2a-4481-4074-845b-878c113bbb4c">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-11.png">
   </p>  <br>
 
 - If that doesn't work for you, check the DNS server settings in both DCs to ensure they contain information (SOA/NameServer) on both.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/0ea60822-9097-44c1-ba73-dc7d5786f8dc">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-12.png">
 </p>  <br>
 
 - If you had to add them manually, confirm the settings and restart DC2, and you will see that it's back in the Domain again:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/0e50088f-4e03-4d97-82f2-5af737886ac4">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-13.png">
 </p>
 
 ___
