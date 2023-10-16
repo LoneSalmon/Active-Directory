@@ -908,25 +908,25 @@ ___
 - Since we're using a virtual environment, we're going to simply add another virtual NIC to our SRV1 by going to its settings:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/d261bb3e-df35-45e9-87ef-108f450298b5">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-1.png">
 </p>  <br>
 
 - Then we will select and add a "Network Adapter":  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/4019c564-bafb-4328-bdad-39e5c7e56963">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-2.png">
 </p>  <br>
 
 - And make sure that this new adapter is configured to "Bridged" Since this NIC will be facing our internal network:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ccc310a4-f5b7-43fe-9fbb-940a8179b315">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-3.png">
 </p>  <br>
 
 - Once that's done, we can see both NICs on the "Network Connections" page:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/185fc933-8ae2-4f03-8d0d-e1bbb188c056">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-4.png">
 </p>  <br>
 
 - But how can we identify which NIC is internal and which is external?  <br>
@@ -935,25 +935,25 @@ ___
 - If you check the Default Gateway, you'll find the ".2" suffix, the VMware NAT:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/12bae089-dbce-4986-a6f3-8abb7accf3b2">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-5.png">
 </p>  <br>
 
 - We will also change the IP address of this NIC, since we will be using the ".5" suffix for our SRV1 Router:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/701e7464-2175-4013-81b0-6f159555ecce">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-6.png">
 </p>  <br>
 
 - This is our External NIC. Let's call it "WAN" and the other NIC will be "LAN": <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/9087c571-5e88-4c01-9d6e-85bccf36337c">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-7.png">
 </p>  <br>
 
 - We will also change the IPv4 information of our LAN NIC:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/40f07de6-84ae-4206-8940-d34374b361d2"><br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-8.png"><br>
   <strong>😨 "You... missed the Default Gateway?" 😨</strong><br>
   <p align="justify">
     <em>I did not. I intentionally haven't configured it with a default gateway because a bridged network relies on the default gateway present in the network it's bridged with. In this case, it's bridged to our NAT, and the NAT, in turn, handles the actual routing for it. </em>
@@ -973,22 +973,22 @@ ___
 - Go to your WAN NIC and change the DNS to point to one of your DNS Servers:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/26b91440-34ce-4338-a87f-d1e16e07a4d0">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-9.png">
 </p>  <br>
 
 - Like we previously did with our DCs, we will select the "Computer Name" in the Server Manager UI:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/f6d13aef-9d89-4824-853f-3a0f9bf911e0">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-10.png">
 </p>  <br>
 
 - Select "Change..." > Domain > Add your domain name.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ff7f63b1-8cbc-4c02-82f6-348b8d479f9e">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-11.png">
 </p>  <br>
 
-- Once you confirm your settings, a window will pop-up asking for Domain credentials.
+- Once you confirm your settings, a window will pop up asking for Domain credentials.
 - The server will restart and enter the domain.
 
 
