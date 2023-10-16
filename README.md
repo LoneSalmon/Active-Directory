@@ -766,13 +766,13 @@ ___
 - As soon as we log in to the OS, we are automatically Added to the domain using our Admin User (in my case SuperSalmon):  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/21f578a1-e0a7-4c31-a10a-495906f1e7a7">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/testing-dhcp-scope-1.png">
 </p>  <br>
 
 - And if we check using <code><strong>ipconfig /all</strong></code>:
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/8845f140-04f7-4567-b24b-a12e95ff1ffa">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/testing-dhcp-scope-2.png">
 </p>  <br>
 
 - Here, we can see all the parameters we previously configured:  <br>
@@ -786,7 +786,7 @@ ___
 - We can also verify that windows 10 is connected to domain by pinging our DCs:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/44046531-d5b6-42f3-b081-07fc6abd304f">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/testing-dhcp-scope-3.png">
 </p>
 
 ___
