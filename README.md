@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/1d10a0e9-e2f0-46bf-b80a-f9f7beae8423">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/See-Security-logo.png">
 </p>
 
 <h1 align="center"> Microsoft Server Module (MCSA) </h1>
