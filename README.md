@@ -1144,7 +1144,7 @@ ___
 - We will start off by going to ADUC (Tools > ADUC).  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/86bcd6e6-2ebb-434d-9465-3999f5cf882b">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/ADUCGUI-1.png">
 </p>
 
 <p align="center">
@@ -1165,7 +1165,7 @@ ___
 </div>
   
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/377fe417-abb9-45a5-9c26-e609a8642aba">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/ADUCGUI-2.png">
 </p>
 
 ___
@@ -1177,14 +1177,14 @@ ___
   * Select New > Organizational Unit.
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/fd8be967-74b5-4e27-8f83-70028d8c6620">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-1.png">
 </p>  <br>
 
   * A window will pop up asking you to input the OU name.
   * You will also have the option to select "Protect container from accidental deletion" - Which I recommend keeping.
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/edf2cefa-d2f6-48ef-97ff-352576bc66bb"><br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-2.png"><br>
   <strong>"That Protect option sounds fancy. What does it do?"</strong><br>
   <em>When trying to delete the container, a window pops to ask, "Are you sure you'd like to get fired today?", you have the option to accept, but umm, well...</em><br>
   🦗 <a href="https://www.youtube.com/watch?v=CpGtBnVZLSk&ab_channel=GamingSoundFX"><strong>*Cricket Sounds*</strong></a> 🦗
@@ -1193,7 +1193,7 @@ ___
   * Click "OK" and you have yourself a brand-new OU. Well, I created two.
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ec25d914-bdae-4674-9f69-41efcab93866">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-3.png">
 </p>
 
 ___
@@ -1204,13 +1204,13 @@ ___
 - Select New > User  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/3086897b-622d-4a29-ab97-eb06a0fc1d11">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-4.png">
 </p>  <br>
 
 - A window pops up so you can fill out basic info about the new user:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/b3130dc2-51ca-49ad-a44e-4835de4b50c3">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-5.png">
 </p>  <br>
 
 - Next, we will need to specify a password and its settings. They're self-explanatory, but let me go over their use case:  <br>
@@ -1220,7 +1220,7 @@ ___
   4. **Account is disabled:** For templates, bulk account creation, Temporary/Seasonal users, testing, and Security review before deployment.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/c02e5247-7ccb-4b52-bd29-d8830aeb9843">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-6.png">
 </p>  <br>
 
 ___
@@ -1233,8 +1233,8 @@ ___
 - Once you choose the desired settings, review them and "Finish". Congratulations, you have your first users!  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/29a427ea-56c3-49b3-8dc6-27a018f88ec0">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/5342631d-2c2f-45c7-b50d-173493e47430">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-7.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-8.png">
 </p>
 
 ___
@@ -1251,7 +1251,7 @@ ___
 - Right-click the desired OU > New > Group.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/0383e3ac-3d02-4008-945e-f4c0e893d1e1">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-9.png">
 </p>  <br>
 
 - A window pops up asking you to input the group name and select the desired group settings:  <br>
@@ -1269,7 +1269,7 @@ ___
 <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/299eaee1-8d49-40da-91cc-3cd50bd5b15c"><br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-10.png"><br>
 </p>
 
 ___
@@ -1279,24 +1279,24 @@ ___
 
 ___
 
-- Now that we have our new group, let's add our Sales users to it:  <br>
+- Now that we have our new group let's add our Sales users to it:  <br>
   * Select all the desired users.  <br>
   * Right-click > select "Add to group..."  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/00d9c978-d0f5-4a0d-bc7b-fd4d97ef590f">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-11.png">
 </p>  <br>
 
   * A window pops-up asking you to search for the desired group:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/4a68aa36-e1bb-431d-98ee-0bcf1f217f36">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-12.png">
 </p>  <br>
 
   * We can confirm this by going to a user's properties and navigating to the "Member of" Tab:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/148fbe87-6534-4a33-b2cc-0d4df161636b">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-13.png">
 </p>
 
 ___
@@ -1304,16 +1304,16 @@ ___
 - Now, let's take the same steps on our SysAdmin OU.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/9d74f819-cf05-4518-9c15-8a987e25d6a1">  <br>
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/1ae1f15b-c0b2-462a-be5f-0d701e180448">  <br>
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/28f2469d-f7d4-4647-9703-ff36a3c055f2">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-14.png">  <br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-15.png">  <br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-16.png">
 </p>  <br>
 
 - It also makes perfect sense to add these users to the Domain Admins group (Since they're SysAdmin, right?):
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/04d24102-f20b-4b54-8b84-b0ab924c7829">  <br>
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/02f33598-eb05-4789-85c3-713be02ff636">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-17.png">  <br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-18.png">
 </p>
 
 ___
