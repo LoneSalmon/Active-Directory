@@ -1354,7 +1354,7 @@ ___
 </p>  <br>
 
 > [!NOTE]  
-> *I will demonstrate elements crucial to creating an account, as there are many options in the tool itself on how to customize the user or add more information about the account.*
+> *I will demonstrate elements crucial to creating an object, as the tool has many options to customize the object or add more information about the object.*
 
 ___
 
@@ -1389,25 +1389,16 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/5c1b3096-06ef-44a6-bfc6-b340090a922b">
 </p>  <br>
 
-- And lastly, we will create two new OUs using <strong><code>"DSADD OU"</code></strong>:  <br>
-
-<p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/b5994b86-9db1-4d80-9b3f-e34fda279897">
-</p>  <br>
-
-- And check that they were created in the GUI:  <br>
-
-<p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/97bc6e2d-41f2-4075-9788-7f4688fe5d70">
-</p>  <br>
+> [!NOTE]  
+> *If you can't see your new users/groups, refresh the UI.*
 
 > [!NOTE]  
-> *If you can't see your new users, refresh the UI.*
+> *When you want to create a user in a container, you use the syntax "cn" (Container Name), when you want to create the user in an Organizational Unit, you will use "ou".*
 
 ___
 
 <h4>💻 Modifying Objects 💻</h4>
-- Now that we know how to create users and groups successfully, we will want to add our users inside the Groups/OUs and the Groups to the OUs.
+- Now that we know how to create users and groups successfully, we will want to add our users inside the Groups.  <br>
 - To do this, we will use the <strong><code>"DSMOD"</code></strong> command.  <br>
 - Here's a table that describes what you can do with <strong><code>"DSMOD"</code></strong>:  <br>
 
@@ -1429,7 +1420,7 @@ ___
 </p>  <br>
 
 > [!NOTE]  
-> *I will demonstrate elements crucial to modifying an account, as there are many options in the tool itself on how to customize the user or add more information about the account.*
+> *I will demonstrate elements crucial to modifying an object, as there are many options in the tool itself on how to customize the object or add more information about the object.*
 
 ___
 
@@ -1439,11 +1430,107 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/9b001dbb-4891-4abe-b4ae-a01dbee23b4b">
 </p>  <br>
 
-- And confirm that both users are members of "Development" & "Operations" in the GUI:
+- And confirm that both users are members of "Development" & "Operations" in the GUI:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/65bf8647-4f01-4c97-b341-04ff9d855f1d">
+</p>
+
+___
+
+<h3>🤖 Bulk Object Creation Using a Batch Script 🤖</h3>
+
+<p align="center">
+  <p align="justify">
+    <em>In Active Directory management, manually adding users can be time-consuming. To efficiently create multiple users, you can use Excel in conjunction with scripting to generate a batch script for dsadd user.</em>
+  </p>
+</p>
+
+<p align="center">
+  <strong>😆 "You're referring to Microsoft Excel?? 😆</strong>
+  <p align="justify">
+    <em>Yes! This allows you to import user data from an Excel spreadsheet and simultaneously create multiple users in Active Directory. The process involves preparing an Excel sheet, entering user data, auto-filling the rest of the users, concatenating each column into a single cell, then copying the rows into Notepad and changing its format to a Batch script. This approach streamlines the user creation process, reduces manual data entry errors, and is particularly useful for administrators dealing with numerous user accounts.</em>
+  </p>
+</p>
+
+<p align="center">
+  <a href="https://www.learnesl.net/perform-bulk-active-directory-operations-using-dsadd/">👉 Here's an excellent guide for this 👈</a>
+</p>
+
+___
+
+- In this demo, we will bulk-create ten new users using DSADD.  <br>
+- We start by opening an Excel sheet and adding the elements I used earlier to create one user:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6a32ef37-19d4-499e-8d20-5e5a4a8e1310">
 </p>  <br>
+
+- Then, we will use <strong>"=CONCATENATE"</strong> function on the <strong><code>DSADD</code></strong> statement:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/7a725c44-c56e-4c6d-ab45-8205d09e7175">
+</p>
+
+___
+
+<p align="center">
+  <strong>😨 What is the "Concatenate" Function? 😨</strong>
+  <p align="justify">
+    <em>The function  combines multiple text strings or cell values into a single string. It simplifies the process of joining text to create formatted or structured data, such as creating commands for scripts, as it can merge various elements into a unified string without the need for complex formulas or manual entry. As you can see in the screenshot above, I combined the first column (the username) into the "Common Name" or "CN".</em>
+  </p>
+</p>
+
+<p align="center">
+  <a href="https://support.microsoft.com/en-gb/office/combine-text-from-two-or-more-cells-into-one-cell-81ba0946-ce78-42ed-b3c3-21340eb164a6">👉 Here's more info on CONCAT 👈</a><br>
+  <a href="https://support.microsoft.com/en-us/office/excel-functions-alphabetical-b3944572-255d-4efb-bb96-c6d90033e188">👉 And other functions 👈</a><br>
+</p>
+
+___
+
+- We will use the same function for the "UPN" (User Principal Name) and "Display":  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/bd07df11-3d3c-4f4c-948a-6f1b10accc47"><br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/c6d33b6c-6fbd-4026-b7dd-00056a5267b7">
+</p>  <br>
+
+- We will also use the same function for "Password", but only so it doesn't auto-fill other values, not to Concatenate it with other cells.  <br>
+- And we will keep the "Must change password" static.  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/5dc63bc6-216e-43d3-aa1e-4f9599909dda">
+</p>  <br>
+
+- Once you're done filling out all the details, you will need to select all the cells:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/95a7796f-6592-4b1c-bb65-432963ca0fc7">
+</p>  <br>
+
+- And drag them to auto-fill the remaining nine cells:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/8f4c8428-775f-4179-8e38-bce80d956ae0">
+</p>  <br>
+
+- Now, to Concatenate all the cells into one, select a different cell and add the function with the number of the first cells (Excluding A2), and then drag the cell to auto-fill:
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/a89189c1-7c2c-49da-944a-0f960730bbba">
+</p>  <br>
+
+> [!NOTE]  
+> *Mind the space between each command in the spreadsheet and make sure the function syntax is written correctly.*
+
+___
+
+- Select all the single cells that contain the commands, copy and paste them into Notepad in DC1:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6666ed36-3fc8-4bf0-8c50-2db3823d86d2">
+</p>  <br>
+
 
 <div align="center">
 
