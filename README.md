@@ -1333,6 +1333,8 @@ ___
 
 ___
 
+<h4>💻 Creating Objects 💻</h4>
+
 - We will first demo creating two users with the following command-line tool: <code><strong>"DSADD"</strong></code>  <br>
 - Here's a table that describes what each of the DSADD tools can do:  <br>
 
@@ -1345,11 +1347,11 @@ ___
 | <strong><code>DSADD user</code></strong> | Adds a single user to the directory.|
 | <strong><code>DSADD quota</code></strong> | Adds a quota specification to a directory partition.|
 
-- You can use <code><strong>"DSADD /?"</strong></code> or <code><strong>"DSADD user /?"</strong></code> to check what syntax follows each tool.
+- You can use <code><strong>"DSADD /?"</strong></code> or <code><strong>"DSADD user /?"</strong></code> to check what syntax follows each tool.  <br>
 
 <p align="center">
   <a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc753708(v=ws.11)">👉 Here's more info on DSADD 👈</a>
-</p>
+</p>  <br>
 
 > [!NOTE]  
 > *I will demonstrate elements crucial to creating an account, as there are many options in the tool itself on how to customize the user or add more information about the account.*
@@ -1404,8 +1406,9 @@ ___
 
 ___
 
+<h4>💻 Modifying Objects 💻</h4>
 - Now that we know how to create users and groups successfully, we will want to add our users inside the Groups/OUs and the Groups to the OUs.
-- To add our users to the group, we will use the <strong><code>"DSMOD"</code></strong> command to achieve this.  <br>
+- To do this, we will use the <strong><code>"DSMOD"</code></strong> command.  <br>
 - Here's a table that describes what you can do with <strong><code>"DSMOD"</code></strong>:  <br>
 
 | Command | Description |
@@ -1419,6 +1422,28 @@ ___
 | <strong><code>DSMOD server</code></strong> | Modifies properties of a domain controller.|
 | <strong><code>DSMOD partition</code></strong> | Modifies attributes of one or more existing partitions in the directory.|
 
+- You can use <code><strong>"DSMOD /?"</strong></code> or <code><strong>"DSMOD user /?"</strong></code> to check what syntax follows each tool.  <br>
+
+<p align="center">
+  <a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc732406(v=ws.11)">👉 Here's more info on DSMOD 👈</a>
+</p>  <br>
+
+> [!NOTE]  
+> *I will demonstrate elements crucial to modifying an account, as there are many options in the tool itself on how to customize the user or add more information about the account.*
+
+___
+
+- To add our users to the group, we will use the following example:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/9b001dbb-4891-4abe-b4ae-a01dbee23b4b">
+</p>  <br>
+
+- And confirm that both users are members of "Development" & "Operations" in the GUI:
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/65bf8647-4f01-4c97-b341-04ff9d855f1d">
+</p>  <br>
 
 <div align="center">
 
