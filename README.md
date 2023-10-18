@@ -1531,6 +1531,37 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6666ed36-3fc8-4bf0-8c50-2db3823d86d2">
 </p>  <br>
 
+- Save the notepad file and change its extension from .txt to .bat:  <br>
+
+ <p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/386254b4-20b4-4297-9507-bd2c5a14862e">
+</p>  <br>
+
+<p align="center">
+  <strong>😨 "Why did you add (pause) at the end?" 😨</strong>
+  <p align="justify">
+    <em>When running a batch script, it runs all the commands in order and then exits when done. I use the pause command to prevent that so I could check what were the responses to the commands, troubleshoot if necessary, and actually manage to get a screenshot for you ;)</em>
+  </p>
+</p>
+
+___
+
+- Run the batch script with Administrator Privileges and watch the magic happen:  <br>
+
+ <p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6e6bbd2e-39af-4671-959e-52028b71ff46">
+</p>  <br>
+
+- Confirm that the users were created in Active-Directory Users & Computers:
+
+ <p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/afd1b917-54cb-423c-8ca0-2865b5eedefd">
+</p>  <br>
+
+___
+
+<h3>🏭 Creating OUs, Users & Groups Using PowerShell 🏭 </h3>
+
 
 <div align="center">
 
