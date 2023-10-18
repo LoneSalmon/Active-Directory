@@ -1333,19 +1333,19 @@ ___
 
 ___
 
-- We will first demo creating two users with the following command-line tool: <code><strong>DSADD</strong></code>  <br>
+- We will first demo creating two users with the following command-line tool: <code><strong>"DSADD"</strong></code>  <br>
 - Here's a table that describes what each of the DSADD tools can do:  <br>
 
 | Command | Description |
 | ------- | ----------- |
-| DSADD computer | Adds a single computer to the directory.|
-| DSADD contact | Adds a single contact to the directory.|
-| DSADD group | Adds a single group to the directory.|
-| DSADD OU | Adds a single organizational unit to the directory.|
-| DSADD user | Adds a single user to the directory.|
-| DSADD quota | Adds a quota specification to a directory partition.|
+| <strong><code>DSADD computer</code></strong> | Adds a single computer to the directory.|
+| <strong><code>DSADD contact</code></strong> | Adds a single contact to the directory.|
+| <strong><code>DSADD group</code></strong> | Adds a single group to the directory.|
+| <strong><code>DSADD OU</code></strong> | Adds a single organizational unit to the directory.|
+| <strong><code>DSADD user</code></strong> | Adds a single user to the directory.|
+| <strong><code>DSADD quota</code></strong> | Adds a quota specification to a directory partition.|
 
-- You can use <code><strong>DSADD /?</strong></code> or <code><strong> DSADD user /?</strong></code> to check what syntax follows each tool.
+- You can use <code><strong>"DSADD /?"</strong></code> or <code><strong>"DSADD user /?"</strong></code> to check what syntax follows each tool.
 
 <p align="center">
   <a href="https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc753708(v=ws.11)">👉 Here's more info on DSADD 👈</a>
@@ -1356,11 +1356,72 @@ ___
 
 ___
 
-- We will start off by manually running DSADD commands so we can get familiar with them.
-- 
+- We will start by manually running <strong><code>"DSADD"</code></strong> commands to familiarize ourselves.  <br>
+- We will run CMD as admin:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/a0484e8d-0dbf-4713-9311-d989ea5ee462">
+</p>  <br>
+
+- And input the <strong><code>"DSADD USER"</code></strong> along with it's syntax to add two new users:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/939ac8f3-8a4b-4c9f-a7d2-19046fcbfc48">
+</p>  <br>
+
+- Now, if we check in the Active Directory UI, we can see that two new users were created in the "Users" Container:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/0dcaa9a9-0fab-4baf-9474-6b64aff973ed">
+</p>  <br>
+
+- Now we will demo creating two new groups using the same command but with the "group" syntax;<strong><code>"DSADD GROUP"</code></strong>:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/b4c1f9e5-efc7-4c85-89b2-caa8405f57db">
+</p>  <br>
+
+- And confirm that they're created in the AD GUI:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/5c1b3096-06ef-44a6-bfc6-b340090a922b">
+</p>  <br>
+
+- And lastly, we will create two new OUs using <strong><code>"DSADD OU"</code></strong>:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/b5994b86-9db1-4d80-9b3f-e34fda279897">
+</p>  <br>
+
+- And check that they were created in the GUI:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/97bc6e2d-41f2-4075-9788-7f4688fe5d70">
+</p>  <br>
+
+> [!NOTE]  
+> *If you can't see your new users, refresh the UI.*
+
+___
+
+- Now that we know how to create users and groups successfully, we will want to add our users inside the Groups/OUs and the Groups to the OUs.
+- To add our users to the group, we will use the <strong><code>"DSMOD"</code></strong> command to achieve this.  <br>
+- Here's a table that describes what you can do with <strong><code>"DSMOD"</code></strong>:  <br>
+
+| Command | Description |
+| ------- | ----------- |
+| <strong><code>DSMOD computer</code></strong> | Modifies attributes of one or more existing computers in the directory.|
+| <strong><code>DSMOD contact</code></strong> | Modifies attributes of one or more existing contacts in the directory.|
+| <strong><code>DSMOD group</code></strong> | Modifies attributes of one or more existing groups in the directory.|
+| <strong><code>DSMOD OU</code></strong> | Modifies attributes of one or more existing organizational units (OUs) in the directory.|
+| <strong><code>DSMOD user</code></strong> | Modifies attributes of one or more existing users in the directory.|
+| <strong><code>DSMOD quota</code></strong> | Modifies attributes of one or more existing quota specifications in the directory.|
+| <strong><code>DSMOD server</code></strong> | Modifies properties of a domain controller.|
+| <strong><code>DSMOD partition</code></strong> | Modifies attributes of one or more existing partitions in the directory.|
+
 
 <div align="center">
-  
+
 |[☝️ Back to top ☝️](#-%EF%B8%8F-active-directoy-users--computers-management-%EF%B8%8F-)|[📑 Table of Contents 📑](#--table-of-contents-)|
 |---|---|
 
