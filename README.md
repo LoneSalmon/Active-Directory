@@ -1566,15 +1566,44 @@ ___
   <p align="justify">
     <em>PowerShell is a powerful tool for efficiently managing Active Directory Users and Computers. This scripting and automation platform enables administrators to streamline user account management, group operations, and other directory-related tasks with precision and scalability. Leveraging PowerShell, administrators can perform bulk operations, automate routine tasks, and gain granular control over user attributes, all while simplifying the management of Active Directory objects.</em>
   </p>
-</p>
+</p>  <br>
 
 <p align="center">
   <strong>😨 "But we already have CMD!" 😨</strong>
   <p align="justify">
     <em>The primary difference between PowerShell and CMD for AD management lies in their capabilities. While CMD provides basic command-line functionality, PowerShell offers a more versatile environment for managing AD. PowerShell is specifically designed to work with AD and provides a rich set of commandlets tailored for tasks such as user and group management, enabling automation, scripting, and fine-grained control over directory objects. This makes it the preferred choice for administrators seeking to streamline and enhance AD management tasks.</em>
+  </p>
+</p>  <br>
+
+<p align="center">
+  <a href="https://learn.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2">👉 Here's more info on PowerShell 👈</a>
+</p>
+
+___
+
+- We will begin by creating a new Organizational Unit using the <a href="https://learn.microsoft.com/en-us/powershell/module/activedirectory/new-adorganizationalunit?view=windowsserver2022-ps"><strong><code>"New-ADOrganizationalUnit"</code></strong></a> Cmdlet.  <br>
+- The first thing we must do is run PS as an administrator.  <br>
+- Then, we will need to import the Active-Directory Module using the <a href="https://learn.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps"><strong><code>"Import-Module ActiveDirectory"</code></strong></a> Cmdlet and a brief loading screen will pop-up:  <br>
+
+ <p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/bd7d10ca-9e5b-4497-9c21-148469de2ab0">
+</p>  <br>
+
+<p align="center">
+  <strong>😨 "Why did you do that?" 😨</strong>
+  <p align="justify">
+    <em>It is essential for accessing a set of specialized cmdlets designed for streamlined, granular, and automated AD management tasks, ensuring efficiency and accuracy. However, you can still use standard command-line tools for basic AD tasks without importing the AD module in PowerShell. These commands include utilities like <code>dsquery</code>, <code>dsadd</code>, <code>dsmod</code>, and <code>dsrm</code>.</em>
+  </p>
+</p>
+
+- New that we've imported the module, we can use the <strong><code>"New-ADOrgnaizationalUnit"</code></strong> as follows:
+
+ <p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/2482b2b2-b4e3-42c7-bf64-059681c1c48f">
+</p>  <br>
 
 
-    
+
 <div align="center">
 
 |[☝️ Back to top ☝️](#-%EF%B8%8F-active-directoy-users--computers-management-%EF%B8%8F-)|[📑 Table of Contents 📑](#--table-of-contents-)|
