@@ -763,7 +763,7 @@ ___
 
 - It's time to test our DHCP configuration and see if it works properly.  <br>
 - We will fire up a Windows 10 Pro image that we prepared during the <a href="#--requirements-for-the-lab-environment--">requirements for the lab environment</a>.  <br>
-- As soon as we log in to the OS, we are automatically Added to the domain using our Admin User (in my case SuperSalmon):  <br>
+- As soon as we log into the OS, we are automatically assigned our IP information from the DHCP:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/testing-dhcp-scope-1.png">
@@ -776,14 +776,40 @@ ___
 </p>  <br>
 
 - Here, we can see all the parameters we previously configured:  <br>
-  * The domain ✔️  <br>
   * IP address which took the suffix "26", which means our exclusion rule worked ✔️  <br>
   * The lease that expires in 8 hours ✔️  <br>
   * The default-Gateway which is SRV1 ✔️  <br>
   * The DHCP Server, which is DC1 ✔️  <br>
   * The DNS servers, which is both DC1 and DC2 ✔️  <br>
 
-- We can also verify that windows 10 is connected to domain by pinging our DCs:  <br>
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/testing-dhcp-scope-2.png">
+</p>  <br>
+
+___
+
+- Now we will this PC to our domain (Manually for now).  <br>
+- Go to "Settings" > "System" > "About" and select "Advanced System Settings":  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/9c47c0b2-3bce-4572-bf69-a3990bbfc9fe">
+</p>  <br>
+
+- Then Switch to the "Computer Name" tab and select "Change...":  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/93a72d84-eee7-4820-884f-dceb50b656a0">
+</p>  <br>
+
+- Add the domain name and select "Ok":  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/8c064c8c-43ed-4dff-a6ca-a66cb0c4272c">
+</p>  <br>
+
+- You will need to input a domain admin's credentials to proceed and then restart the computer.  <br>
+- Once the computer restarts, you can use domain user credentials to log in.  <br>
+- We can verify that Windows 10 is connected to the domain by pinging our DCs:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/testing-dhcp-scope-3.png">
@@ -1533,7 +1559,7 @@ ___
 
 - Save the notepad file and change its extension from .txt to .bat:  <br>
 
- <p align="center">
+<p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/386254b4-20b4-4297-9507-bd2c5a14862e">
 </p>  <br>
 
@@ -1548,13 +1574,13 @@ ___
 
 - Run the batch script with Administrator Privileges and watch the magic happen:  <br>
 
- <p align="center">
+<p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6e6bbd2e-39af-4671-959e-52028b71ff46">
 </p>  <br>
 
 - Confirm that the users were created in Active-Directory Users & Computers:
 
- <p align="center">
+<p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/afd1b917-54cb-423c-8ca0-2865b5eedefd">
 </p>  <br>
 
@@ -1585,7 +1611,7 @@ ___
 - The first thing we must do is run PS as an administrator.  <br>
 - Then, we will need to import the Active-Directory Module using the <a href="https://learn.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2022-ps"><strong><code>"Import-Module ActiveDirectory"</code></strong></a> Cmdlet and a brief loading screen will pop-up:  <br>
 
- <p align="center">
+<p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/bd7d10ca-9e5b-4497-9c21-148469de2ab0">
 </p>  <br>
 
@@ -1594,15 +1620,149 @@ ___
   <p align="justify">
     <em>It is essential for accessing a set of specialized cmdlets designed for streamlined, granular, and automated AD management tasks, ensuring efficiency and accuracy. However, you can still use standard command-line tools for basic AD tasks without importing the AD module in PowerShell. These commands include utilities like <code>dsquery</code>, <code>dsadd</code>, <code>dsmod</code>, and <code>dsrm</code>.</em>
   </p>
-</p>
+</p>  <br>
 
-- New that we've imported the module, we can use the <strong><code>"New-ADOrgnaizationalUnit"</code></strong> as follows:
+- New that we've imported the module, we can use the <strong><code>"New-ADOrgnaizationalUnit"</code></strong> as follows:  <br>
 
- <p align="center">
+<p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/2482b2b2-b4e3-42c7-bf64-059681c1c48f">
 </p>  <br>
 
+- And if we check on our AD GUI, we can see that the OU has appeared there already:  <br>
 
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/48e28d8c-7c9a-495c-a8ba-e168e1564246">
+</p>  <br>
+
+> [!NOTE]  
+> *You don't need to remember each cmdlet to the letter. Partially writing the cmdlet and then clicking the "TAB" button will auto-fill it.*
+___
+
+- Now let's create a new group using the <a href="https://learn.microsoft.com/en-us/powershell/module/activedirectory/new-adgroup?view=windowsserver2022-ps"><strong><code>"New-ADGroup"</code></strong></a> cmdlet and point that group to the OU we just created:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/8eca303a-a8d3-41d0-b8ed-435dfa858b2d">
+</p>  <br>
+
+- Check the GUI, and you'll find your new group in the OU you created:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/f65788bc-63fc-46aa-a0dd-39e5a378603f">
+</p>  <br>
+
+___
+
+- For the last demo, we're going to create a new user using the <a href="https://learn.microsoft.com/en-us/powershell/module/activedirectory/new-aduser?view=windowsserver2022-ps"><strong><code>"New-ADUser"</code></strong></a> cmdlet and point it to our new OU:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/19b72ad7-905c-47af-b777-e2712d3cc51c">
+</p>  <br>
+
+- Look at all the info we can conjure up for a single user. Now let's check the user in the GUI:
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6a1ad8ab-f18a-4dbf-aae7-aee6235c47d2">
+</p>  <br>
+
+___
+
+<h3>🤖 Bulk Object Creation Using a PowerShell Script 🤖</h3>
+
+<p align="center">
+  <p align="justify">
+    <em>Just like in CMD, we will also be using a .CSV file (Excel Spreadsheets) to create our script, only this time, most of the work will be done on PowerShell. I will give you a hypothetical scenario where you just received an Excel table for 10 new recruits to be added to your Development Organizational Unit and an easy way to import all that data into a PowerShell script and then run such scripts with a click of a button.</em>
+  </p>
+</p>
+
+___
+
+<p align="justify">
+  Early work-day morning, you're having your last sip of coffee and then <strong><em>"DING!"</em></strong> an email with an Excel sheet of ten new Developers you need to add to your Active-Directory OU. Your stomach twists! Horrified, you think about how you will waste your entire workday creating fresh new users manually instead of slacking off somewhere. Luckily, you find this guide while frantically searching the Internet, restoring your inner peace.
+</p>  <br>
+
+- This is the Excel Spreadsheet you received: (I already Concatenated all the data for simplicity)  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/45f3fd71-4666-4212-aff9-2420ffc81c80">
+</p>  <br>
+
+- We will begin building our PowerShell Script Using PowerShell ISE.  <br>
+
+<p align="center">
+  <strong>😨 "What is PowerShell ISE?" 😨</strong>
+  <p align="justify">
+    <em>PowerShell Integrated Scripting Environment (ISE) is a graphical user interface (GUI) application that serves as a development environment for PowerShell scripting. It provides an interface for creating, editing, testing and running PowerShell scripts and commands. PowerShell ISE offers code highlighting, tab completion, script execution, and debugging tools. It's much more user-friendly than a simple Notepad.</em>
+  </p>
+</p>  <br>
+
+- Here's the relevant script I wrote to bulk-create the users found in the Excel Spreadsheet:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/8cde9e21-6244-45aa-9a85-c4541cd4eb33">
+</p>  <br>
+
+- Let's break it down to each component to understand the concepts:
+
+| Component | Description |
+| ------- | ----------- |
+| <strong><code>Import-Module ActiveDirectory</code></strong> | Imports Active Directory module for user management tasks.|
+| <strong><code>$users = Import-Csv -LiteralPath "C:\XXX"</code></strong> | Reads user data from a CSV file for creating new user accounts.|
+| <strong><code>foreach ($user in $users)</code></strong> | Iterates through user data entries in the CSV.|
+| <strong><code>$UserName = $user.UserName...</code></strong> | Assigns user attributes from CSV to variables for easy access.|
+| <strong><code>New-ADUser -Name $UserName...</code></strong> | Creates new user accounts in Active Directory using extracted data from the .csv and the variables we assigned earlier.|
+
+- Now let's test this script by running it in PowerShell ISE:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/88c33f72-012e-42cc-bc48-6fe859b41fd1">
+</p>  <br>
+
+- In the console Side, we can see the script running successfully/producing errors, etc:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/0f422801-0610-491e-9d91-b71f81415560">
+</p>  <br>
+
+- In this case, the script ran successfully if no response was printed in the console.
+- We can confirm this in the ADUC GUI:
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/9db0f8db-9a28-4688-bb06-a5ecf41da5ea">
+</p>  <br>
+
+> [!NOTE]  
+> *1. I used <space> + backtick "`" to let the command New-ADUser continue in a new line. If you simply hit Enter, your script won't run.*<br>
+> *2. You can add more functionalities like printing "The user "XXX" has been created successfully" for each run etc. The possibility for customization is almost endless.*
+
+___
+
+<h3>🧪 Testing Replication and user login 🧪</h3>
+
+- Now, before we move on to the next subject, let's check that our users replicated to DC2 successfully and that we can log in to some of the users to test that they're working correctly.  <br>
+- Let's start by checking the replication status by going to DC2 > Active Directory Users & Computers tool.  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6bf60e79-d9b5-451b-bdf6-9d64c8c27f30">
+</p>  <br>
+
+- Here, we can see that our users replicated to DC2 successfully.  <br>
+- Let's check if we can log on to our Windows machine using one of the users:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/d7fac684-65b7-4fc3-a9f9-baa96de49fce">
+</p>  <br>
+
+- As soon as we log in, we are asked to reset the password since I added the "must change password at first logon" argument in the cmdlet:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/5df2e502-05f9-49fa-9661-ced99a46c56f">
+</p>  <br>
+
+- And now you're logged in successfully as "John Shepard":
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/66d214d6-3b57-4e7d-96cd-96d10d238666">
+</p>
 
 <div align="center">
 
