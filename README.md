@@ -55,6 +55,10 @@
       <li><a href="#-the-aduc-gui-"> <em> The ADUC GUI</em></a></li>
       <li><a href="#creating-ous-users--groups-using-the-gui"> <em> Creating OUs, Users & Groups Using the GUI</em></a></li>
       <li><a href="#-creating-ous-users--groups-using-cmd-"> <em> Creating OUs, Users & Groups Using CMD</em></a></li>
+      <li><a href="#-bulk-object-creation-using-a-batch-script-"> <em> Bulk Object Creation Using a Batch Script</em></a></li>
+      <li><a href="#-creating-ous-users--groups-using-powershell--"> <em> Creating OUs, Users & Groups using PowerShell</em></a></li>
+      <li><a href="#-bulk-object-creation-using-a-powershell-script-"> <em> Bulk Object Creation Using a PowerShell Script</em></a></li>
+      <li><a href="#-testing-replication-and-user-login-"> <em> Testing Replication and User Login</em></a></li>
     </ol>
   </details></li>
 </ol>
@@ -1705,11 +1709,11 @@ ___
 
 | Component | Description |
 | ------- | ----------- |
-| <strong><code>Import-Module ActiveDirectory</code></strong> | Imports Active Directory module for user management tasks.|
-| <strong><code>$users = Import-Csv -LiteralPath "C:\XXX"</code></strong> | Reads user data from a CSV file for creating new user accounts.|
-| <strong><code>foreach ($user in $users)</code></strong> | Iterates through user data entries in the CSV.|
-| <strong><code>$UserName = $user.UserName...</code></strong> | Assigns user attributes from CSV to variables for easy access.|
-| <strong><code>New-ADUser -Name $UserName...</code></strong> | Creates new user accounts in Active Directory using extracted data from the .csv and the variables we assigned earlier.|
+|<strong><code>Import-Module ActiveDirectory</code></strong>| Imports Active Directory module for user management tasks.|
+|<strong><code>$users = Import-Csv -LiteralPath "C:\..."</code></strong>| Reads user data from a CSV file for creating new user accounts.|
+|<strong><code>foreach ($user in $users)</code></strong>| Iterates through user data entries in the CSV.|
+|<strong><code>$UserName = $user.UserName...</code></strong>| Assigns user attributes from CSV to variables for easy access.|
+|<strong><code>New-ADUser -Name $UserName...</code></strong>| Creates new user accounts in Active Directory using extracted data from the .csv and the variables we assigned earlier.|
 
 - Now let's test this script by running it in PowerShell ISE:  <br>
 
