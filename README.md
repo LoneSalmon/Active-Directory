@@ -1169,6 +1169,31 @@ ___
 
 ___
 
+<strong>Here are the topics that we're going to cover:</strong>  <br>
+
+|[1. The ADUC GUI ▶️](#-the-aduc-gui-)|
+|---|
+
+|[2. Creating OUs, Users & Groups Using the GUI ▶️](#creating-ous-users--groups-using-the-gui)|
+|---|
+
+|[3. Creating OUs, Users & Groups Using CMD ▶️](#-creating-ous-users--groups-using-cmd-)|
+|---|
+
+|[4. Bulk Object Creation Using a Batch Script ▶️](#-bulk-object-creation-using-a-batch-script-)|
+|---|
+
+|[5. Creating OUs, Users & Groups using PowerShell ▶️](#-creating-ous-users--groups-using-powershell--)|
+|---|
+
+|[6. Bulk Object Creation Using a PowerShell Script ▶️](#-bulk-object-creation-using-a-powershell-script-)|
+|---|
+
+|[7. Testing Replication and User Login ▶️](#-testing-replication-and-user-login-)|
+|---|
+
+___
+
 <h3>🐒 The ADUC GUI 🐒</h3>
 
 - We will start off by going to ADUC (Tools > ADUC).  <br>
