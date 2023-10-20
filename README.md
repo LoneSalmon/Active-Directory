@@ -19,12 +19,12 @@
 <h2 align="center"> 📑 Table of Contents 📑</h2>
 
 <ol>
-  <li><a href="#-%EF%B8%8F-topology-%EF%B8%8F-"> Topology</a></li>
-  <li><a href="#--introduction--"> Introduction</a></li>
-  <li><a href="#--requirements-for-the-lab-environment--"> Requirements for the lab environment</a></li>
-  <li><a href="#-%EF%B8%8F-setting-up-the-lab-environment-%EF%B8%8F-"> Setting up the lab environment</a></li>
+  <li><a href="#-%EF%B8%8F-topology-%EF%B8%8F-"> <strong>Topology</strong></a></li>
+  <li><a href="#--introduction--"> <strong>Introduction</strong></a></li>
+  <li><a href="#--requirements-for-the-lab-environment--"> <strong>Requirements for the lab environment</strong></a></li>
+  <li><a href="#-%EF%B8%8F-setting-up-the-lab-environment-%EF%B8%8F-"> <strong>Setting up the lab environment</strong></a></li>
   <li><details open="open">
-    <summary><a href="#--creating--configuring-a-domain-controller--"> Creating & Configuring a Domain Controller</a></summary>
+    <summary><a href="#--creating--configuring-a-domain-controller--"> <strong>Creating & Configuring a Domain Controller</strong></a></summary>
     <ol>
       <li><a href="#--creating-server-roles-"> <em> Creating Server Roles</em></a></li>
       <li><a href="#-%EF%B8%8F-configuring-our-1st-domain-controller-%EF%B8%8F-"> <em> Configuring our 1st Domain Controller</em></a></li>
@@ -34,7 +34,7 @@
     </ol>
   </details></li>
   <li><details open="open">
-    <summary><a href="#--dhcp-configuration--"> DHCP Configuration</a></summary>
+    <summary><a href="#--dhcp-configuration--"> <strong>DHCP Configuration</strong></a></summary>
     <ol>
       <li><a href="#-pre-requesite-steps-"> <em>Pre-requisite Steps</em></a></li>
       <li><a href="#-configuring-a-dhcp-scope-"> <em>Configuring a DHCP Scope</em></a></li>
@@ -43,14 +43,14 @@
     </ol>
   </details></li>
   <li><details open="open">
-    <summary><a href="#-%EF%B8%8F-configuring-routing--pat-on-srv1-%EF%B8%8F"> Configuring Routing & PAT on SRV1</a></summary>
+    <summary><a href="#-%EF%B8%8F-configuring-routing--pat-on-srv1-%EF%B8%8F"> <strong>Configuring Routing & PAT on SRV1</strong></a></summary>
       <ol>
         <li><a href="#-pre-requisite-steps-"> <em>Pre-requisite Steps</em></a></li>
         <li><a href="#%EF%B8%8F-installing--configuring-routing--remote-access-services-rras-%EF%B8%8F"><em> Configuring Routing & Remote Access Services (RRAS)</em></a></li>
       </ol>
   </details></li>
   <li><details open="open">
-    <summary><a href="#-%EF%B8%8F-active-directoy-users--computers-management-%EF%B8%8F-"> Active Directory Users & Computers Management</a></summary>
+    <summary><a href="#-%EF%B8%8F-active-directoy-users--computers-management-%EF%B8%8F-"> <strong>Active Directory Users & Computers Management</strong></a></summary>
     <ol>
       <li><a href="#-the-aduc-gui-"> <em> The ADUC GUI</em></a></li>
       <li><a href="#creating-ous-users--groups-using-the-gui"> <em> Creating OUs, Users & Groups Using the GUI</em></a></li>
