@@ -1152,6 +1152,21 @@ ___
 
 ![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Split-Bar.png)
 
+<h2 align="center"> 🎯 DNS Configuration 🎯 </h2>
+
+<p align="center">
+  <p align="justify">
+    <em>For this part of our infrastructure setup for the Lab Environment, we will configure our Domain Name Service Servers (DNSs) which we installed previously on DC1 and DC2. We will look at setting up DNS forwarding, conditional forwarding, primary, secondary, stub-zones, CNAME configuration, and Round Robin. </em>
+
+<div align="center">
+  
+|[☝️ Back to top ☝️](#-%EF%B8%8F-configuring-routing--pat-on-srv1-%EF%B8%8F)|[📑 Table of Contents 📑](#--table-of-contents-)|
+|---|---|
+
+</div>
+
+![-----------------------------------------------------](https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Split-Bar.png)
+
 <h2 align="center"> 🕴️ Active-Directoy Users & Computers Management 🕴️ </h2>
 
 <p align="center">
@@ -1701,8 +1716,11 @@ ___
   <p align="justify">
     <em>Just like in CMD, we will also be using a .CSV file (Excel Spreadsheets) to create our script, only this time, most of the work will be done on PowerShell. I will give you a hypothetical scenario where you just received an Excel table for 10 new recruits to be added to your Development Organizational Unit and an easy way to import all that data into a PowerShell script and then run such scripts with a click of a button.</em>
   </p>
-</p>
+</p>  <br>
 
+<p align="center">
+  <a href="https://www.imanami.com/bulk-user-creation-in-active-directory/">👉 Here's a great guide for this 👈 </a>
+  
 ___
 
 <p align="justify">
