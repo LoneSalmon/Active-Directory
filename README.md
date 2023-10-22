@@ -1157,6 +1157,8 @@ ___
 <p align="center">
   <p align="justify">
     <em>For this part of our infrastructure setup for the Lab Environment, we will configure our Domain Name Service Servers (DNSs) which we installed previously on DC1 and DC2. We will look at setting up DNS forwarding, conditional forwarding, primary, secondary, stub-zones, CNAME configuration, and Round Robin. </em>
+  </p>
+</p>
 
 <div align="center">
   
