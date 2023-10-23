@@ -1,0 +1,10 @@
+﻿FirstName,LastName,UserName,Display,PrincipalName,Title,Password,Path
+Garrus,Vakarian,G.Vakarian,Garrus Vakarian,Garrus.Vakarian@mustafa.com,Archangel,Abcd1234,"ou=Developement,dc=mustafa,dc=com"
+Tali,Zorah,T.Zorah,Tali Zorah,Tali.Zorah@mustafa.com,Admiral,Abcd1234,"ou=Developement,dc=mustafa,dc=com"
+Miranda,Lawson,M.Lawson,Miranda Lawson,Miranda.Lawson@mustafa.com,SuperHuman,Abcd1234,"ou=Developement,dc=mustafa,dc=com"
+Liara,Tsoni,L.Tsoni,Liara Tsoni,Liara.Tsoni@mustafa.com,Shadow Broker,Abcd1234,"ou=Developement,dc=mustafa,dc=com"
+Jeff,Moreau,J.Moreau,Jeff Moreau,Jeff.Moreau@mustafa.com,Joker,Abcd1234,"ou=Developement,dc=mustafa,dc=com"
+Mordin,Solus,M.Solus,Mordin Solus,Mordin.Solus@mustafa.com,Professor,Abcd1234,"ou=Developement,dc=mustafa,dc=com"
+Urdnot,Wrex,U.Wrex,Urdnot Wrex,Urdnot.Wrex@mustafa.com,Warlord,Abcd1234,"ou=Developement,dc=mustafa,dc=com"
+Ashley,Williams,A.Williams,Ashley Williams,Ashley.Williams@mustafa.com,Lieutenant Commander,Abcd1234,"ou=Developement,dc=mustafa,dc=com"
+Jacob,Taylor,J.Taylor,Jacob Taylor,Jacob.Taylor@mustafa.com,Corsair,Abcd1234,"ou=Developement,dc=mustafa,dc=com"
