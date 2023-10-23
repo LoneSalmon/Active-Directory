@@ -1160,6 +1160,21 @@ ___
   </p>
 </p>
 
+<p align="center">
+  <strong>😨 "What is DNS?" 😨</strong>
+  <p align="justify">
+    <em>DNS is a vital network service in Microsoft Server that converts user-friendly domain names into numerical IP addresses. This translation enables devices to locate and communicate with each other on the internet or within a local network. DNS is essential for domain management, resolving hostnames, supporting Active Directory, and ensuring smooth network communication in a Windows Server environment. It is fundamental for identifying network resources, streamlining administrative tasks, and enhancing server infrastructure functionality and reliability.</em>
+  </p>
+</p>
+
+<p align="center">
+  <a href="https://learn.microsoft.com/en-us/windows-server/networking/dns/dns-top">👉 Here's a more detailed explanation 👈</a>
+</p>
+
+___
+
+
+
 <div align="center">
   
 |[☝️ Back to top ☝️](#-%EF%B8%8F-configuring-routing--pat-on-srv1-%EF%B8%8F)|[📑 Table of Contents 📑](#--table-of-contents-)|
