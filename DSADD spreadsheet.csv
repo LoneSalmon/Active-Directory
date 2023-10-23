@@ -1,0 +1,30 @@
+﻿User,DSADD Statement,UPN,Display,Password,Must change password
+User7,"dsadd user cn=User7,cn=Users,dc=mustafa,dc=com", -upn User7@mustafa.com, =display User7, -pwd Abcd1234, -mustchpwd yes
+User8,"dsadd user cn=User8,cn=Users,dc=mustafa,dc=com", -upn User8@mustafa.com, =display User8, -pwd Abcd1234, -mustchpwd yes
+User9,"dsadd user cn=User9,cn=Users,dc=mustafa,dc=com", -upn User9@mustafa.com, =display User9, -pwd Abcd1234, -mustchpwd yes
+User10,"dsadd user cn=User10,cn=Users,dc=mustafa,dc=com", -upn User10@mustafa.com, =display User10, -pwd Abcd1234, -mustchpwd yes
+User11,"dsadd user cn=User11,cn=Users,dc=mustafa,dc=com", -upn User11@mustafa.com, =display User11, -pwd Abcd1234, -mustchpwd yes
+User12,"dsadd user cn=User12,cn=Users,dc=mustafa,dc=com", -upn User12@mustafa.com, =display User12, -pwd Abcd1234, -mustchpwd yes
+User13,"dsadd user cn=User13,cn=Users,dc=mustafa,dc=com", -upn User13@mustafa.com, =display User13, -pwd Abcd1234, -mustchpwd yes
+User14,"dsadd user cn=User14,cn=Users,dc=mustafa,dc=com", -upn User14@mustafa.com, =display User14, -pwd Abcd1234, -mustchpwd yes
+User15,"dsadd user cn=User15,cn=Users,dc=mustafa,dc=com", -upn User15@mustafa.com, =display User15, -pwd Abcd1234, -mustchpwd yes
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+"dsadd user cn=User7,cn=Users,dc=mustafa,dc=com -upn User7@mustafa.com =display User7 -pwd Abcd1234 -mustchpwd yes",,,,,
+"dsadd user cn=User8,cn=Users,dc=mustafa,dc=com -upn User8@mustafa.com =display User8 -pwd Abcd1234 -mustchpwd yes",,,,,
+"dsadd user cn=User9,cn=Users,dc=mustafa,dc=com -upn User9@mustafa.com =display User9 -pwd Abcd1234 -mustchpwd yes",,,,,
+"dsadd user cn=User10,cn=Users,dc=mustafa,dc=com -upn User10@mustafa.com =display User10 -pwd Abcd1234 -mustchpwd yes",,,,,
+"dsadd user cn=User11,cn=Users,dc=mustafa,dc=com -upn User11@mustafa.com =display User11 -pwd Abcd1234 -mustchpwd yes",,,,,
+"dsadd user cn=User12,cn=Users,dc=mustafa,dc=com -upn User12@mustafa.com =display User12 -pwd Abcd1234 -mustchpwd yes",,,,,
+"dsadd user cn=User13,cn=Users,dc=mustafa,dc=com -upn User13@mustafa.com =display User13 -pwd Abcd1234 -mustchpwd yes",,,,,
+"dsadd user cn=User14,cn=Users,dc=mustafa,dc=com -upn User14@mustafa.com =display User14 -pwd Abcd1234 -mustchpwd yes",,,,,
+"dsadd user cn=User15,cn=Users,dc=mustafa,dc=com -upn User15@mustafa.com =display User15 -pwd Abcd1234 -mustchpwd yes",,,,,
+,,,,,
+,,,,,
