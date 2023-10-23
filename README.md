@@ -1744,7 +1744,7 @@ ___
   Early work-day morning, you're having your last sip of coffee and then <strong><em>"DING!"</em></strong> an email with an Excel sheet of ten new Developers you need to add to your Active-Directory OU. Your stomach twists! Horrified, you think about how you will waste your entire workday creating fresh new users manually instead of slacking off somewhere. Luckily, you find this guide while frantically searching the Internet, restoring your inner peace.
 </p>  <br>
 
-- This is the Excel Spreadsheet you received: (I already Concatenated all the data for simplicity)  <br>
+- This is the <a href="https://github.com/LoneSalmon/Active-Directory/blob/main/PowerShell%20Spreadsheet.csv">Excel Spreadsheet</a> you received: (I already Concatenated all the data for simplicity)  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/45f3fd71-4666-4212-aff9-2420ffc81c80">
@@ -1759,7 +1759,7 @@ ___
   </p>
 </p>  <br>
 
-- Here's the relevant script I wrote to bulk-create the users found in the Excel Spreadsheet:  <br>
+- Here's the relevant <a href="https://github.com/LoneSalmon/Active-Directory/blob/main/PS%20Script.ps1">script</a> I wrote to bulk-create the users found in the Excel Spreadsheet:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/8cde9e21-6244-45aa-9a85-c4541cd4eb33">
