@@ -1547,7 +1547,7 @@ ___
 ___
 
 - In this demo, we will bulk-create ten new users using DSADD.  <br>
-- We start by opening an Excel sheet and adding the elements I used earlier to create one user:  <br>
+- We start by opening an <a href="https://github.com/LoneSalmon/Active-Directory/blob/main/DSADD%20spreadsheet.csv">Excel sheet</a> and adding the elements I used earlier to create one user:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6a32ef37-19d4-499e-8d20-5e5a4a8e1310">
