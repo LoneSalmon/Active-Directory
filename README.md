@@ -1173,6 +1173,48 @@ ___
 
 ___
 
+<h3>🏣 Configuring External DNS Forwarding 🏣</h3>
+
+<p align="center">
+  <p align="justify">
+    <em>External forwarding involves configuring the DNS server to route DNS queries for external domain names to external DNSs, typically provided by an ISP or a public DNS service like Google's 8.8.8.8. This configuration enables the internal DNS server to resolve external domain names by forwarding requests to the designated external DNS. It enhances DNS resolution, reduces the server's workload, and ensures internal clients can access internet resources.</em>
+  </p>
+</p>  <br>
+
+<p align="center">
+  <a href="https://learn.microsoft.com/en-us/windows-server/networking/dns/quickstart-install-configure-dns-server?tabs=powershell#configure-forwarders">👉 Here's more info on External Forwarding 👈</a>
+</p>
+
+___
+
+- To add DNS external forwarding, we must go to the DNS tools UI in the Server Manager.  <br>
+- At the top right corner, select "Tools" > then "DNS".  <br>
+- In the DNS tools UI, right-click your DNS server and select "Properties":  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/960b181b-49f4-4d6f-a28d-3d23d34f10f7">
+</p>  <br>
+
+- In the Properties window, navigate to the "Forwarders" tab and select "Edit...":  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/df0d48df-9afa-4979-9619-eb968b91c265">
+</p>  <br>
+
+- In the "Edit Forwarders" window, add your desired external DNS. In this case, we're adding Google public DNS (8.8.8.8):  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/e71fa726-8c80-47a9-bf00-087f7e0856be">
+</p>  <br>
+
+- Now we can see that the Google public DNS was added as a forwarder in our DNS configuration:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ee06f8de-1fd4-443c-bd00-94972910194b">
+</p>
+
+___
+
 
 
 <div align="center">
