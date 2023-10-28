@@ -68,7 +68,7 @@
 <h2 align="center"> 🚪 Introduction 🚪 </h2>
 
 <p align="justify">
-Welcome to my Active Directory Project, culminating my studies in the Microsoft Server (MCSA) and Cybersecurity courses at See-Security College. This project showcases a meticulously designed network infrastructure, focusing on Microsoft's Active Directory technology. I've configured key components within this virtual environment, including Domain Controllers, DNS, Group Policies, user management, security protocols, organizational efficiency, remote access solutions, and comprehensive documentation. This project underscores my expertise in Microsoft technologies and network security principles, emphasizing the pivotal role of a well-structured directory service in modern network management.
+Welcome to my Active Directory Project, culminating my studies in the Microsoft Server (MCSA) and Cybersecurity courses at See-Security College. This project showcases a network infrastructure design in-depth, focusing on Microsoft's Active Directory technology. I've configured key components within this virtual environment, including Domain Controllers, DNS, DHCP, Routing, FTP, Group Policies, user management, security protocols, and remote access solutions. This project underscores my knowledge of Microsoft technologies and network security principles, emphasizing the important role of a well-structured directory service in organizational management.
 </p>
 
 <div align="center">
@@ -100,39 +100,33 @@ Welcome to my Active Directory Project, culminating my studies in the Microsoft 
 <p align="center"> 
   <strong>I will not be diving deep into Vmware since this is out of the scope of this project</strong>  <br>
   <a href="https://medium.com/r3d-buck3t/building-an-active-directory-lab-part-1-windows-server-2022-setup-7dfaf0dafd5c">
-    👉 <em>You can check this link here for a guide</em></a> 👈
+    👉 You can check this link here for a guide 👈</a>
 </p>
 
 ___
 
-- We will start by setting up the lab environment in 5 virtual machines in Vmware Workstation Pro. It will Consist of 2 Domain Controllers, a routing server (PAT) (3 Windows Server 2019 OS's), and two end-user clients hosting Windows 10 Pro.  <br>
+- We will start by setting up the lab environment in 5 VMs. It will Consist of 2 Domain Controllers, a routing server, and two Windows 10 Pro clients.  <br>
 
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-1.png"> 
-</p>
+</p>  <br>
 
-___
-
-- It is essential to ensure that each virtual machine is configured to NAT and that you have NAT already configured in your Vmware Workstation Pro settings.  <br>
+- It is essential that each virtual machine is configured to NAT.  <br>
 
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-2.png" height="500px" width="auto">
-</p>
-
-___
+</p>  <br>
 
 > [!NOTE]  
-> <em>I have disabled Vmware DHCP services because I'm going to create my own DHCP service from the Active-Directory services.</em>
+> <em>I have disabled Vmware DHCP services because I'm going to create my own DHCP service from the Active Directory services.</em>
 
 ___
 
-- Once that's done, begin installing the Operating System individually, and then we will do some basic setting up for both DCs and SRV-1 (basic networking settings).  <br>
+- Begin installing the OSs individually, and then we will do some basic set up for both DCs and SRV-1 (basic networking settings).  <br>
 
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-3.png"> 
-</p>
-
-___
+</p>  <br>
 
 - Change NIC configuration to match your (Future) domain network as follows:  <br>
   * Select "Ethernet0" Value →  <br>
@@ -145,14 +139,10 @@ ___
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-4.png" height="auto" width="500px">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-5.png" height="auto" width="500px">
-</p>
-
-___
+</p>  <br>
 
 > [!NOTE]  
-> *The reason that the "Host" portion of the IP address is "3" and not "1" or "2" for example is because these two "Host" addresses are reserved for Vmwares' NAT operation:*  
-> - *"1" is for the NAT bridge installed on the host machine.*  
-> - *"2" is for the virtual switch (Default-Gateway).*
+> *The reason that the "Host" portion of the IP address is "3" and not "1" or "2" is because these two "Host" addresses are reserved for NAT operation by VMware*
 
   <p align="center">
     <a href="https://docs.vmware.com/en/VMware-Workstation-Pro/17/com.vmware.ws.using.doc/GUID-144D22BA-298E-4293-8137-B631AD7BF694.html">
@@ -161,19 +151,15 @@ ___
 
 ___
 
-- Change the Computer Name (And don't add a Domain Just yet since we didn't create a Domain-Controller)  <br>
+- Change the Computer Name (And don't add a Domain Just yet since we didn't create a Domain-Controller):  <br>
 
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-6.png" height="auto" width="500px">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-7.png" height="auto" width="500px">
-</p>
-
-___
+</p>  <br>
 
 > [!NOTE]  
-> *Restart, repeat the same steps in DC2 and SRV1 with their corresponding names, and use the IP addresses with "4" and "5" as the hosts.*
-
-___
+> *Restart, and repeat the same steps in DC2 and SRV1 (with different host IPs).*
 
 <div align="center">
   
@@ -187,12 +173,12 @@ ___
 <h2 align="center"> 🤔 Creating & Configuring a Domain Controller 🤔 </h2>
 
 <p align="center">
-  <em>In this section of the project, we will be exploring the steps needed to create Two domain controllers properly (I will explain the rationale during setup) and talk briefly about the features and options that will come across during setup.</em>
+  <p align="justify">
+    <em>In this section, we will explore the steps needed to create Two DCs (I will explain the rationale during setup) and explain briefly about the features and options that will be encountered.</em>
+  </p>
 </p>  <br>
 
-___
-
-<strong>Here are the topic that we're going to cover:</strong>  <br>
+<strong>Here are the topics that we're going to cover:</strong>  <br>
 
 |[1. Creating Server Roles ▶️](#--creating-server-roles-)|
 |---|
@@ -213,36 +199,33 @@ ___
 
 <h3> 🧻 Creating Server Roles 🧻</h3>
 
-- The first step to creating a domain is to create a Domain-Controller (DC for short). For that, we will go to the Server Manager Application > Click on Manage at the top right and then add Roles and Features  <br>
+- The first step to creating a domain is to create a DC. For that, we will go to Server Manager > Manage and add Roles and Features  <br>
 
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-1.png"> 
-</p>
+</p>  <br>
 
-___
-
-- We will go through the setup wizard to add the needed roles (I skipped the first page by default since it's not necessary)  <br>
-- In the installation wizard, we must choose between "Role-based or feature-based installation" and "Remote Desktop Services installation".  <br>
-- To install a Domain-Controller, select "Role-based or feature-based installation."  <br>
+- In the wizard 🪄, we must choose between "Role-based or feature-based installation" and "Remote Desktop Services installation".  <br>
+- To install a new DC, select "Role-based or feature-based installation"  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-2.png">  <br>
-  <strong>😨 What is the difference? 😨</strong>
-</p>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-2.png">
+</p>  <br>
 
-<p align="justify"> 
-  <em>Role-based or feature-based installation configures the server's core roles and optional features to provide fundamental services in your network environment. Remote Desktop Services installation, on the other hand, is specifically focused on enabling remote desktop access and application delivery for multiple users. In an Active Directory environment, you might use role-based or feature-based installation to set up essential services like Domain Controllers, DNS, and DHCP. Afterward, if you need to provide remote desktop access to users, you would install the Remote Desktop Services role separately to cater to that specific requirement.</em>
+<p align="center">
+  <strong>😨 What is the difference? 😨</strong>
+  <p align="justify"> 
+    <em>Role-based/feature-based configures the server's core roles and optional features to provide fundamental services in your environment. Remote Desktop Services, on the other hand, is specifically focused on enabling remote desktop access and application delivery for multiple users. In an AD environment, you might use role-based/feature-based installation to set up services like Domain Controllers, DNS, and DHCP. Afterward, if you need to provide remote desktop access to users, you would install the RDS role separately.</em>
+  </p>
 </p>
 
 ___
 
-- The next step is to select the server from the server pool. Here, I will choose my current server, "DC1-Mustafa".  <br>
+- The next step is to select the server from the pool:  <br>
 
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-3.png">
-</p>
-
-___
+</p>  <br>
 
 > [!NOTE]  
 > *We cannot see "DC2" and "SRV1" even though they're in the same subnet because we haven't created a domain yet*
@@ -257,10 +240,10 @@ ___
 
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-4.png"> 
-</p>
+</p>  <br>
 
-- We will skip the "Features" page since we already selected all the features for the corresponding Server Roles we added.  <br>
-- We will also skip all the "About" pages on each Server Role we added.
+> [!NOTE]  
+> *We will skip the "Features" page since we already selected all the features for the corresponding Server Roles we added.*
 
 ___
 
@@ -269,8 +252,6 @@ ___
 <p align="center"> 
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-5.png">
 </p>
-
-___
 
 > [!NOTE]  
 > *We will not need to check the "Restart..." box since this is a local Server.*
@@ -283,36 +264,32 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-6.png">
 </p>
 
-___
-
-- Note that if you reach this point and hit "Close" instead of "Promote this server to a domain controller", then there's no need to panic and follow these steps:  <br>
-  * On the top right of the Server Manager UI, you will see a flag with ⚠️ on it.  <br>
-  * When clicking on it, you will see the tasks that must be completed. Among them is Promoting the server.  <br>
-  * You can click on the task to resume the configuration.  <br>
-
-  <p align="center"> 
-    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-7.png">
-</p>
+> [!NOTE]  
+> *if you reach this point and hit "Close" instead of "Promote this server to a domain controller", then there's no need to panic. On the top right of the Server Manager UI, you will see a flag with ⚠️ on it. When clicking on it, you will see the tasks that must be completed. Among them is Promoting the server*
 
 ___
 
 <h3> ☣️ Configuring our 1st Domain Controller ☣️ </h3>
+
 - We must select the "Add a new forest" operation for the first deployment.  <br>
 - Then specify the "Root Domain Name". In my case, it will be "mustafa.com".  <br>
 
   <p align="center"> 
-    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-1.png">  <br>
-    <strong>😨 Why Did I select "Add a new forest"? 😨</strong>  <br>
-    <p align="justify">
-      <em> Selecting "Add a new forest" when deploying a domain controller for the first time is necessary when establishing a new Active Directory environment from scratch. It allows you to create the foundation for your directory structure, set forest-wide settings, and maintain administrative autonomy over your network.</em></p>
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-1.png">
+  </p>
+
+<p align="center">
+  <strong>😨 Why Did I select "Add a new forest"? 😨</strong>
+  <p align="justify">
+    <em> Selecting "Add a new forest" when deploying a DC for the first time is necessary when establishing a new AD environment. It allows you to create the foundation for your directory structure, set forest-wide settings, and maintain administrative autonomy over your network.</em></p>
 </p>
 
 ___
 
 - For the DC options, we will need to select the following settings:  <br>
   * Forest & Domain Functional level: Since we will use the same OS on all servers, the latest.  <br>
-  * We will need to ✔️ the DNS since we will require it for configuring a DNS on this DC.  <br>
-  * We will also ✔️ the Global Catalog since we need it to replicate DC1 and DC2. Follow this <a href="https://learn.microsoft.com/en-us/windows/win32/ad/global-catalog">link</a> to understand GC functionality.  <br>
+  * ✔️ the DNS since we will require it for configuring a DNS on this DC.  <br>
+  * ✔️ the Global Catalog to replicate objects between DC1 and DC2. Follow this <a href="https://learn.microsoft.com/en-us/windows/win32/ad/global-catalog">link</a> to understand GC functionality.  <br>
   * We <strong>do not</strong> select "RODC". This is reserved for DCs that we don't want its info changed/tampered with.  <br>
   * We are required to enter a DSRM password for catastrophes. Check this <a href="https://en.wikipedia.org/wiki/Directory_Services_Restore_Mode">link</a> for more info.  <br>
 
@@ -320,14 +297,12 @@ ___
     <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-2.png">
   </p>
 
-___
-
 - I will skip the DNS options since we will not cover DNS delegation in this step.  <br>
-- In the Additional Options page, the NetBIOS domain name will be automatically generated from the root domain name we specified earlier. <a href="http://www.differencebetween.net/technology/internet/difference-between-dns-and-netbios/">Here's more info on NetBIOS</a>.  <br>
+- In the Additional Options page, the NetBIOS domain name will automatically generate from the domain name we specified. <a href="http://www.differencebetween.net/technology/internet/difference-between-dns-and-netbios/">Here's more info on NetBIOS</a>.  <br>
 - In the "Paths" page, we can see and edit the default folders for:  <br>
-  * Database: NTDS is a critical component of the Active Directory infrastructure, housing the database files that store directory information.  <br>
-  * Log files: Log files associated with AD database contain transaction logs that record all changes made to the database.  <br>
-  * SYSVOL: Responsible for storing and distributing Group Policy objects and other system-level settings (Scripts, for example) across all domain controllers.  <br>
+  * Database: NTDS is a critical component of the AD infrastructure, housing the information on directory information.  <br>
+  * Log files: Log files associated with the AD database.  <br>
+  * SYSVOL: Stores and distributes Group Policy objects and other system-level settings (Scripts, for example) across all DCs.  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-3.png">
@@ -335,33 +310,26 @@ ___
 
 ___
 
-- Lastly, we will reach the "Review Options" page, where we can review all the configurations we did. Take note of the following sentence:  <br>
-<p align="center">
-  <strong>❗ The password of the new domain Administrator will be the same as the password of the local Administrator of this computer. ❗</strong>
-</p>
+- Lastly, we will reach the "Review Options" page, where we can review all the configurations we did.  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-4.png">
 </p>
-
-___
 
 > [!NOTE]  
 > *If you haven't yet configured a local Admin password when installing the VM, you will run into this error in the Prerequisites Check page.*
 
 ___
 
-- The way to remedy this is to change (or create) a local admin password using <a href="https://www.top-password.com/knowledge/change-windows-10-password.html">any of these simple methods here</a>.
+- The way to remedy this is to add a local admin password using <a href="https://www.top-password.com/knowledge/change-windows-10-password.html">any of these simple methods</a>.
 - Once the password is updated, we hit the "Rerun prerequisites check" link and can see that there are no errors:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-5.png">  <br>
 </p>
 
-- If you're cleared to proceed, you can hit "Install". This will install AD-DS & DNS and restart the system to apply the changes.  <br>
+- If you're cleared to proceed, you can hit "Install". This will install AD-DS & DNS and restart the system.  <br>
 - Once restarted, you will be asked to enter the domain using your previously configured local admin password.
-
-___
 
 > [!NOTE]  
 > *Please ensure the password you created is for the Administrator profile and not your current user profile.*
@@ -399,12 +367,10 @@ ___
     <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/initial-security-step-5.png">
   </p>
 
-___
-
 <p align="center">
   <strong>😨 Why did I do that? 😨</strong>  <br>
   <p align="justify">
-  <em>When creating a domain controller, it's advisable to duplicate the default Administrator user in Active Directory Users and Computers, assign the new copy a distinct name, and disable the original Administrator account. This precaution is taken because the default Administrator account, which is present in every Windows domain, has a well-known Security Identifier (SID) suffix. The SID is a unique identifier associated with user accounts, and a widely recognized SID could potentially expose the domain to security risks. By renaming and disabling the default Administrator account, you obscure its SID, making it less predictable to potential attackers and enhancing the security posture of the domain</em>
+  <em>When creating a DC, it's recommended to duplicate the default Administrator, assign the new copy a distinct name, and disable the original Administrator. This precaution is taken because the default Administrator, which is present in every Windows installation, has a well-known Security Identifier (SID) suffix. The SID is a unique identifier associated with user accounts, and a widely recognized SID could potentially expose the domain to security risks. By renaming and disabling the default Administrator, you obscure its SID, making it less predictable to potential attackers.</em>
   </p>
 </p>
 
@@ -424,12 +390,10 @@ ___
     <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/initial-security-step-7.png">
   </p> <br>
 
-  * If we break-down every section of the SID, we will find that it's similar across all accounts except the suffix:  <br>
-  * **S-1-5**: SID version information (fixed on all users)  <br>
-  * **21-1869958264-2762823925-4193717463**: Domain Identifier (Fixed for all users in the same domain)  <br>
+  * If we break down every section of the SID, we will find that it's similar across all accounts except the suffix:  <br>
+  * **S-1-5**: SID version information (fixed)  <br>
+  * **21-1869958264-2762823925-4193717463**: Domain Identifier (Fixed for users in the same domain)  <br>
   * **500**: Relative ID (RID), which identifies the specific user; default users in the active directory always start at **500**  <br>
-
-___
 
 > [!NOTE]  
 > *Any other user created by our <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-adts/d142a27c-65fb-49c9-9e4b-6ede5f226c8a">RID Master</a> will begin at 1000.*
@@ -437,11 +401,12 @@ ___
 ___
 
 <p align="center">
-  <strong>😨 Now Imagine this scenario. 😨</strong>  <br>
+  <strong>🚨 Now Imagine this scenario 🚨</strong>  <br>
   <p align="justify">
-    <em>An unauthorized access occurs on one of your users (be it outside or inside the network/domain), and that threat actor types this simple command:</em> <code><strong>whoami /user</strong></code><em>. This will be his output. One can use this output to get more information about the domain and try to escalate privileges to an Admin level to gain more control of the system</em>
+    <em>An unauthorized access occurs on one of your users (be it outside or inside the network/domain), and that threat actor types this command:</em> <code><strong>whoami /user</strong></code><em>. This will be his output. One can use this output to get more information about the domain and try to escalate privileges to an Admin level to gain more control of the system</em>
   </p>
 </p>  <br>
+
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/initial-security-step-8.png">  <br>
   <a href="https://www.sentinelone.com/blog/windows-sid-history-injection-exposure-blog/"><em>Check this technique for example</em></a>  <br>
@@ -455,37 +420,37 @@ ___
 <p align="center">
   <strong>😨 "Do I even need a Secondary Domain Controller?" 😨</strong>  <br>
   <p align="justify">
-    <em>Yes!! Adding a secondary domain controller (DC) is essential as it ensures high availability, data redundancy, improved performance, and security in an Active Directory environment. While a forest can technically function with just one DC, the recommended practice is to deploy at least two DCs to prevent disruptions caused by hardware failures or maintenance, maintain data integrity, distribute the load, enhance security, and facilitate efficient management and updates. Relying solely on a single DC is discouraged due to the potential risks associated with a single point of failure.</em>
+    <em>Yes!! Adding a secondary DC ensures high availability, data redundancy, improved performance, and security in an AD environment. While a forest can technically function with just one DC, the recommended practice is to deploy at least two DCs to prevent disruptions caused by hardware failures or maintenance, maintain data integrity, distribute the load, and facilitate efficient management and updates. Relying on a single DC is discouraged due to the potential risks associated with a single point of failure.</em>
   </p>
 </p>
 
 ___
 
-- Now that we have this out of the way, we'll start by first adding the DC2 VM to our newly established domain:  <br>
+- we'll start by first adding the DC2 VM to our newly established domain:  <br>
   * Go to Server Manager on DC2  <br>
   * Switch to the Local Server Page  <br>
   * Click on either "Computer name" or "Workgroup"  <br>
   * Click on change  <br>
-  * Select "Domain" and add your previously created domain. In my case, it's "mustafa.com"  <br>
+  * Select "Domain" and add your domain.  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-1.png">
 </p>  <br>
 
-- Notice that when clicking "Ok" we run into the following error:  <br>
+- Notice that when clicking "OK" we run into the following error:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-2.png">
 </p>  <br>
 
-- The reason is because our DC1 DNS properties are pointing to Vmwares' Vmnet DNS Service:  <br>
+- The reason is that our DC DNS properties are pointing to VMware's DNS Service.  <br>
 - We will need to configure our DC2 to point to DC1 DNS instead:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-3.png">
 </p>  <br>
 
-- Once we insert the DNS of our DC1 and try again, we will be prompted to enter a domain Admin User/pass, and DC2 will be migrated to our domain:  <br>
+- Once we insert the DNS of our DC1 and try again, we will be prompted to enter domain Admin credentials:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-4.png">
@@ -505,11 +470,11 @@ ___
 </p>  <br>
 
 > [!NOTE]  
-> *Now you have the option to manage DC2 from DC1. This is especially helpful when you're using a Server-Core.*
+> *Now you have the option to manage DC2 from DC1. This is especially helpful when you're using a server core OS.*
 
 ___
 
-- We will go through the same<a href="#-creating--configuring-a-domain-controller-"> exact steps as DC1</a>, but I will highlight the exceptions here:  <br>
+- We will go through the same<a href="#-%EF%B8%8F-configuring-our-1st-domain-controller-%EF%B8%8F-"> exact steps as DC1</a>, but I will highlight the differences here:  <br>
   * For the "Server Roles", we will add AD-DS, a secondary DNS, and a File-Server role.  <br>
 
   <p align="center">
@@ -517,7 +482,7 @@ ___
   </p>  <br>
 
   * Once the Roles are installed. We will "Promote this server to a domain controller" much like before.  <br>
-  * Take note, since this is important, We will need to add our DC2 to an existing domain (since we already have one) and specify it:  <br>
+  * We will need to add our DC2 to an existing domain (since we already have one) and specify it:  <br>
 
   <p align="center">
     <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-7.png">
@@ -529,7 +494,6 @@ ___
     <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-8.png">
   </p>  <br>
 
-  * Skip the DNS Options, same as before.  <br>
   * In the "Additional Options" page, we will specify the DC to replicate from any domain controller in the domain (In this case it's DC1)  <br>
   
   <p align="center">
@@ -537,7 +501,7 @@ ___
   </p>  <br>
 
   * Paths will be maintained as default.  <br>
-  * After reviewing everything, we will continue to "Prerequisites Check". <strong>Don't forget to add a password to the local Administrator if you haven't already done so</strong>  <br>
+  * After reviewing everything, we will continue to the "Prerequisites Check".  <br>
   * If the Prerequisite Check is successful, hit install, and the Server will reboot.
  
 ___
@@ -549,7 +513,7 @@ ___
   </p>  <br>
 
 - This is because 🥁<em>DRUM ROLL...</em>🥁 DNS!!  <br>
-- Same as we did earlier, we will need to reconfigure the DNS in the IP address information to point to DC1 instead of DC2 as the preferred and to DC2 as the alternative:  <br>
+- Same as we did earlier, we will need to reconfigure the DNS to point to DC1 instead of DC2 as the preferred and to DC2 as the alternative:  <br>
   
   <p align="center">
     <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-11.png">
@@ -574,24 +538,23 @@ ___
 <p align="center">
   <strong>😨 What in God's Name is a RID Master?? 😨</strong>  <br>
   <p align="justify">
-    <em>The RID (Relative Identifier) Master is a crucial Flexible Single Master Operations (FSMO) role in an Active Directory domain. Its primary function is to allocate unique Relative Identifiers (RID) to each domain controller. These RIDs create Security Identifiers (SIDs) for objects like users and groups. Ensuring the uniqueness of SIDs is essential for security and data integrity in the Active Directory. The RID Master is responsible for preventing conflicts and maintaining globally unique SIDs within the domain. In a multi-domain forest, each domain has its own RID Master, and this role can be transferred if necessary.</em>
+    <em>RID (Relative Identifier) is a crucial Flexible Single Master Operations (FSMO) role in a domain. Its primary function is to allocate unique Relative Identifiers (RID) to each domain controller. These RIDs create Security Identifiers (SIDs) for objects like users and groups. Ensuring the uniqueness of SIDs is essential for security and data integrity in AD. The RID Master is responsible for preventing conflicts and maintaining globally unique SIDs within the domain. In a multi-domain forest, each domain has its own RID Master, and this role can be transferred if necessary.</em>
   </p>
 </p>
 
 <p align="center">
   <strong>😨 FSMO?? 😨</strong>  <br>
   <p align="justify">
-    <em>FSMO roles are critical components of Active Directory, responsible for various administrative functions. Five FSMO roles exist in an Active Directory forest: the Schema Master, Domain Naming Master, Infrastructure Master, RID Master, and PDC Emulator. Each role has a specific purpose: managing schema updates, domain naming, handling RID allocation, and time synchronization. FSMO roles ensure the proper functioning and integrity of the Active Directory structure. While some roles are forest-wide (Schema Master and Domain Naming Master), others are per-domain (RID Master, Infrastructure Master, and PDC Emulator). FSMO roles can be transferred or seized if needed, but careful planning is essential to maintain the stability and security of the Active Directory environment.</em>
+    <em>FSMO roles are responsible for various administrative functions. Five FSMO roles exist in a forest: the Schema Master, Domain Naming Master, Infrastructure Master, RID Master, and PDC Emulator. Each role has a specific purpose: managing schema updates, domain naming, handling RID allocation, and time synchronization. FSMO roles ensure the proper functioning and integrity of the AD structure. some roles are forest-wide (Schema Master and Domain Naming Master), and others are per-domain (RID Master, Infrastructure Master, and PDC Emulator). FSMO roles can be transferred or seized if needed.</em>
   </p>
 </p>
 
 ___
 
-- in DC2, We navigate to "Active Directory Users and Computers".  <br>
-- We right-click the domain name and select "Operations Masters".  <br>
+- In DC2, navigate to "Active Directory Users and Computers".  <br>
+- Right-click the domain name and select "Operations Masters".  <br>
 - A window displays information about All the Domain Roles (RID, PDC, Infrastructure).  <br>
 - We will select "RID" and click "change" to transfer the role from DC1 to DC2.  <br>
-- Once that's done, you'll get another window confirming the role transfer.  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/rid-master-1.png">
@@ -627,20 +590,11 @@ ___
 <p align="center">
   <strong>😨 "Why do I need DHCP in an MS Server Environment?" 😨</strong>  <br>
   <p align="justify">
-    <em>DHCP, or Dynamic Host Configuration Protocol, is a network service used in Microsoft Server to automatically assign IP addresses and related network configuration settings to devices on a network. Its primary use case is to simplify and streamline IP address management, making deploying and managing many computers and devices in a network easier. DHCP ensures that each device on the network receives a unique IP address, subnet mask, default gateway, DNS server addresses, and other configuration parameters, reducing the administrative overhead of manually configuring each device's network settings. This automation especially benefits large corporate networks, reducing errors and ensuring efficient IP address allocation.</em>
-  </p>
-</p>  <br>
-
-<p align="center">
-  <strong>😨 "Why are you configuring DHCP now?" 😨</strong>  <br>
-  <p align="justify">
-    <em>The reason is that I will require DHCP services in the next chapter when testing our user creations on a Windows 10 Pro log in to our domain. I don't want to configure a Windows 10 pro, then configure a DHCP then reconfigure the Windows Client again.</em>
+    <em>Dynamic Host Configuration Protocol is a network service used in MS Servers to automatically assign IP addresses and related network configuration settings to devices on a network. Its primary use case is to simplify IP address management, making deploying and managing devices in a network easier. DHCP ensures that each device on the network receives a unique IP address, subnet mask, default gateway, DNS, and other parameters. Reducing the administrative overhead of manually configuring each device.</em>
   </p>
 </p>
 
-___
-
-<strong>Here are the topic that we're going to cover:</strong>  <br>
+<strong>Here are the topics that we're going to cover:</strong>  <br>
 
 |[1. Pre-requisite Steps ▶️](#-pre-requesite-steps-)|
 |---|
@@ -677,20 +631,20 @@ ___
 
 <h3>🔭 Configuring a DHCP Scope 🔭</h3>
 
-- Now we will create a new <strong><a href="https://learn.microsoft.com/en-us/windows-server/networking/technologies/dhcp/dhcp-scopes">DHCP Scope</a></strong> and customize its settings to match our domain needs.  <br>
-- The first step is to go to "Tools"> Select "DHCP" and a window for the DHCP service will pop up:  <br>
+- We will create a new <strong><a href="https://learn.microsoft.com/en-us/windows-server/networking/technologies/dhcp/dhcp-scopes">DHCP Scope</a></strong> and customize its settings to match our domain needs.  <br>
+- The first step is to go to "Tools" > "DHCP":  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-1.png">
 </p>  <br>
 
-- We will configure a new DHCP scope by right-clicking "IPv4"> select "New Scope...":  <br>
+- We will configure a new DHCP scope by right-clicking "IPv4" > "New Scope...":  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-2.png">
 </p>  <br>
 
-- This will open an installation wizard window, we will begin by specifying the scope name and description:  <br>
+- This will open an installation window, where we specify the scope name and description:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-3.png">
@@ -701,8 +655,6 @@ ___
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-4.png">
 </p>
-
-___
 
 > [!NOTE]  
 > *Your Start/End addresses will be different according to the subnet you're in and your use case*
@@ -715,7 +667,7 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-5.png"><br>
   <strong>😨 "What is the purpose of address exclusion?" 😨</strong>  <br>
   <p align="justify">
-    <em>It ensures that these addresses are not automatically assigned to client devices. Exclusion is typically used for network devices with statically configured IP addresses, such as servers, routers, or printers, ensuring that the DHCP server does not allocate these reserved addresses to other devices. Address exclusion helps maintain network stability, preventing IP address conflicts and ensuring that critical network resources always have their designated addresses available for use.</em>
+    <em>It ensures that these addresses are not automatically assigned to client devices. Exclusion is typically used for devices with statically configured IP addresses, such as servers, routers, or printers, ensuring that the DHCP server does not allocate these addresses to other devices. Exclusion helps maintain network stability, preventing IP address conflicts and ensuring that critical network resources always have their designated addresses available for use.</em>
   </p>
 </p>
 
@@ -727,26 +679,25 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-6.png"><br>
   <strong>😨 "What is the purpose of Lease Duration?" 😨</strong>  <br>
   <p align="justify">
-    <em>The lease duration in DHCP specifies how long a client device can use an IP address and network configuration. Its purpose is to efficiently manage IP address allocation, adapt to changing network needs, facilitate IP address reclamation, support load balancing, and enhance network security. The choice of lease duration depends on network requirements, balancing address management efficiency, network stability, and security considerations. Shorter leases suit devices with frequent connections, while longer leases are suitable for stable connections and resource planning.</em>
+    <em>It specifies how long a device can use the IP information provided. Its purpose is to manage address allocation, adapt to changing network needs, facilitate IP address reclamation, support load balancing, and enhance network security. The choice of lease duration depends on network requirements, balancing address management efficiency, network stability, and security considerations. Shorter leases suit devices with frequent connections, while longer leases are suitable for stable connections and resource planning.</em>
   </p>
 </p>
 
 ___
 
-- Now we're given the choice to define the DHCP options (which I'll explain shortly) or opt out of them for now.  <br>
-- We will define these options from the get-go since I like living on the edge:  <br>
+- Now we will define the DHCP options (which I'll explain shortly).  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-7.png">  <br>
   <strong>😨 "So what are DHCP options?" 😨</strong>  <br>
   <p align="justify">
-    <em>They are additional parameters that a DHCP server can provide to client devices alongside the essential IP address and subnet mask. These options include settings such as the default gateway, DNS server addresses, domain names, time servers, and more.</em>
+    <em>They are additional parameters that a DHCP can provide to devices alongside the essential IP address and subnet mask. These options include settings such as the default gateway, DNS server addresses, domain names, time servers, and more.</em>
   </p>
 </p>
 
 ___
 
-- The first step is to define our Default-Gateway (Router) Address. Here, I will not specify the Vmware NAT, but Instead, I will add the address of our SRV1. If you look back at our <a href="#-%EF%B8%8F-topology-%EF%B8%8F-">Topology</a> You can see that we will be configuring our SRV1 as a routing server.  <br>
+- The first step is to define our default gateway address. I will not specify the VMware NAT. Instead, I will add the address of SRV1. If you look back at our <a href="#-%EF%B8%8F-topology-%EF%B8%8F-">Topology</a> You can see that we will be configuring SRV1 as a routing server.  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-8.png">
@@ -792,7 +743,7 @@ ___
 
 ___
 
-- Now we will this PC to our domain (Manually for now).  <br>
+- We will add this PC to our domain.  <br>
 - Go to "Settings" > "System" > "About" and select "Advanced System Settings":  <br>
 
 <p align="center">
@@ -823,26 +774,23 @@ ___
 
 <h3>🚧 Configuring a Failover Cluster 🚧</h3>
 
-- Now let's move on to creating a Failover Cluster to DHCP.
-
 <p align="center">
   <strong>😨 "A Failover Cluster?! I thought we were done with DHCP!" 😨</strong>  <br>
   <p align="justify">
-    <em> Yeah, sure. You can stop here... Why would you need a Failover Cluster?... BAM! Your DC1 decided it's taking a holiday, along with its DHCP server to the digital Caribbean, In 8 hours, all of your DHCP clients are going to lose their lease and, therefore, lose their IP address information. Do you think you have the wits to fix the issue in less than 8 hours? at midnight? oh, you forgot the keys? you're having a gut-wrenching diarrhea? Do you think you can survive all the human factors and restore stability to your organization before all hell breaks loose?</em>
+    <em> Yeah, sure. You can stop here... Why would you need a Failover Cluster?... BAM! Your DC1 decided it's taking a holiday, along with its DHCP server to the digital Caribbean, In 8 hours, all of your DHCP clients are going to end their lease and lose their IP information. Do you think you have the wits to fix this in less than 8 hours? at midnight? oh, you forgot the keys? you're having a gut-wrenching diarrhea? Can you survive all the human factors and restore stability to your organization before all hell breaks loose?</em>
   </p>
 </p>
 
 <p align="center">
   <strong>😨 "I get your point. What is a Failover Cluster, then?" 😨</strong>  <br>
   <p align="justify">
-    <em>A failover cluster ensures high availability and load balancing for DHCP services, improving network reliability. In Load Balance mode, both servers share the DHCP client load, while in Hot Standby mode, one server is active while the other is on standby, ready to take over if the active server fails. This setup helps prevent DHCP service interruptions and is especially valuable in environments where uninterrupted IP address assignment is critical.</em>
+    <em>It ensures high availability and load balancing for DHCP services, improving network reliability. In Load Balance mode, both servers share the DHCP client load, while in Hot Standby mode, one server is active while the other is on standby, ready to take over if the active server fails. This setup helps prevent DHCP service interruptions.</em>
   </p>
 </p>
 
 ___
 
 - The first step is to create a DHCP server role in DC2 using the same steps we took when we <a href="#--creating-server-roles-">configured a DHCP server on DC1</a>; By selecting the DHCP server role and adding it's features.  <br>
-- Then we go through the initial configuration, the same way we did <a href="#--dhcp-configuration--">here</a>  <br>
 - Now that we're done with the initial configuration, we will move to DC1 DHCP tools.  <br>
 - We will right-click "IPv4" again and select "Configure Failover..."  <br>
 
@@ -850,20 +798,17 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-1.png">
 </p>  <br>
 
-- An installation wizard will open up, asking us which scopes we would like to configure for the failover.  <br>
-- We will select the one we already created since we want our Secondary DHCP to take over the same functions:  <br>
+- In the installation wizard, select the scope to configure the failover for.  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-2.png">
 </p>  <br>
 
-- On the next page, we're asked to specify the server we want to configure as a Failover DHCP. We will select "Add Server" and add DC2 as the Partner Server and click Next:
+- Next, we're we specify the server we want as a Failover DHCP. Select "Add Server" and add DC2 as the Partner Server and click Next:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-3.png">
 </p>  <br>
-
-___
 
 > [!NOTE]  
 > *If you don't see DC2 in the "Authorized DHCP Servers", you should refresh the Server Manager UI.*
@@ -880,16 +825,16 @@ ___
 
 | Parameter | Description |
 | --------- | ----------- |
-| <strong>Relationship Name</strong> | Assign a unique name to identify the failover relationship. It helps distinguish this relationship from others if you have multiple configurations. |
+| <strong>Relationship Name</strong> | Assign a unique name to identify the failover relationship. |
 | <strong>Maximum Client Lead Time</strong> | Specifies the maximum time by which a client can extend its lease beyond the duration offered by the failed DHCP. |
-| <strong>Mode</strong> | <ul><li><strong>Load Balance:</strong> Both servers actively serve DHCP clients, sharing the load. It's suitable for distributing client requests across both servers.</li><li><strong>Hot Standby:</strong> One server is active, and the other is on standby. The standby server only takes over the DHCP service if the active server fails.</li></ul>|
-| <strong>Addresses Reserved for Standby Server</strong> | You can specify a pool of IP addresses that will be reserved and not used for DHCP assignments. This is useful for maintaining a buffer of unused addresses for failover situations.|
-| <strong>State Switchover Interval</strong> | This is unrelated to Hot-Standby. It represents the interval at which the roles of the two DHCP servers in a relationship switch between the primary and secondary DHCP servers in Load-Balance mode. |
-| <strong>Enable Message Authentication</strong> | allows for the authentication of messages exchanged between the DHCP servers in a failover relationship. It ensures that the messages transmitted between the servers are secure and have not been tampered with during transmission.|
+| <strong>Mode</strong> | <ul><li><strong>Load Balance:</strong> Both servers actively serve DHCP clients, sharing the load.</li><li><strong>Hot Standby:</strong> One server is active, and the other is on standby. The standby server only takes over the DHCP service if the active server fails.</li></ul>|
+| <strong>Addresses Reserved for Standby Server</strong> | You can specify a pool of IP addresses that will be reserved. This is useful for maintaining a pool of unused addresses for failover situations.|
+| <strong>State Switchover Interval</strong> | It represents the interval at which the roles of the two DHCP servers in a relationship switch between the primary and secondary DHCP servers in Load-Balance mode. |
+| <strong>Enable Message Authentication</strong> | Authentication of information exchanged between the DHCP servers in a failover relationship. It ensures that the data transmitted between the servers are secure and have not been tampered with during transmission.|
 | <strong>Shared Secret</strong> | A secret key shared only between both servers to communicate securely - Required if Message Authentication is Enabled.|
 
 - The last page shows a review of your configuration to confirm and apply, click "Finish".  <br>
-- Once you click "Finish" a log window will pop-up to show you the progress of installing the failover configuration:  <br>
+- Once you click "Finish" a log window will pop up to show you the progress of installing the failover configuration:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-5.png">
@@ -915,14 +860,14 @@ ___
 <p align="center">
   <strong>😨 "What is PAT?" 😨</strong>
   <p align="justify">
-    <em>Port Address Translation is a network address translation (NAT) technique that enables multiple devices within a private network to share a single public IP address. It achieves this by mapping different private IP addresses and port numbers to a single public IP address and port number, facilitating efficient internet access for multiple devices while conserving public IP addresses. We're essentially, in simple terms, converting SRV1 into a router for our domain LAN.</em>
+    <em>Port Address Translation enables multiple devices within a private network to share a single public IP address. It achieves this by mapping different private IP addresses and port numbers to a single public IP address and port number, facilitating efficient internet access for multiple devices while conserving public IP addresses. We're essentially converting SRV1 into a router for our domain.</em>
   </p>
 </p>
 
 <p align="center">
-  <strong>😨 "What are the use cases? You already have Vmware NAT"</strong>
+  <strong>😨 "What are the use cases? You already have VMware NAT"</strong>
   <p align="justify">
-    <em> Using a Windows Server as a PAT router is advantageous in scenarios where integration with the Windows environment, centralized management, limited budget or resources, testing, and development, or customization and scripting are priorities. It can simplify management within a Windows-centric ecosystem and be cost-effective in smaller environments. However, traditional routers and dedicated networking hardware typically outperform Windows Servers regarding performance and reliability. VMware NAT, on the other hand, is well-suited for virtualized environments but may lack the level of control and integration found in a Windows Server setup. In a dedicated PAT Windows Server, you can activate <a href="https://docs.netscaler.com/en-us/citrix-sd-wan/current-release/dhcp-server-and-dhcp-relay.html#:~:text=A%20DHCP%20relay%20agent%20is,and%20a%20remote%20DHCP%20Server.">DHCP Relay Agent</a>, Enable packet capture and analysis, and create firewall policies in the PAT Server. Capabilities which are not found in Vmware NAT.</em>
+    <em> Using a Windows Server as a router is advantageous in scenarios where integration with the Windows environment, centralized management, limited budget or resources, testing, and development, or customization and scripting are priorities. It can simplify management within a Windows ecosystem and be cost-effective in smaller environments. However, traditional routers and networking hardware outperform Windows Servers regarding performance and reliability. VMware NAT, on the other hand, lacks the level of control found in a Windows Server. In a dedicated PAT Windows Server, you can activate <a href="https://docs.netscaler.com/en-us/citrix-sd-wan/current-release/dhcp-server-and-dhcp-relay.html#:~:text=A%20DHCP%20relay%20agent%20is,and%20a%20remote%20DHCP%20Server.">DHCP Relay Agent</a>, Enable packet capture and analysis, and create firewall policies in the PAT Server. Capabilities which are not found in VMware NAT.</em>
   </p>
 </p>
 
@@ -1026,17 +971,17 @@ ___
 
 <h3>🛠️ Installing & Configuring Routing & Remote Access Services (RRAS) 🛠️</h3>
 
-- Now that we're done with the pre-requisites, let's dive into creating the actual RRAS Server on our Windows Server Machine.  <br>
+- Now that we're done with the prerequisites, let's dive into creating the actual RRAS Server on our Windows Server Machine.  <br>
 - We will begin by going to Manage > Selecting "Add Roles and Features".  <br>
 - Select "Role-based or feature-based installation".  <br>
 - Select our SRV1 from the server pool like we did with our DCs.  <br>
-- In the "Server Roles" Tab, we will scroll-down and select the "Remote Access" role:  <br>
+- In the "Server Roles" Tab, we will scroll down and select the "Remote Access" role:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-1.png">
 </p>  <br>
 
-- We will not change anything with the feautres.  <br>
+- We will not change anything with the features.  <br>
 - Once we get to the Role Services tab, we will need to select "Routing":  <br>
 
 <p align="center">
@@ -1056,8 +1001,6 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-3.png">
 </p>  <br>
 
-___
-
 > [!NOTE]  
 > *I will not be covering IIS/Web Server configuration and leave all to default.*
 
@@ -1068,8 +1011,6 @@ ___
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-4.png">
 </p>  <br>
-
-___
 
 > [!NOTE]  
 > *If you can't see the relevant tool, close the Server Manager UI and re-open it (as many times as needed) - Cheers Microsoft.*
@@ -1108,7 +1049,7 @@ ___
 ___
 
 - We'll start off by configuring the NAT.  <br>
-- Right-Click "NAT" in the Routing and Remote Access window and select "New Interface...":  <br>
+- Right-click "NAT" in the Routing and Remote Access window and select "New Interface...":  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-9.png">
@@ -1237,11 +1178,9 @@ ___
 <p align="center">
   <strong>😨 "What's that now... ADUC?" 😨</strong>  <br>
   <p align="justify">
-    <em>Active Directory Users & Computers (ADUC) is a vital management tool, serving as the primary interface for administering user accounts, groups, and computer objects in an AD environment. It allows administrators to create, modify, and manage user accounts, reset passwords, assign group memberships, organize objects into organizational units (OUs), and oversee domain-wide policies. ADUC also offers advanced features for managing security settings, group policies, and attributes of AD objects, making it an essential tool for maintaining a domain's security, organization, and functionality.</em>
+    <em>Active Directory Users & Computers (ADUC) is a management tool, serving as the primary interface for administering user accounts, groups, and computer objects in an AD environment. It allows administrators to create, modify, and manage user accounts, reset passwords, assign group memberships, organize objects into organizational units (OUs), and oversee domain-wide policies. ADUC also offers advanced features for managing security settings, group policies, and attributes of AD objects, making it an essential tool for maintaining a domain's security, organization, and functionality.</em>
   </p>
 </p>
-
-___
 
 <strong>Here are the topics that we're going to cover:</strong>  <br>
 
@@ -1352,8 +1291,6 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-6.png">
 </p>  <br>
 
-___
-
 > [!NOTE]  
 > *There are many use cases out there, of course. These are just examples.*
 
@@ -1376,6 +1313,8 @@ ___
     <em>The purpose of a group in Active Directory is to simplify user and resource management by grouping users, computers, or other objects. Groups make it easier to assign permissions, access rights, and policies collectively to multiple objects, reducing administrative complexity and enhancing security and resource management.</em>
   </p>
 </p>  <br>
+
+___
 
 - Right-click the desired OU > New > Group.  <br>
 
@@ -1401,8 +1340,6 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-10.png"><br>
 </p>
 
-___
-
 > [!NOTE]  
 > *I selected "Global" and "Security" for my use case since I want to configure permissions and access policies for this group later on in the project.*
 
@@ -1416,7 +1353,7 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-11.png">
 </p>  <br>
 
-  * A window pops-up asking you to search for the desired group:  <br>
+  * A window pops up asking you to search for the desired group:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-12.png">
@@ -1445,10 +1382,6 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-18.png">
 </p>
 
-___
-
-- Let's check if the users we created are functioning correctly and if their relevant information is correct:
-  * Remember the Windows 10 Pro we added to the domain earlier when setting up the lab environment? Well, let's fire it up.
 ___
 
 <h3>🏭 Creating OUs, Users & Groups Using CMD 🏭</h3>
@@ -1520,14 +1453,12 @@ ___
 
 > [!NOTE]  
 > *If you can't see your new users/groups, refresh the UI.*
-
-> [!NOTE]  
 > *When you want to create a user in a container, you use the syntax "cn" (Container Name), when you want to create the user in an Organizational Unit, you will use "ou".*
 
 ___
 
 <h4>💻 Modifying Objects 💻</h4>
-- Now that we know how to create users and groups successfully, we will want to add our users inside the Groups.  <br>
+- Now that we know how to create users and groups successfully, we will want to add our users to the Groups.  <br>
 - To do this, we will use the <strong><code>"DSMOD"</code></strong> command.  <br>
 - Here's a table that describes what you can do with <strong><code>"DSMOD"</code></strong>:  <br>
 
@@ -1576,7 +1507,7 @@ ___
 </p>
 
 <p align="center">
-  <strong>😆 "You're referring to Microsoft Excel?? 😆</strong>
+  <strong>😆 "You're referring to Microsoft Excel??" 😆</strong>
   <p align="justify">
     <em>Yes! This allows you to import user data from an Excel spreadsheet and simultaneously create multiple users in Active Directory. The process involves preparing an Excel sheet, entering user data, auto-filling the rest of the users, concatenating each column into a single cell, then copying the rows into Notepad and changing its format to a Batch script. This approach streamlines the user creation process, reduces manual data entry errors, and is particularly useful for administrators dealing with numerous user accounts.</em>
   </p>
@@ -1604,7 +1535,7 @@ ___
 ___
 
 <p align="center">
-  <strong>😨 What is the "Concatenate" Function? 😨</strong>
+  <strong>😨 "What is the "Concatenate" Function?" 😨</strong>
   <p align="justify">
     <em>The function  combines multiple text strings or cell values into a single string. It simplifies the process of joining text to create formatted or structured data, such as creating commands for scripts, as it can merge various elements into a unified string without the need for complex formulas or manual entry. As you can see in the screenshot above, I combined the first column (the username) into the "Common Name" or "CN".</em>
   </p>
@@ -1725,7 +1656,9 @@ ___
   </p>
 </p>  <br>
 
-- New that we've imported the module, we can use the <strong><code>"New-ADOrgnaizationalUnit"</code></strong> as follows:  <br>
+___
+
+- Now that we've imported the module, we can use the <strong><code>"New-ADOrgnaizationalUnit"</code></strong> as follows:  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/2482b2b2-b4e3-42c7-bf64-059681c1c48f">
@@ -1739,6 +1672,7 @@ ___
 
 > [!NOTE]  
 > *You don't need to remember each cmdlet to the letter. Partially writing the cmdlet and then clicking the "TAB" button will auto-fill it.*
+
 ___
 
 - Now let's create a new group using the <a href="https://learn.microsoft.com/en-us/powershell/module/activedirectory/new-adgroup?view=windowsserver2022-ps"><strong><code>"New-ADGroup"</code></strong></a> cmdlet and point that group to the OU we just created:  <br>
@@ -1792,14 +1726,18 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/45f3fd71-4666-4212-aff9-2420ffc81c80">
 </p>  <br>
 
+___
+
 - We will begin building our PowerShell Script Using PowerShell ISE.  <br>
 
 <p align="center">
   <strong>😨 "What is PowerShell ISE?" 😨</strong>
   <p align="justify">
-    <em>PowerShell Integrated Scripting Environment (ISE) is a graphical user interface (GUI) application that serves as a development environment for PowerShell scripting. It provides an interface for creating, editing, testing and running PowerShell scripts and commands. PowerShell ISE offers code highlighting, tab completion, script execution, and debugging tools. It's much more user-friendly than a simple Notepad.</em>
+    <em>PowerShell Integrated Scripting Environment (ISE) is a graphical user interface (GUI) application that serves as a development environment for PowerShell scripting. It provides an interface for creating, editing, testing, and running PowerShell scripts and commands. PowerShell ISE offers code highlighting, tab completion, script execution, and debugging tools. It's much more user-friendly than a simple Notepad.</em>
   </p>
 </p>  <br>
+
+___
 
 - Here's the relevant <a href="https://github.com/LoneSalmon/Active-Directory/blob/main/PS%20Script.ps1">script</a> I wrote to bulk-create the users found in the Excel Spreadsheet:  <br>
 
@@ -1816,6 +1754,8 @@ ___
 |<strong><code>foreach ($user in $users)</code></strong>| Iterates through user data entries in the CSV.|
 |<strong><code>$UserName = $user.UserName...</code></strong>| Assigns user attributes from CSV to variables for easy access.|
 |<strong><code>New-ADUser -Name $UserName...</code></strong>| Creates new user accounts in Active Directory using extracted data from the .csv and the variables we assigned earlier.|
+
+___
 
 - Now let's test this script by running it in PowerShell ISE:  <br>
 
@@ -1844,14 +1784,17 @@ ___
 
 <h3>🧪 Testing Replication and user login 🧪</h3>
 
-- Now, before we move on to the next subject, let's check that our users replicated to DC2 successfully and that we can log in to some of the users to test that they're working correctly.  <br>
-- Let's start by checking the replication status by going to DC2 > Active Directory Users & Computers tool.  <br>
+- Let's check that our users replicated to DC2 successfully and that we can log in to some of the users to test that they're working correctly.  <br>
+- Start by checking the replication status by going to DC2 > Active Directory Users & Computers tool.  <br>
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6bf60e79-d9b5-451b-bdf6-9d64c8c27f30">
 </p>  <br>
 
 - Here, we can see that our users replicated to DC2 successfully.  <br>
+
+___
+
 - Let's check if we can log on to our Windows machine using one of the users:  <br>
 
 <p align="center">
