@@ -108,7 +108,7 @@ ___
 - We will start by setting up the lab environment in 5 VMs. It will Consist of 2 Domain Controllers, a routing server, and two Windows 10 Pro clients.  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-1.png"> 
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-1-2.png"> 
 </p>  <br>
 
 - It is essential that each virtual machine is configured to NAT.  <br>
