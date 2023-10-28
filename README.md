@@ -180,20 +180,13 @@ ___
 
 <strong>Here are the topics that we're going to cover:</strong>  <br>
 
+| |
+|---|
 |[1. Creating Server Roles ▶️](#--creating-server-roles-)|
-|---|
-
 |[2. Configuring our 1st Domain Controller ▶️](#-%EF%B8%8F-configuring-our-1st-domain-controller-%EF%B8%8F-)|
-|---|
-
 |[3. Intial Security Step ▶️](#-initial-security-step-)|
-|---|
-
 |[4. Adding a Secondary Domain Controller (DC2) ▶️](#-adding-a-secondary-domain-controller-dc2)|
-|---|
-
 |[5. Configure DC2 as the RID Master ▶️](#-configure-dc2-as-the-rid-master-)|
-|---|
 
 ___
 
@@ -596,17 +589,12 @@ ___
 
 <strong>Here are the topics that we're going to cover:</strong>  <br>
 
+| |
+|---|
 |[1. Pre-requisite Steps ▶️](#-pre-requesite-steps-)|
-|---|
-
 |[2. Configuring a DHCP Scope ▶️](#-configuring-a-dhcp-scope-)|
-|---|
-
 |[3. Testing our DHCP Scope ▶️](#-testing-our-dhcp-scope-)|
-|---|
-
 |[4. Configuring a Failover Cluster ▶️](#-configuring-a-failover-cluster-)|
-|---|
 
 ___
 
@@ -1184,26 +1172,15 @@ ___
 
 <strong>Here are the topics that we're going to cover:</strong>  <br>
 
+| |
+|---|
 |[1. The ADUC GUI ▶️](#-the-aduc-gui-)|
-|---|
-
 |[2. Creating OUs, Users & Groups Using the GUI ▶️](#creating-ous-users--groups-using-the-gui)|
-|---|
-
 |[3. Creating OUs, Users & Groups Using CMD ▶️](#-creating-ous-users--groups-using-cmd-)|
-|---|
-
 |[4. Bulk Object Creation Using a Batch Script ▶️](#-bulk-object-creation-using-a-batch-script-)|
-|---|
-
 |[5. Creating OUs, Users & Groups using PowerShell ▶️](#-creating-ous-users--groups-using-powershell--)|
-|---|
-
 |[6. Bulk Object Creation Using a PowerShell Script ▶️](#-bulk-object-creation-using-a-powershell-script-)|
-|---|
-
 |[7. Testing Replication and User Login ▶️](#-testing-replication-and-user-login-)|
-|---|
 
 ___
 
