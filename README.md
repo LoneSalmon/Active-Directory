@@ -125,7 +125,7 @@ ___
 - Begin installing the OSs individually, and then we will do some basic set up for both DCs and SRV-1 (basic networking settings).  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-3.png"> 
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-3-1.png"> 
 </p>  <br>
 
 - Change NIC configuration to match your (Future) domain network as follows:  <br>
