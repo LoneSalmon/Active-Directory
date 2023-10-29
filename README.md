@@ -114,7 +114,7 @@ ___
 - It is essential that each virtual machine is configured to NAT.  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-2-1.png" height="500px" width="auto">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-2-1.png">
 </p>  <br>
 
 > [!NOTE]  
