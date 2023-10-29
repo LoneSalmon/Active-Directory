@@ -137,8 +137,8 @@ ___
   * Add the corresponding Network address according to the previous "NAT" network that was added by VMWare  <br>
   
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-4.png" height="auto" width="500px">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-5.png" height="auto" width="500px">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-4-1.png" width="500">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-5-1.png" width="500">
 </p>  <br>
 
 > [!NOTE]  
@@ -154,8 +154,8 @@ ___
 - Change the Computer Name (And don't add a Domain Just yet since we didn't create a Domain-Controller):  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-6.png" height="auto" width="500px">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-7.png" height="auto" width="500px">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-6-1.png" height="auto" width="500px">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Setting-up-the-lab-environment-7-1.png" height="auto" width="500px">
 </p>  <br>
 
 > [!NOTE]  
