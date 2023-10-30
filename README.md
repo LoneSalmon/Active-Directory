@@ -178,9 +178,7 @@ ___
   </p>
 </p>  <br>
 
-<strong>Here are the topics that we're going to cover:</strong>  <br>
-
-| |
+| Here are the topics that we're going to cover |
 |---|
 |[1. Creating Server Roles ▶️](#--creating-server-roles-)|
 |[2. Configuring our 1st Domain Controller ▶️](#-%EF%B8%8F-configuring-our-1st-domain-controller-%EF%B8%8F-)|
@@ -587,9 +585,7 @@ ___
   </p>
 </p>
 
-<strong>Here are the topics that we're going to cover:</strong>  <br>
-
-| |
+| Here are the topics that we're going to cover |
 |---|
 |[1. Pre-requisite Steps ▶️](#-pre-requesite-steps-)|
 |[2. Configuring a DHCP Scope ▶️](#-configuring-a-dhcp-scope-)|
@@ -1170,9 +1166,7 @@ ___
   </p>
 </p>
 
-<strong>Here are the topics that we're going to cover:</strong>  <br>
-
-| |
+| Here are the topics that we're going to cover |
 |---|
 |[1. The ADUC GUI ▶️](#-the-aduc-gui-)|
 |[2. Creating OUs, Users & Groups Using the GUI ▶️](#creating-ous-users--groups-using-the-gui)|
