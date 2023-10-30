@@ -348,14 +348,14 @@ ___
   * We will give a name to the copied user (This will be the name of the "Super" Administrator) and give the user a password.  <br>
  
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/initial-security-step-3.png">
-    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/initial-security-step-4.png">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/initial-security-step-3-1.png">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/initial-security-step-4-1.png">
   </p>  <br>
 
   * And then proceed with Disabling the user "Administrator":  <br>
   
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/initial-security-step-5.png">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/initial-security-step-5-1.png">
   </p>
 
 <p align="center">
@@ -962,14 +962,14 @@ ___
 - In the "Server Roles" Tab, we will scroll down and select the "Remote Access" role:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-1.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-1-1.png">
 </p>  <br>
 
 - We will not change anything with the features.  <br>
 - Once we get to the Role Services tab, we will need to select "Routing":  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-2.png"><br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-2-1.png"><br>
   <strong>😨 "Why did "DirectAccess and VPN (RAS)" get automatically selected?!" 😨</strong><br>
   <p align="justify">
     <em>The role is mandatory when selecting "Routing" because routing and VPN services are closely linked. Routing often involves secure data transfer between networks, where VPNs play a crucial role. This bundled setup simplifies configuration and caters to common scenarios where both routing and VPN services are needed, offering flexibility to enable or disable specific features based on your requirements during setup.</em>
@@ -982,7 +982,7 @@ ___
 - So instead, we will close this window:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-3.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-3-1.png">
 </p>  <br>
 
 > [!NOTE]  
@@ -993,7 +993,7 @@ ___
 - Instead, to configure routing, we will go to "Tools" in the Server Manager UI and select "Routing and Remote Access":  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-4.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-4-1.png">
 </p>  <br>
 
 > [!NOTE]  
@@ -1005,14 +1005,14 @@ ___
 - Right-click SRV1 and select "Configure and enable routing and remote access".  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-5.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-5-1.png">
 </p>  <br>
 
 - In this Wizard, we will reach the configuration page.  <br>
 - Here, we will select "Custom Configuration":  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-6.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-6-1.png">
 </p>  <br>
 
 - On the next page. The Wizard is asking to select which features we'd like to configure.  <br>
@@ -1021,13 +1021,13 @@ ___
   * **LAN Routing:** Because we want to configure this service on our LAN NIC.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-7.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-7-1.png">
 </p>  <br>
 
 - Once finished, Start the service when prompted, and you will see the updated window:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-8.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-8-1.png">
 </p>
 
 ___
@@ -1036,19 +1036,19 @@ ___
 - Right-click "NAT" in the Routing and Remote Access window and select "New Interface...":  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-9.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-9-1.png">
 </p>  <br>
 
 - A window that requires selecting which physical interface to work with will open. Select the "WAN" interface:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-10.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-10-1.png">
 </p>  <br>
 
 - In the next window, Configure this WAN interface as "Public" and enable "NAT":  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-11.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/RRAS-11-1.png">
 </p>  <br>
 
 - Your domain should be able to access the internet from this interface now.
@@ -1123,19 +1123,19 @@ ___
 - In the Properties window, navigate to the "Forwarders" tab and select "Edit...":  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/df0d48df-9afa-4979-9619-eb968b91c265">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/dns-external-configuration-2.png">
 </p>  <br>
 
 - In the "Edit Forwarders" window, add your desired external DNS. In this case, we're adding Google public DNS (8.8.8.8):  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/e71fa726-8c80-47a9-bf00-087f7e0856be">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/dns-external-configuration-3.png">
 </p>  <br>
 
 - Now we can see that the Google public DNS was added as a forwarder in our DNS configuration:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/ee06f8de-1fd4-443c-bd00-94972910194b">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/dns-external-configuration-4.png">
 </p>
 
 ___
@@ -1183,7 +1183,7 @@ ___
 - We will start off by going to ADUC (Tools > ADUC).  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/ADUCGUI-1.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/ADUCGUI-1-1.png">
 </p>
 
 <p align="center">
@@ -1216,14 +1216,14 @@ ___
   * Select New > Organizational Unit.
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-1.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-1-1.png">
 </p>  <br>
 
   * A window will pop up asking you to input the OU name.
   * You will also have the option to select "Protect container from accidental deletion" - Which I recommend keeping.
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-2.png"><br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-2-1.png"><br>
   <strong>"That Protect option sounds fancy. What does it do?"</strong><br>
   <em>When trying to delete the container, a window pops to ask, "Are you sure you'd like to get fired today?", you have the option to accept, but umm, well...</em><br>
   🦗 <a href="https://www.youtube.com/watch?v=CpGtBnVZLSk&ab_channel=GamingSoundFX"><strong>*Cricket Sounds*</strong></a> 🦗
@@ -1232,7 +1232,7 @@ ___
   * Click "OK" and you have yourself a brand-new OU. Well, I created two.
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-3.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-3-1.png">
 </p>
 
 ___
@@ -1243,13 +1243,13 @@ ___
 - Select New > User  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-4.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-4-1.png">
 </p>  <br>
 
 - A window pops up so you can fill out basic info about the new user:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-5.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-5-1.png">
 </p>  <br>
 
 - Next, we will need to specify a password and its settings. They're self-explanatory, but let me go over their use case:  <br>
@@ -1259,7 +1259,7 @@ ___
   4. **Account is disabled:** For templates, bulk account creation, Temporary/Seasonal users, testing, and Security review before deployment.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-6.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-6-1.png">
 </p>  <br>
 
 > [!NOTE]  
@@ -1308,7 +1308,7 @@ ___
 <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-10.png"><br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-10-1.png"><br>
 </p>
 
 > [!NOTE]  
@@ -1321,19 +1321,19 @@ ___
   * Right-click > select "Add to group..."  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-11.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-11-1.png">
 </p>  <br>
 
   * A window pops up asking you to search for the desired group:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-12.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-12-1.png">
 </p>  <br>
 
   * We can confirm this by going to a user's properties and navigating to the "Member of" Tab:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-13.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-13-1.png">
 </p>
 
 ___
@@ -1341,16 +1341,16 @@ ___
 - Now, let's take the same steps on our SysAdmin OU.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-14.png">  <br>
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-15.png">  <br>
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-16.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-14-1.png">  <br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-15-1.png">  <br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-16-1.png">
 </p>  <br>
 
 - It also makes perfect sense to add these users to the Domain Admins group (Since they're SysAdmin, right?):
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-17.png">  <br>
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-18.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-17-1.png">  <br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/creating-objects-gui-18-1.png">
 </p>
 
 ___
@@ -1395,7 +1395,7 @@ ___
 - We will run CMD as admin:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/a0484e8d-0dbf-4713-9311-d989ea5ee462">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/objects-cmd-1.png">
 </p>  <br>
 
 - And input the <strong><code>"DSADD USER"</code></strong> along with it's syntax to add two new users:  <br>
@@ -1638,7 +1638,7 @@ ___
 - And if we check on our AD GUI, we can see that the OU has appeared there already:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/48e28d8c-7c9a-495c-a8ba-e168e1564246">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Powershell-1.png">
 </p>  <br>
 
 > [!NOTE]  
@@ -1669,7 +1669,7 @@ ___
 - Look at all the info we can conjure up for a single user. Now let's check the user in the GUI:
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6a1ad8ab-f18a-4dbf-aae7-aee6235c47d2">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Powershell-2.png">
 </p>  <br>
 
 ___
@@ -1781,7 +1781,7 @@ ___
 - And now you're logged in successfully as "John Shepard":
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/66d214d6-3b57-4e7d-96cd-96d10d238666">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/test-user-1.png">
 </p>
 
 <div align="center">
