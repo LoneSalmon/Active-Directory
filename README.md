@@ -200,7 +200,7 @@ ___
 - To install a new DC, select "Role-based or feature-based installation"  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-2.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-2-1.png">
 </p>  <br>
 
 <p align="center">
@@ -215,7 +215,7 @@ ___
 - The next step is to select the server from the pool:  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-3.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-3-1.png">
 </p>  <br>
 
 > [!NOTE]  
@@ -230,7 +230,7 @@ ___
   * The already (partially) selected "File and Storage Services"  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-4.png"> 
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-4-1.png"> 
 </p>  <br>
 
 > [!NOTE]  
@@ -241,7 +241,7 @@ ___
 - Then we will reach the "Confirmation" page and hit "Install"  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-5.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-5-1.png">
 </p>
 
 > [!NOTE]  
@@ -252,7 +252,7 @@ ___
 - Once the wizard is done installing, you are given the option to "Promote this server to a domain controller":  <br>
 
 <p align="center"> 
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-6.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Server-Roles-6-1.png">
 </p>
 
 > [!NOTE]  
@@ -266,7 +266,7 @@ ___
 - Then specify the "Root Domain Name". In my case, it will be "mustafa.com".  <br>
 
   <p align="center"> 
-    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-1.png">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-1-1.png">
   </p>
 
 <p align="center">
@@ -285,7 +285,7 @@ ___
   * We are required to enter a DSRM password for catastrophes. Check this <a href="https://en.wikipedia.org/wiki/Directory_Services_Restore_Mode">link</a> for more info.  <br>
 
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-2.png">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-2-1.png">
   </p>
 
 - I will skip the DNS options since we will not cover DNS delegation in this step.  <br>
@@ -296,7 +296,7 @@ ___
   * SYSVOL: Stores and distributes Group Policy objects and other system-level settings (Scripts, for example) across all DCs.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-3.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-3-1.png">
 </p>
 
 ___
@@ -304,7 +304,7 @@ ___
 - Lastly, we will reach the "Review Options" page, where we can review all the configurations we did.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-4.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-4-1.png">
 </p>
 
 > [!NOTE]  
@@ -316,7 +316,7 @@ ___
 - Once the password is updated, we hit the "Rerun prerequisites check" link and can see that there are no errors:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-5.png">  <br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/Configuring-domain-controller-5-1.png">  <br>
 </p>
 
 - If you're cleared to proceed, you can hit "Install". This will install AD-DS & DNS and restart the system.  <br>
@@ -438,7 +438,7 @@ ___
 - We will need to configure our DC2 to point to DC1 DNS instead:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-3.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-3-1.png">
 </p>  <br>
 
 - Once we insert the DNS of our DC1 and try again, we will be prompted to enter domain Admin credentials:  <br>
@@ -457,7 +457,7 @@ ___
   * Search the name of your DC2 and add it  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-5.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-5-1.png">
 </p>  <br>
 
 > [!NOTE]  
@@ -469,14 +469,14 @@ ___
   * For the "Server Roles", we will add AD-DS, a secondary DNS, and a File-Server role.  <br>
 
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-6.png">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-6-1.png">
   </p>  <br>
 
   * Once the Roles are installed. We will "Promote this server to a domain controller" much like before.  <br>
   * We will need to add our DC2 to an existing domain (since we already have one) and specify it:  <br>
 
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-7.png">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-7-1.png">
   </p>  <br>
 
   * For "DC options" we will maintain the default values and add the previously created DSRM password:  <br>
@@ -488,7 +488,7 @@ ___
   * In the "Additional Options" page, we will specify the DC to replicate from any domain controller in the domain (In this case it's DC1)  <br>
   
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-9.png">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-9-1.png">
   </p>  <br>
 
   * Paths will be maintained as default.  <br>
@@ -507,13 +507,13 @@ ___
 - Same as we did earlier, we will need to reconfigure the DNS to point to DC1 instead of DC2 as the preferred and to DC2 as the alternative:  <br>
   
   <p align="center">
-    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-11.png">
+    <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-11-1.png">
   </p>  <br>
 
 - If that doesn't work for you, check the DNS server settings in both DCs to ensure they contain information (SOA/NameServer) on both.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-12.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/2nd-domain-controller-12-1.png">
 </p>  <br>
 
 - If you had to add them manually, confirm the settings and restart DC2, and you will see that it's back in the Domain again:  <br>
@@ -549,7 +549,7 @@ ___
 
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/rid-master-1.png">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/rid-master-2.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/rid-master-2-1.png">
 </p>
 
 ___
@@ -619,25 +619,25 @@ ___
 - The first step is to go to "Tools" > "DHCP":  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-1.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-1-1.png">
 </p>  <br>
 
 - We will configure a new DHCP scope by right-clicking "IPv4" > "New Scope...":  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-2.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-2-1.png">
 </p>  <br>
 
 - This will open an installation window, where we specify the scope name and description:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-3.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-3-1.png">
 </p>  <br>
 
 - I will configure the DHCP scope to lease 50 addresses in total for my domain:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-4.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-4-1.png">
 </p>
 
 > [!NOTE]  
@@ -648,7 +648,7 @@ ___
 - I will be excluding the first 5 addresses from the scope. This will bring the total down to 45 addresses:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-5.png"><br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-5-1.png"><br>
   <strong>😨 "What is the purpose of address exclusion?" 😨</strong>  <br>
   <p align="justify">
     <em>It ensures that these addresses are not automatically assigned to client devices. Exclusion is typically used for devices with statically configured IP addresses, such as servers, routers, or printers, ensuring that the DHCP server does not allocate these addresses to other devices. Exclusion helps maintain network stability, preventing IP address conflicts and ensuring that critical network resources always have their designated addresses available for use.</em>
@@ -660,7 +660,7 @@ ___
 - Then we will define the Lease Duration, which will be 8 hours:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-6.png"><br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-6-1.png"><br>
   <strong>😨 "What is the purpose of Lease Duration?" 😨</strong>  <br>
   <p align="justify">
     <em>It specifies how long a device can use the IP information provided. Its purpose is to manage address allocation, adapt to changing network needs, facilitate IP address reclamation, support load balancing, and enhance network security. The choice of lease duration depends on network requirements, balancing address management efficiency, network stability, and security considerations. Shorter leases suit devices with frequent connections, while longer leases are suitable for stable connections and resource planning.</em>
@@ -672,7 +672,7 @@ ___
 - Now we will define the DHCP options (which I'll explain shortly).  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-7.png">  <br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-7-1.png">  <br>
   <strong>😨 "So what are DHCP options?" 😨</strong>  <br>
   <p align="justify">
     <em>They are additional parameters that a DHCP can provide to devices alongside the essential IP address and subnet mask. These options include settings such as the default gateway, DNS server addresses, domain names, time servers, and more.</em>
@@ -684,13 +684,13 @@ ___
 - The first step is to define our default gateway address. I will not specify the VMware NAT. Instead, I will add the address of SRV1. If you look back at our <a href="#-%EF%B8%8F-topology-%EF%B8%8F-">Topology</a> You can see that we will be configuring SRV1 as a routing server.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-8.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-8-1.png">
 </p>  <br>
 
 - Next, we will Define our Parent domain and DNS servers, which we already configured in previous steps:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-9.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-DHCP-scope-9-1.png">
 </p>  <br>
 
 - We will skip the "WINS" section since it's not necessary for this project, but here's more 👉 <a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/setting-wins-server-options">info</a> 👈 on the subject.  <br>
@@ -705,7 +705,7 @@ ___
 - As soon as we log into the OS, we are automatically assigned our IP information from the DHCP:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/testing-dhcp-scope-1.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/testing-dhcp-scope-1-1.png">
 </p>  <br>
 
 - And if we check using <code><strong>ipconfig /all</strong></code>:
@@ -779,19 +779,19 @@ ___
 - We will right-click "IPv4" again and select "Configure Failover..."  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-1.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-1-1.png">
 </p>  <br>
 
 - In the installation wizard, select the scope to configure the failover for.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-2.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-2-1.png">
 </p>  <br>
 
 - Next, we're we specify the server we want as a Failover DHCP. Select "Add Server" and add DC2 as the Partner Server and click Next:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-3.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-3-1.png">
 </p>  <br>
 
 > [!NOTE]  
@@ -802,7 +802,7 @@ ___
 - The next page is where we lay out the details of the Failover Relationship:
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-4.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-4-1.png">
 </p>  <br>
 
 - Here's a detailed explanation of each Parameter and their use cases:  <br>
@@ -821,13 +821,13 @@ ___
 - Once you click "Finish" a log window will pop up to show you the progress of installing the failover configuration:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-5.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-5-1.png">
 </p>  <br>
 
 - We can confirm this by checking the description of the Scope we created at the beginning and see that the failover relationship was applied:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-6.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/configuring-failover-cluster-6-1.png">
 </p>
 
 <div align="center">
@@ -867,19 +867,19 @@ ___
 - Since we're using a virtual environment, we're going to simply add another virtual NIC to our SRV1 by going to its settings:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-1.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-1-1.png">
 </p>  <br>
 
 - Then we will select and add a "Network Adapter":  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-2.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-2-1.png">
 </p>  <br>
 
 - And make sure that this new adapter is configured to "Bridged" Since this NIC will be facing our internal network:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-3.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-3-1.png">
 </p>  <br>
 
 - Once that's done, we can see both NICs on the "Network Connections" page:  <br>
@@ -894,13 +894,13 @@ ___
 - If you check the Default Gateway, you'll find the ".2" suffix, the VMware NAT:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-5.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-5-1.png">
 </p>  <br>
 
 - We will also change the IP address of this NIC, since we will be using the ".5" suffix for our SRV1 Router:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-6.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-6-1.png">
 </p>  <br>
 
 - This is our External NIC. Let's call it "WAN" and the other NIC will be "LAN": <br>
@@ -912,7 +912,7 @@ ___
 - We will also change the IPv4 information of our LAN NIC:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-8.png"><br>
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-8-1.png"><br>
   <strong>😨 "You... missed the Default Gateway?" 😨</strong><br>
   <p align="justify">
     <em>I did not. I intentionally haven't configured it with a default gateway because a bridged network relies on the default gateway present in the network it's bridged with. In this case, it's bridged to our NAT, and the NAT, in turn, handles the actual routing for it. </em>
@@ -932,7 +932,7 @@ ___
 - Go to your WAN NIC and change the DNS to point to one of your DNS Servers:  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-9.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-9-1.png">
 </p>  <br>
 
 - Like we previously did with our DCs, we will select the "Computer Name" in the Server Manager UI:  <br>
@@ -944,7 +944,7 @@ ___
 - Select "Change..." > Domain > Add your domain name.  <br>
 
 <p align="center">
-  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-11.png">
+  <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/route-pre-requisite-steps-11-1.png">
 </p>  <br>
 
 - Once you confirm your settings, a window will pop up asking for Domain credentials.
