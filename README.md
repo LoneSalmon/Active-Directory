@@ -1140,7 +1140,95 @@ ___
 
 ___
 
-<h3>⛔ Conditional Forwarding ⛔</h3>
+<h3>⛔ Configuring a Primary Zone (with a twist) ⛔</h3>
+
+<p align="center">
+  <strong>😨 "What is Primary Zone?" 😨</strong>
+  <p align="justify">
+    <em>It is a type of DNS zone that contains the authoritative DNS records for a domain. It is the master copy of the zone data and is responsible for maintaining and updating DNS resource records for the associated domain. In a primary zone, changes to DNS records can be made directly, and it is the source of truth for DNS information. Primary zones are typically used for domains that your DNS server is authoritative for, allowing it to respond to DNS queries for those domains with accurate and up-to-date information.</em>
+  </p>
+</p>
+
+<p align="center">
+  <strong>😨 "Why did you say "with a twist"?" 😨</strong>
+  <p align="justify">
+    <em>Because I'm going to use the primary zone to block organizational users from accessing a certain domain, a domain that could distract them from work (Social Media😉)</em>
+  </p>
+</p>
+
+<p align="center">
+  <a href="https://learn.microsoft.com/en-us/windows-server/networking/dns/zone-types"> 👉 Here's an excellent guide 👈</a>
+</p>
+
+___
+
+- We'll start by opening our "DNS Manager" tool in Server Manager.  <br>
+- Go to "Tools" > "DNS" and the DNS Manager will open:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/85c23101-154e-4c66-a48c-3a3d6454cd64">
+</p>  <br>
+
+- Right-click your DNS Server and select "New Zone..."  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/0598961a-152f-4548-9a65-64ffa06e2aa6">
+</p>  <br>
+
+- In the Zone Wizard, you must select the Zone Type (In my case, I will select a Primary Zone).  <br>
+- I will also ✔️ the "Store the zone in Active-Directory..."  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/5e062311-522f-4ea7-b913-2a8efbad3c68">
+</p>  <br>
+
+- Here's a table that explains what each Zone does:  <br>
+
+| Zone Type | Description |
+| :-------: | ----------- |
+| <strong>🥇 Primary Zone 🥇</strong> | <ul><li>The primary source for zone data and allows for the creation, editing, and deletion of records.</li><li>Zone data can be stored in a file or AD, with additional features like secure dynamic updates.</li><li>Each DC hosting the zone can be a primary for updates.</li><li>You can also configure AD Integrated DNS zones to replicate within an AD DS forest or to specific DCs.</li></ul> |
+| <strong>🥈 Secondary Zone 🥈</strong> | <ul><li>It is a read-only copy of a primary zone.</li><li>Acts as a secondary source for the zone and obtains its data from a remote DNS hosting the primary zone.</li><li>Can't be stored in AD, and they typically copy resource records directly from the primary zone</li></ul> |
+| <strong>🥉 Stub Zone 🥉</strong> | <ul><li>Contains information about the authoritative name servers for a specific zone, enabling the DNS hosting this zone to identify them.</li><li>It doesn't store the entire zone's records, only what's needed to locate the authoritative DNS servers.</li><li>Beneficial for keeping delegated zone information updated, improving name resolution by using the zone's list of name servers and distributing authoritative DNS server lists.</li><li>Is separate from authoritative DNS for the same zone and can be integrated into AD.</li> |
+| <strong>Store the zone in Active-Directory...</strong> | <ul><li>Allows DNS to save the zone data in the AD database.</li><li>This offers benefits like secure dynamic updates and enhanced zone replication to all DCs in the AD forest or specific DCs.</li><li>It's only available when DNS is also a writeable DC.</li> |
+
+___
+
+- On the next page, I will select the replication scope. In my case, I want this zone replicated across the entire organization:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/2c5c73e0-bd73-49b4-a60c-3ae534b0c9b7">
+</p>  <br>
+
+- And then, we will need to choose between a forward or a reverse lookup zone:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/553ef87a-0b76-4fac-89b5-9db4abf62372">
+</p>  <br>
+
+- Next, we will specify the zone name (the FQDN or a sub-domain):  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/d9ed7d22-cc20-44da-9bb6-782c6c2b91b1">
+</p>  <br>
+
+
+
+___
+
+<h3>⏩ Configuring Conditional Forwarding ⏩</h3>
+
+<p align="center">
+  <strong>😨 "What is Conditional Forwarding?" 😨</strong>
+  <p align="justify">
+    <em>Conditional forwarding in DNS involves specifying custom DNS servers to resolve queries for specific domain names or zones. It allows a DNS server to forward requests for certain domains to designated DNS servers, improving the efficiency of DNS resolution and reducing the need to rely on public DNS servers for specific domains.</em>
+  </p>
+</p>
+
+<p align="center">
+  <a href="https://www.interfacett.com/blogs/windows-server-how-to-configure-a-conditional-forwarder-in-dns/"> 👉 Here's an excellent guide 👈</a>
+</p>
+
+___
 
 
 
