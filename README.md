@@ -50,6 +50,14 @@
       </ol>
   </details></li>
   <li><details open="open">
+  <summary><a href="#--dns-configuration--"> <strong>DNS Configuration</strong></a></summary>
+    <ol>
+      <li><a href="#-configuring-external-dns-forwarding-"> <em>Configuring External DNS Forwarding</em></a></li>
+      <li><a href="#-configuring-a-primary-zone-with-a-twist-"><em> Configuring a Primary Zone (Wih a Twist)</em></a></li>
+      <li><a href="#-configuring-conditional-forwarding-"><em> Configuring Conditional Forwarding</em></a></li>
+    </ol>
+</details></li>
+  <li><details open="open">
     <summary><a href="#-%EF%B8%8F-active-directoy-users--computers-management-%EF%B8%8F-"> <strong>Active Directory Users & Computers Management</strong></a></summary>
     <ol>
       <li><a href="#-the-aduc-gui-"> <em> The ADUC GUI</em></a></li>
