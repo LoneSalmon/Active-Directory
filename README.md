@@ -1219,7 +1219,95 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/d9ed7d22-cc20-44da-9bb6-782c6c2b91b1">
 </p>  <br>
 
+- Now we're at the Dynamic Update page, here I will choose "Do not allow dynamic updates":  <br>
 
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/5eb60a98-3648-437e-9177-77e631d8a2e2">
+</p>  <br>
+
+<p align="center">
+  <strong>😨 "What is Dynamic Update?" 😨</strong>
+  <p align="justify">
+    <em>It is a mechanism that allows DNS clients to automatically update their DNS resource records, enabling real-time changes to DNS data, such as hostnames and IP addresses.</em>
+  </p>
+</p>  <br>
+
+- Here's a table that explains what each parameter does:  <br>
+
+| Parameter | Description |
+| --------- | ----------- |
+| <strong>Secure Updates</strong> | It's the most secure option and is suitable for environments where you want to ensure that only authorized and authenticated clients can update DNS records. |
+| <strong>Secure & non-secure</strong> | It's suitable for environments where some older devices or non-Windows clients need to update their DNS records, but you also want to allow secure updates to maintain security. |
+| <strong>None</strong> | Records must be manually added or updated by administrators. |
+
+<p align="center">
+  <strong>😨 "Why did you choose to not allow dynamic updates?" 😨</strong>
+  <p align="justify">
+    <em>The reason is that I'm going to configure facebook.com's DNS to address to 0.0.0.0, which is basically an invalid address, and I don't want that change so that Facebook keeps getting blocked from the organization on a DNS level. The only one who can change that option is an Administrator (Me). So in this case, dynamic updates are not necessary - They might change my static configuration, and also, will require resource to check for updates regularly.</em>
+  </p>
+</p>  <br>
+
+<p align="center">
+  <a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/configure-dns-dynamic-updates-windows-server-2003">👉 Here's more info on Dynamic Updates 👈</a>
+</p>
+
+___
+
+- Now that we're finished with the configuration wizard of that new zone, we will configure the zone.  <br>
+- Right-click the new Zone and select "Properties":  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/aac7fc97-4a9c-40c4-a772-cd88572806fc">
+</p>  <br>
+
+- Navigate to the "Name Servers" Tab.  <br>
+- Here, you will see the current DNS servers that contain this Zone.  <br>
+- Select "Add..." and add the rest of your DNS servers in the domain:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/3f8cd292-5397-48cd-83d4-00cd995c0815">
+</p>  <br>
+
+- In my case, I will add my DC2 as well:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/c238e72e-0146-431a-885c-09beafde2f0b">
+</p>  <br>
+
+- Navigate to the "Zone Transfers" tab > Select "Allow zone transfers" and "Only to servers listed on the Name Servers tab."  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/d632f18b-3c12-4cc9-95fa-962e6761c20e">
+</p>  <br>
+
+<p align="center">
+  <strong>😨 "What is Zone Transfers?" 😨</strong>
+  <p align="justify">
+    <em>The process of copying DNS zone data (including all its resource records) from one DNS server (the primary server) to another DNS server (the secondary server). It helps ensure consistency and redundancy in DNS data across multiple servers in a domain.</em>
+  </p>
+</p>  <br>
+
+<p align="center">
+  <a href="https://learn.microsoft.com/en-us/windows-server/networking/dns/manage-dns-zones?tabs=powershell">👉 Here's more info on Zone Transfers 👈</a>
+</p>
+
+___
+
+- Now that we've set up all the needed info surrounding the zone itself, we will add a host record that corresponds to "facebook.com".  <br>
+- Right-click your zone and select "New Host (A or AAAA)..."  <Br>
+- This will open the "New Host" window. Here, we will keep the "Name" blank so that the record uses the parent domain name.  <br>
+- Then, we will specify the IP address as "0.0.0.0" - this means that anyone who tries to browse to "facebook.com" will be directed to that address (An invalid address).  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/54c2f31c-485d-422d-9c00-8073bf4c8010">
+</p>  <br>
+
+- If we test this on our client's PC, we can see that our network is running normally, but when we try to browse to facebook.com, it will fail:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/fdc7e87b-e048-422b-b322-50397c7cc2c9">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/6c1dd5e8-735e-4b5b-b611-16e2bd5fc9a7">
+</p>
 
 ___
 
