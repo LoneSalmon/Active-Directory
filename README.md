@@ -963,7 +963,7 @@ ___
 
 <h3>🛠️ Installing & Configuring Routing & Remote Access Services (RRAS) 🛠️</h3>
 
-- Now that we're done with the prerequisites, let's dive into creating the actual RRAS Server on our Windows Server Machine.  <br>
+- Now that we're done with the prerequisites let's dive into creating the actual RRAS Server on our Windows Server Machine.  <br>
 - We will begin by going to Manage > Selecting "Add Roles and Features".  <br>
 - Select "Role-based or feature-based installation".  <br>
 - Select our SRV1 from the server pool like we did with our DCs.  <br>
@@ -1146,6 +1146,19 @@ ___
   <img src="https://github.com/LoneSalmon/Active-Directory/blob/main/Media/dns-external-configuration-4.png">
 </p>
 
+- We can test this by using the <strong><code>NSLOOKUP</code></strong> command on one of our clients to see that it can "speak" with the DNS Servers and lookup addresses outside the domain.  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/88f9a496-8c83-42c8-9160-d29a2be390ad">
+</p>
+
+<p align="center">
+  <strong>😨 "Why did you use <strong><code>set type=ns</code></strong>?" 😨</strong>
+  <p align="justify">
+    <em>This command instructs nslookup to specifically request information about the authoritative name servers responsible for a particular domain. It can be useful when you want to identify the name servers that are authoritative for a specific domain, which is valuable for troubleshooting DNS issues or verifying DNS configuration.</em>
+  </p>
+</p>
+
 ___
 
 <h3>⛔ Configuring a Primary Zone (with a twist) ⛔</h3>
@@ -1326,7 +1339,13 @@ ___
 
 ___
 
+- In this section, we will configure a conditional forwarder to one of Google's Name Servers.  <br>
+- We will first need to lookup the NS IP addresses and decide which one we will use.  <br>
+- You can open the "NSLOOKUP" tool by right-clicking your DNS and selecting "Launch nslookup":  <br>
 
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/9f57f502-02c8-43f5-bca8-7dfb650979bf">
+</p>  <br>
 
 <div align="center">
   
