@@ -1349,7 +1349,7 @@ ___
 
 <div align="center">
   
-|[☝️ Back to top ☝️](#-%EF%B8%8F-configuring-routing--pat-on-srv1-%EF%B8%8F)|[📑 Table of Contents 📑](#--table-of-contents-)|
+|[☝️ Back to top ☝️](#--dns-configuration--)|[📑 Table of Contents 📑](#--table-of-contents-)|
 |---|---|
 
 </div>
