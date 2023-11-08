@@ -55,6 +55,7 @@
       <li><a href="#-configuring-external-dns-forwarding-"> <em>Configuring External DNS Forwarding</em></a></li>
       <li><a href="#-configuring-a-primary-zone-with-a-twist-"><em> Configuring a Primary Zone (Wih a Twist)</em></a></li>
       <li><a href="#-configuring-conditional-forwarding-"><em> Configuring Conditional Forwarding</em></a></li>
+      <li><a href="#%EF%B8%8F-configuring-a-stub-zone-%EF%B8%8F"><em> Configuring a Stub-Zone</em></a></li>
     </ol>
 </details></li>
   <li><details open="open">
@@ -1346,6 +1347,67 @@ ___
 <p align="center">
   <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/9f57f502-02c8-43f5-bca8-7dfb650979bf">
 </p>  <br>
+
+- Now we'll first set the type to "NS" and then query Google's name servers:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/e6f0bf9e-1eff-453b-8242-1c1bd7a790f2">
+</p>  <br>
+
+- For this example, I will use ns3.google.com's IP address.  <br>
+- I will right-click the "Conditional Forwarders" Directory in my DNS Manager GUI and select "New Conditional Forwarder...":  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/d6fc2f5e-59a9-4106-9b10-c204da70c8be">
+</p>  <br>
+
+- The DNS Domain will be "google.com", and I will add the IP address of "ns3".  <br>
+- I will also replicate this forwarder to the forest (meaning, it will replicate to DC2):  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/01ed1ae7-61f3-48fe-a28c-e6b37fa28230">
+</p>  <br>
+
+<p align="center">
+  <strong>😨 "But there's a validation error!" 😨</strong>
+  <p align="justify">
+    <em>Yes, the wonders of Microsoft's GUI, the error is just a bug. I will prove that to you in a minute.</em>
+  </p>
+</p>  <br>
+
+___
+
+- Once you click "OK", you will see that your newly configured Conditional Forwarder is added.  <br>
+- If you right-click your google.com conditional forwarder and select "Properties":  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/78687319-68f1-4d1e-a2a3-2f0cff2d009e">
+</p>  <br>
+
+- Then select "Edit..." you will find that the name server was validated successfully. *Thanks again Microsoft 🤦*:  <br>
+
+<p align="center">
+  <img src="https://github.com/LoneSalmon/Active-Directory/assets/132819728/c952d29a-19d4-4da3-a1bf-ba6fbc26c8b5">
+</p>  <br>
+
+___
+
+<h3>✏️ Configuring a Stub Zone ✏️</h3>
+
+<p align="center">
+  <strong>😨 "What is a Stub Zone?" 😨</strong>
+  <p align="justify">
+    <em>It is a simplified zone that includes information about the authoritative name servers for a specific domain. Its primary purpose is to identify the authoritative DNS servers for that domain. A common use case is in organizations that need to maintain accurate DNS records for delegated subdomains. Using stub zones ensures that their DNS servers always have the latest information about the authoritative name servers.</em>
+  </p>
+</p>
+
+<p align="center">
+  <a href="https://learn.microsoft.com/en-us/windows-server/networking/dns/zone-types#stub-zone"> 👉 Here's more info on Stub Zones 👈</a>
+</p>
+
+___
+
+
 
 <div align="center">
   
